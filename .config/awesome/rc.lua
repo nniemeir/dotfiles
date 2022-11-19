@@ -45,7 +45,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.init(gears.filesystem.get_themes_dir() .. "NN_Awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
@@ -91,8 +91,6 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- {{{ Wibar
 -- Create a textclock widget
-local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
-local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
 mytextclock=awful.widget.textclock('<span color="#ffffff" font="Ubuntu 15"> %H:%M  </span>', 5)
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -216,9 +214,6 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             mytextclock,
-            volume_widget {
-                widget_type = 'horizontal-bar'
-            },
            s.systray 
         },
     }
@@ -329,9 +324,12 @@ globalkeys = gears.table.join(
     awful.key({ modkey },            "r",     function ()
         awful.util.spawn("rofi -show drun") end,
     {description = "rofi menu", group = "launcher"}),
+    awful.key({ modkey },            "l",     function ()
+        awful.util.spawn("rofi -show power-menu -modi power-menu:rofi-power-menu") end,
+    {description = "rofi menu", group = "launcher"}),
     awful.key({ modkey },            "e",     function ()
         awful.util.spawn("kitty ranger") end,
-    {description = "rofi menu", group = "launcher"}),
+    {description = "Ranger", group = "launcher"}),
 awful.key({ modkey },            "d",     function ()
         awful.util.spawn("discord") end,
     {description = "Discord", group = "launcher"}),
