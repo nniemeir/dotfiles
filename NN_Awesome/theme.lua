@@ -30,7 +30,7 @@ theme.border_normal = "#000000"
 theme.border_focus  = "#535d6c"
 theme.border_marked = "#91231c"
 
-theme.menu_submenu_icon = themes_path.."default/submenu.png"
+theme.menu_submenu_icon = themes_path.."NN_Awesome/submenu.png"
 theme.menu_height = dpi(30)
 theme.menu_width  = dpi(150)
 awesome.set_preferred_icon_size(64)
