@@ -69,16 +69,22 @@ awful.layout.layouts = {
 -- {{{ Menu
 -- Create a launcher widget and a main menu
 myawesomemenu = {
-   { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
-   { "restart", awesome.restart },
-   { "quit", function() awesome.quit() end },
+   { "Controls", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
+   { "Manual", terminal .. " -e man awesome" },
+   { "Configuration", editor_cmd .. " " .. awesome.conffile },
+   { "Restart", awesome.restart },
+   { "Exit", function() awesome.quit() end },
 }
-
-mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "Terminal", terminal },
-                                    { "Shutdown", terminal .. "shutdown now " }
+screenshotmenu = {
+   {"Fullscreen", "scrot -d 1 "},
+   {"Select Area", "scrot -s "},
+}
+mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu},
+                                    { "Screenshot", screenshotmenu}, 
+				    {"Browser", "firefox"},
+                                    { "Editor", "kitty vim"},
+                                    { "Files", "kitty ranger"},
+                                    { "Terminal", terminal }
                                   }
                         })
 
@@ -89,9 +95,11 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 -- }}}
 
+
+
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock=awful.widget.textclock('<span color="#ffffff" font="Ubuntu 15"> %H:%M  </span>', 5)
+mytextclock=awful.widget.textclock('<span color="#ffffff" font="Ubuntu 15"> %m/%d, %H:%M  </span>', 5)
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
                     awful.button({ }, 1, function(t) t:view_only() end),
@@ -199,7 +207,7 @@ awful.screen.connect_for_each_screen(function(s)
             }
         }
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s, height = 48, bg = "#282a36" })
+    s.mywibox = awful.wibar({ position = "top", screen = s, height = 53, bg = "#282a36" })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -213,7 +221,7 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            mytextclock,
+	    mytextclock,
            s.systray 
         },
     }
@@ -275,9 +283,7 @@ globalkeys = gears.table.join(
         {description = "go back", group = "client"}),
 
     -- Standard program
-    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
-              {description = "open a terminal", group = "launcher"}),
-    awful.key({ modkey, "Control" }, "r", awesome.restart,
+       awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
@@ -321,48 +327,26 @@ globalkeys = gears.table.join(
               {description = "restore minimized", group = "client"}),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function ()
-        awful.util.spawn("rofi -show drun") end,
-    {description = "rofi menu", group = "launcher"}),
-    awful.key({ modkey },            "l",     function ()
+    awful.key({ modkey },            "d",     function ()
+        awful.util.spawn("Discord") end,
+    {description = "Discord", group = "launcher"}),
+       awful.key({ modkey },            "l",     function ()
         awful.util.spawn("rofi -show power-menu -modi power-menu:rofi-power-menu") end,
-    {description = "rofi menu", group = "launcher"}),
+    {description = "Power Menu", group = "launcher"}),
     awful.key({ modkey },            "e",     function ()
         awful.util.spawn("kitty ranger") end,
     {description = "Ranger", group = "launcher"}),
-awful.key({ modkey },            "d",     function ()
-        awful.util.spawn("discord") end,
-    {description = "Discord", group = "launcher"}),
-awful.key({ modkey },            "z",     function ()
-        awful.util.spawn("firefox") end,
-    {description = "Mozilla Firefox", group = "launcher"}),
+    awful.key({ modkey },            "r",     function ()
+        awful.util.spawn("rofi -show drun") end,
+    {description = "Rofi", group = "launcher"}),
+    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
+              {description = "Terminal", group = "launcher"}),
+    awful.key({ modkey },            "v",     function ()
+        awful.util.spawn("kitty vim") end,
+    {description = "VIM", group = "launcher"}),
 awful.key({ modkey }, "=", function ()
       awful.screen.focused().systray.visible = not awful.screen.focused().systray.visible end, 
-    {description = "Toggle systray visibility", group = "custom"}),
-awful.key({ modkey }, "x",
-        function ()
-            awful.prompt.run {
-              prompt       = "Run Lua code: ",
-              textbox      = awful.screen.focused().mypromptbox.widget,
-              exe_callback = awful.util.eval,
-              history_path = awful.util.get_cache_dir() .. "/history_eval"
-            }
-        end,
-        {description = "lua execute prompt", group = "awesome"}),
-
-    awful.key({ modkey }, "x",
-              function ()
-                  awful.prompt.run {
-                    prompt       = "Run Lua code: ",
-                    textbox      = awful.screen.focused().mypromptbox.widget,
-                    exe_callback = awful.util.eval,
-                    history_path = awful.util.get_cache_dir() .. "/history_eval"
-                  }
-              end,
-              {description = "lua execute prompt", group = "awesome"}),
-    -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+    {description = "Toggle System Tray", group = "layout"})
 )
 clientkeys = gears.table.join(
     awful.key({ modkey,           }, "f",
@@ -491,42 +475,7 @@ awful.rules.rules = {
                      placement = awful.placement.no_overlap+awful.placement.no_offscreen
      }
     },
-
-    -- Floating clients.
-    { rule_any = {
-        instance = {
-          "DTA",  -- Firefox addon DownThemAll.
-          "copyq",  -- Includes session name in class.
-          "pinentry",
-        },
-        class = {
-          "Arandr",
-          "Blueman-manager",
-          "Gpick",
-          "Kruler",
-          "MessageWin",  -- kalarm.
-          "Sxiv",
-          "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
-          "Wpa_gui",
-          "veromix",
-          "xtightvncviewer"},
-
-        -- Note that the name property shown in xprop might be set slightly after creation of the client
-        -- and the name shown there might not match defined rules here.
-        name = {
-          "Event Tester",  -- xev.
-        },
-        role = {
-          "AlarmWindow",  -- Thunderbird's calendar.
-          "ConfigManager",  -- Thunderbird's about:config.
-          "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
-        }
-      }, properties = { floating = true }},
-
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
-}
+    }
 -- }}}
 
 -- {{{ Signals
