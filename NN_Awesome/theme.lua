@@ -26,10 +26,12 @@ theme.fg_minimize   = "#ffffff"
 
 theme.useless_gap   = dpi(0)
 theme.border_width  = dpi(0)
+theme.border_width_floating = dpi(4)
 theme.border_normal = "#000000"
 theme.border_focus  = "#535d6c"
 theme.border_marked = "#91231c"
-
+theme.border_color = "#6272a4"
+theme.border_color_floating = "#6272a4"
 theme.menu_submenu_icon = themes_path.."NN_Awesome/submenu.png"
 theme.menu_height = dpi(30)
 theme.menu_width  = dpi(150)
