@@ -85,7 +85,7 @@ mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu},
                                     { "Editor", "kitty vim"},
                                     { "Files", "kitty ranger"},
                                     { "Terminal", terminal }
-                                  }
+			    }
                         })
 
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
@@ -99,7 +99,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock=awful.widget.textclock('<span color="#ffffff" font="Ubuntu 15"> %m/%d, %H:%M  </span>', 5)
+mytextclock=awful.widget.textclock('<span color="#ffffff" font="Ubuntu 15"> %b %d | %H:%M  </span>', 5)
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
                     awful.button({ }, 1, function(t) t:view_only() end),
@@ -151,6 +151,14 @@ local function set_wallpaper(s)
         gears.wallpaper.maximized(wallpaper, s, true)
     end
 end
+local function update_floating_client_border(c)
+    if c.floating then
+            c.border_color = beautiful.border_color_floating
+	    c.border_width = beautiful.border_width_floating
+			    end
+			    end
+			    client.connect_signal("manage", update_floating_client_border)
+			    client.connect_signal("property::floating", update_floating_client_border)
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
@@ -330,9 +338,6 @@ globalkeys = gears.table.join(
     awful.key({ modkey },            "d",     function ()
         awful.util.spawn("Discord") end,
     {description = "Discord", group = "launcher"}),
-       awful.key({ modkey },            "l",     function ()
-        awful.util.spawn("rofi -show power-menu -modi power-menu:rofi-power-menu") end,
-    {description = "Power Menu", group = "launcher"}),
     awful.key({ modkey },            "e",     function ()
         awful.util.spawn("kitty ranger") end,
     {description = "Ranger", group = "launcher"}),
