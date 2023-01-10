@@ -77,10 +77,12 @@ end}, {"Manual", terminal .. " -e man awesome"}, {"Configuration", editor_cmd ..
                  {"Restart", awesome.restart}, {"Exit", function()
     awesome.quit()
 end}}
-appmenu = {{"Browser", "firefox"}, {"Editor", "kitty vim"}, {"Files", "kitty ranger"}, {"Music", "kitty ncmpcpp"}, {"Steam", "steam"}, {"Terminal", terminal}}
+appmenu = {{"Browser", "firefox"}, {"Editor", "kitty vim"}, {"Files", "kitty ranger"}, {"Music", "kitty ncmpcpp"},
+           {"Steam", "steam"}, {"Terminal", terminal}}
 screenshotmenu = {{"Fullscreen", "scrot -d 1 "}, {"Select Area", "scrot -s "}}
+systemmenu = {{"Power Off", "systemctl shutdown"}, {"Reboot", "systemctl reboot "}, {"Suspend", "systemctl suspend"}}
 mymainmenu = awful.menu({
-    items = {{"Awesome", myawesomemenu}, {"Programs", appmenu}, {"Screenshot", screenshotmenu}}
+    items = {{"Awesome", myawesomemenu}, {"Programs", appmenu}, {"Screenshot", screenshotmenu}, {"System", systemmenu}}
 })
 
 mylauncher = awful.widget.launcher({
@@ -93,8 +95,10 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- }}}
 
 -- {{{ Wibar
--- Create a textclock widget
-mytextclock = awful.widget.textclock('<span color="#ffffff" font="Ubuntu 15"> %b %d | %H:%M  </span>', 5)
+sep_bar = wibox.widget.textbox('<span font="Ubuntu 22"> |  </span>')
+local mytextclock = wibox.widget.textclock('<span color="#ffffff" font="Ubuntu 18"> %l:%M %p</span>', 5)
+local month_calendar = awful.widget.calendar_popup.month()
+month_calendar:attach(mytextclock, "tc")
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(awful.button({}, 1, function(t)
     t:view_only()
@@ -180,8 +184,31 @@ awful.screen.connect_for_each_screen(function(s)
             shape = gears.shape.rect
         },
         layout = {
-            spacing = 15,
-            layout = wibox.layout.fixed.horizontal
+
+            spacing = 2,
+
+            spacing_widget = {
+
+                {
+
+                    forced_width = 0,
+
+                    shape = gears.shape.circle,
+
+                    widget = wibox.widget.separator
+
+                },
+
+                valign = "center",
+
+                halign = "center",
+
+                widget = wibox.container.place
+
+            },
+
+            layout = wibox.layout.flex.horizontal
+
         },
         ------------------------------
         widget_template = {
@@ -209,7 +236,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mywibox = awful.wibar({
         position = "top",
         screen = s,
-        height = 53,
+        height = 46,
         bg = "#282a36"
     })
 
@@ -218,18 +245,19 @@ awful.screen.connect_for_each_screen(function(s)
         layout = wibox.layout.align.horizontal,
         expand = "none",
         { -- Left widgets
-            layout = wibox.layout.fixed.horizontal,
+            layout = wibox.layout.align.horizontal,
             s.mytaglist,
-            s.mypromptbox
+            sep_bar,
+            s.mytasklist
         },
-        s.mytasklist, -- Middle widget
+        mytextclock,
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            mytextclock,
             s.systray
         }
     }
 end)
+
 -- }}}
 
 -- {{{ Mouse bindings
@@ -367,7 +395,27 @@ end, {
     description = "restore minimized",
     group = "client"
 }), -- Prompt
-awful.key({modkey}, "d", function()
+awful.key({}, "XF86AudioRaiseVolume", function()
+    awful.spawn.with_shell("pactl set-sink-mute @DEFAULT_SINK@ 0")
+    awful.spawn.with_shell("pactl set-sink-volume @DEFAULT_SINK@ +5%")
+    awesome.emit_signal("widget::volume")
+end, {
+    description = "raise volume",
+    group = "volume"
+}), awful.key({}, "XF86AudioLowerVolume", function()
+    awful.spawn.with_shell("pactl set-sink-mute @DEFAULT_SINK@ 0")
+    awful.spawn.with_shell("pactl set-sink-volume @DEFAULT_SINK@ -5%")
+    awesome.emit_signal("widget::volume")
+end, {
+    description = "lower volume",
+    group = "volume"
+}), awful.key({}, "XF86AudioMute", function()
+    awful.spawn.with_shell("pactl set-sink-mute @DEFAULT_SINK@ toggle")
+    awesome.emit_signal("widget::volume")
+end, {
+    description = "mute volume",
+    group = "volume"
+}), awful.key({modkey}, "d", function()
     awful.util.spawn("Discord")
 end, {
     description = "Discord",
@@ -378,7 +426,7 @@ end, {
     description = "Ranger",
     group = "launcher"
 }), awful.key({modkey}, "r", function()
-    awful.util.spawn("rofi -show drun")
+    awful.util.spawn("rofi -disable-history -no-levenshtein-sort -show drun")
 end, {
     description = "Rofi",
     group = "launcher"
@@ -525,6 +573,7 @@ root.keys(globalkeys)
 
 -- {{{ Rules
 -- Rules to apply to new clients (through the "manage" signal).
+
 awful.rules.rules = { -- All clients will match this rule.
 {
     rule = {},
@@ -536,7 +585,8 @@ awful.rules.rules = { -- All clients will match this rule.
         keys = clientkeys,
         buttons = clientbuttons,
         screen = awful.screen.preferred,
-        placement = awful.placement.no_overlap + awful.placement.no_offscreen
+        placement = awful.placement.no_overlap + awful.placement.no_offscreen,
+        switch_to_tags = true
     }
 }, -- Clients will spawn in appropriate tag
 {
@@ -548,10 +598,39 @@ awful.rules.rules = { -- All clients will match this rule.
     }
 }, {
     rule_any = {
-        class = {"code"}
+        class = {"Code", "Gimp.*"}
     },
     properties = {
         tag = "DEV"
+    }
+}, {
+    rule = {
+        name = "Virtual Machine Manager"
+    },
+    properties = {
+        tag = "VM"
+    }
+}, {
+    rule = {
+        name = "Subscriptions - FreeTube"
+    },
+    properties = {
+        tag = "MED"
+    }
+}, {
+    rule_any = {
+        class = {"Lutris", "openrgb", "Steam"}
+    },
+    properties = {
+        tag = "GAME"
+    }
+}, {
+    rule_any = {
+        class = {"freetube", "Ghb", "Pavucontrol", "mpv", "steam_app_.*"}
+    },
+    properties = {
+        tag = "MED",
+        fullscreen = true
     }
 }, -- Floating clients.
 {
@@ -579,7 +658,6 @@ end)
 
 -- Autostart Applications
 awful.spawn.with_shell("blueman-applet")
-awful.spawn.with_shell("dunst")
 awful.spawn.with_shell("mpd")
 awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("nm-applet")
