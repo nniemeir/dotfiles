@@ -95,6 +95,16 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- }}}
 
 -- {{{ Wibar
+local buttons_example = wibox {
+    visible = true,
+    bg = '#2E3440',
+    ontop = true,
+    height = 1E00,
+    width = 200,
+    shape = function(cr, width, height)
+        gears.shape.rounded_rect(cr, width, height, 3)
+    end
+}
 sep_bar = wibox.widget.textbox('<span font="Ubuntu 22"> |  </span>')
 local mytextclock = wibox.widget.textclock('<span color="#ffffff" font="Ubuntu 18"> %l:%M %p</span>', 5)
 local month_calendar = awful.widget.calendar_popup.month()
@@ -237,7 +247,7 @@ awful.screen.connect_for_each_screen(function(s)
         position = "top",
         screen = s,
         height = 46,
-        bg = "#282a36"
+        bg = "#282a3650"
     })
 
     -- Add widgets to the wibox
@@ -253,6 +263,15 @@ awful.screen.connect_for_each_screen(function(s)
         mytextclock,
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            -- System Monitors
+            awful.widget.watch('bash -c "sensors | grep -A 0 "Tctl:" | cut -c16-25 | sed "s/^/CPU:/g""', 15),
+            sep_bar,
+            awful.widget.watch('bash -c "sensors | grep -A 0 "edge:" | cut -c16-23 | sed "s/^/GPU:/g""', 15),
+            sep_bar,
+            awful.widget.watch('bash -c "free -m | grep -A 0 "Mem:" | cut -c28-35 | sed "s/^/RAM:/g""', 15,
+                function(widget, stdout)
+                    widget:set_text(stdout .. "MB")
+                end),
             s.systray
         }
     }
@@ -426,7 +445,7 @@ end, {
     description = "Ranger",
     group = "launcher"
 }), awful.key({modkey}, "r", function()
-    awful.util.spawn("rofi -disable-history -no-levenshtein-sort -show drun")
+    awful.util.spawn("rofi -show drun")
 end, {
     description = "Rofi",
     group = "launcher"
@@ -619,14 +638,14 @@ awful.rules.rules = { -- All clients will match this rule.
     }
 }, {
     rule_any = {
-        class = {"Lutris", "openrgb", "Steam"}
+        class = {"Lutris", "openrgb", "Steam", "steam_app_.*"}
     },
     properties = {
         tag = "GAME"
     }
 }, {
     rule_any = {
-        class = {"freetube", "Ghb", "Pavucontrol", "mpv", "steam_app_.*"}
+        class = {"freetube", "Ghb", "Pavucontrol", "mpv"}
     },
     properties = {
         tag = "MED",
@@ -657,7 +676,6 @@ client.connect_signal("manage", function(c)
 end)
 
 -- Autostart Applications
-awful.spawn.with_shell("blueman-applet")
 awful.spawn.with_shell("mpd")
 awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("nm-applet")
