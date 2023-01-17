@@ -1,12 +1,14 @@
 # .files
 These are my configuration files for various applications I use on GNU/Linux, including:
-<ul><li>AwesomeWM</li>
+<ul>
+<li>AwesomeWM</li>
 <li>Cmus</li>
 <li>Dunst</li>
 <li>Kitty</li>
 <li>Picom</li>
 <li>Ranger</li>
 <li>Rofi</li>
+<li>Sway</li>
 <li>VIM</li>
 <li>ZSH</li>
 </ul>
@@ -17,3 +19,5 @@ These are my configuration files for various applications I use on GNU/Linux, in
 <img src=Screenshots/CMUS_Spooky.png>
 <h5>Spooky (Rofi) - forked from Pop-Dark</h5>
 <img src=Screenshots/Rofi_Spooky.png>
+<h5>Personal Theme (Sway)</h5>
+<img src=Screenshots/Sway.png>
