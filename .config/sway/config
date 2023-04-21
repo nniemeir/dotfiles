@@ -7,6 +7,9 @@
         set $mod Mod4
         focus_follows_mouse no
 
+    # XWayland
+    xwayland enable
+    
     # Include scripts or configs
         include /etc/sway/config.d/*
 
