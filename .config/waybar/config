@@ -2,9 +2,9 @@
     "layer": "top",
     "position": "top",
     "height": 40,
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+    "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "pulseaudio", "temperature", "memory", "network"],
+    "modules-right": [ "temperature", "memory", "network", "pulseaudio", "tray"],
     "sway/mode": {
         "format": " {}"
     },
@@ -25,12 +25,8 @@
         "icon-size": 24,
         "spacing": 8
     },
-    "sway/window": {
-        "max-length": 60,
-        "tooltip": false
-    },
     "clock": {
-        "format": "{:%H:%M}",
+        "format": "  {:%H:%M}",
         "tooltip": false
     },
     "cpu": {
@@ -40,7 +36,7 @@
     },
     "memory": {
         "interval": 15,
-        "format": "<span font='Font Awesome 5 Free 9'>︁</span> {used:0.1f} GB",
+        "format": "MEM {used:0.1f} GB",
         "tooltip": false
     },
     "battery": {
@@ -60,13 +56,12 @@
         "format": "{icon}",
         "format-alt": "<span font='Font Awesome 5 Free 10'>︁</span> ︁{ipaddr}/{cidr} {icon}",
         "format-alt-click": "click-left",
-        "format-wifi": "<span font='Font Awesome 5 Free 10'></span> {essid}",
-        "format-ethernet": "<span font='Font Awesome 5 Free 10'>︁</span> {ifname}",
-        "format-disconnected": "⚠ Disconnected",
+        "format-wifi": "ONLINE",
+        "format-disconnected": "OFFLINE",
         "tooltip": false
     },
     "pulseaudio": {
-        "format": "<span font='Font Awesome 5 Free 11'>{icon:2}</span>{volume}%",
+        "format": "VOL {volume}%",
         "format-alt": "<span font='Font Awesome 5 Free 11'>{icon:2}</span>{volume}%",
         "format-alt-click": "click-right",
         "format-muted": "<span font='Font Awesome 5 Free 11'></span>",
@@ -82,14 +77,7 @@
         "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 75,
         "interval": 5,
-        "format": "{icon} {temperatureC}°",
+        "format": "CPU {temperatureC}°C",
         "tooltip": false,
-        "format-icons": [
-            "", // Icon: temperature-empty
-            "", // Icon: temperature-quarter
-            "", // Icon: temperature-half
-            "", // Icon: temperature-three-quarters
-            ""  // Icon: temperature-full
-        ]
     }
 }
