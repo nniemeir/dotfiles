@@ -7,22 +7,20 @@
         set $mod Mod4
         focus_follows_mouse no
 
-    # XWayland
-    xwayland enable
-    
     # Include scripts or configs
         include /etc/sway/config.d/*
 
+    # Xwayland
+    xwayland enable
     # Borders
         # Also removes all title bars
         for_window [class="^.*"] border pixel 3
-        default_border pixel 0
         default_floating_border pixel 3
-
+        default_border none
         # Hide borders at the edge of the screen
         hide_edge_borders smart
 
-        client.focused           #9aa5ce #16161d #c0caf5 #9aa5ce   #9aa5ce
+        client.focused           #c5411d #16161d #c0caf5 #9aa5ce   #9aa5ce
         client.focused_inactive  #16161d #16161d #c0caf5 #16161d   #16161d
         client.unfocused         #16161d #16161d #c0caf5 #16161d   #16161d
 
@@ -32,32 +30,23 @@
         # the inner affects spacing around each view
         # the outer affects the spacing around each workspace
         # To reduce or remove outer gaps, outer gaps can be set to a negative value.
-        gaps inner 5
-        gaps outer 1
-        gaps top 1
-        gaps bottom 1
+        gaps inner 6
+        gaps outer -9
     
         # Hide gaps when there is only 1 window
         smart_gaps on
 
     # Set Wallpaper
-        output * bg /home/natalie/Pictures/Wallpapers/campfire.jpg fill
+        output * bg /home/natalie/Pictures/Wallpapers/dark_morning.jpg fill
 
 ### Keybindings
 
+    # Toggle bar
+     bindsym $mod+b exec pkill -SIGUSR1 '^waybar$'
     # Start a terminal
         bindsym $mod+Return exec $term
 
-    # Switch workspace to another monitor
-        bindsym $mod+Shift+h move workspace to output left
-        bindsym $mod+Shift+Tab move workspace to output left
-        bindsym $mod+Shift+right focus right
-        bindsym $mod+Shift+j move workspace to output down
-        bindsym $mod+Shift+k move workspace to output up
-        bindsym $mod+Shift+l move workspace to output right
-        bindsym $mod+Tab move workspace to output right
-
-    # Kill focused window
+# Kill focused window
         bindsym $mod+Shift+c kill
 
     # Resize/move (floating and tiled) windows with mouse
@@ -73,9 +62,10 @@
     #prev/next workspace. bind it to your mouse if you have a sticky keyboard
         bindsym $mod+left workspace prev_on_output
         bindsym $mod+right workspace next_on_output
-        bindsym $mod+Shift+left focus left
-        bindsym $mod+Shift+up focus up
-        bindsym $mod+Shift+down focus down
+        bindsym $mod+Shift+h focus left
+        bindsym $mod+Shift+k focus up
+        bindsym $mod+Shift+j focus down
+        bindsym $mod+Shift+l focus right
 
     # Switch to workspace
         bindsym $mod+1 workspace number 1
@@ -94,7 +84,7 @@
     # Split direction
     # NOTE: we are using autotiling based on window dimensions
     # See https://github.com/nwg-piotr/autotiling
-        bindsym $mod+b splith
+        bindsym $mod+c splith
         bindsym $mod+v splitv
 
     # Make the current focused window fullscreen
@@ -113,11 +103,14 @@
         bindsym $mod+s scratchpad show
 
 
-    # Volume Controls
+    # Volume & Media Controls
         bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
         bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10%
         bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
         bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+        bindsym XF86AudioPrev exec cmus-remote -r
+        bindsym XF86AudioNext exec cmus-remote -n
+        bindsym XF86AudioPlay exec cmus-remote -u
 
 ### Resizing Containers 
     bindsym $mod+Shift+r mode "resize"
@@ -134,7 +127,7 @@
         for_window [class="Gimp-2.10" title="Option"] floating enable
         for_window [class="Gimp-2.10" title="Change"] floating enable
         for_window [app_id="mpv"] floating enable
-        for_window [app_id="mpv"] resize set 1280 720
+        for_window [app_id="mpv"] resize set 1280 720 floating enable
         for_window [app_id="(pavuctrl|psensor)"] floating enable
 
 ### Assign Programs to Workspaces ###
@@ -165,7 +158,7 @@
 
 ### USER APPLICATIONS
     #Lock Screen
-    bindsym $mod+l exec swaylock -i ~/Pictures/Wallpapers/campfire.jpg --color=282a36  --indicator-radius=100 --indicator-thickness=10 --inside-color=282a36 --inside-clear-color=282a36 --inside-ver-color=282a36 --inside-wrong-color=282a36 --key-hl-color=bd93f9aa --bs-hl-color=ff5555aa --ring-color=44475a90 --ring-ver-color=bd93f9 --ring-clear-color=ff79c611 --line-color=282a36 --line-uses-ring --ring-wrong-color=ff5555 
+    bindsym $mod+l exec swaylock -i ~/Pictures/Wallpapers/red_street.png --color=282a36  --indicator-radius=100 --indicator-thickness=10 --inside-color=282a36 --inside-clear-color=282a36 --inside-ver-color=282a36 --inside-wrong-color=282a36 --key-hl-color=bd93f9aa --bs-hl-color=ff5555aa --ring-color=44475a90 --ring-ver-color=bd93f9 --ring-clear-color=ff79c611 --line-color=282a36 --line-uses-ring --ring-wrong-color=ff5555 
     
     #Ranger
         bindsym $mod+e exec kitty ranger    
@@ -176,7 +169,6 @@
     ### Autostart
     exec nm-applet --indicator
     exec blueman-applet
-    exec mpd
     exec wl-paste -t text --watch clipman store
     exec autotiling &
     exec_always /home/natalie/.config/waybar/launch.sh &

@@ -2,9 +2,9 @@
     "layer": "top",
     "position": "top",
     "height": 40,
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["clock"],
-    "modules-right": [ "temperature", "memory", "network", "pulseaudio", "tray"],
+    "modules-left": ["sway/workspaces", "sway/mode", "wlr/taskbar"],
+    "modules-center": ["custom/cmus"],
+    "modules-right": ["temperature", "memory", "pulseaudio", "clock", "tray"],
     "sway/mode": {
         "format": " {}"
     },
@@ -25,18 +25,23 @@
         "icon-size": 24,
         "spacing": 8
     },
-    "clock": {
-        "format": "  {:%H:%M}",
-        "tooltip": false
+    "custom/cmus": {
+        "format": "♪ {} ♪",
+        "interval": 10,
+        "exec": "cmus-remote -C \"format_print '%a - %t'\"",
+        "exec-if": "pgrep cmus",
+        "on-click": "cmus-remote -u",   
+        "on-scroll-up": "cmus-remote -r",
+        "on-scroll-down": "cmus-remote -n",
+        "escape": true                                       
     },
-    "cpu": {
-        "interval": 5,
-        "format": "︁ {}%",
-        "max-length": 10
+    "clock": {
+        "format": " {:%H:%M}",
+        "format-alt": " {:%B %e %Y}"
     },
     "memory": {
         "interval": 15,
-        "format": "MEM {used:0.1f} GB",
+        "format": "  {used:0.1f} GB",
         "tooltip": false
     },
     "battery": {
@@ -52,16 +57,8 @@
         },
         "tooltip": false
     },
-    "network": {
-        "format": "{icon}",
-        "format-alt": "<span font='Font Awesome 5 Free 10'>︁</span> ︁{ipaddr}/{cidr} {icon}",
-        "format-alt-click": "click-left",
-        "format-wifi": "ONLINE",
-        "format-disconnected": "OFFLINE",
-        "tooltip": false
-    },
     "pulseaudio": {
-        "format": "VOL {volume}%",
+        "format": "{icon} {volume}%",
         "format-alt": "<span font='Font Awesome 5 Free 11'>{icon:2}</span>{volume}%",
         "format-alt-click": "click-right",
         "format-muted": "<span font='Font Awesome 5 Free 11'></span>",
@@ -77,7 +74,28 @@
         "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 75,
         "interval": 5,
-        "format": "CPU {temperatureC}°C",
+        "format": "{icon}  {temperatureC}°",
         "tooltip": false,
+        "format-icons": [
+            "", // Icon: temperature-empty
+            "", // Icon: temperature-quarter
+            "", // Icon: temperature-half
+            "", // Icon: temperature-three-quarters
+            ""  // Icon: temperature-full
+        ]
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 26,
+        "icon-theme": "Numix-Circle",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [
+            "Alacritty"
+        ],
+        "app_ids-mapping": {
+            "firefoxdeveloperedition": "firefox-developer-edition"
+        }
     }
 }
