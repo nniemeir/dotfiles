@@ -50,6 +50,7 @@ window#waybar {
   color: #ee2e24;
 }
 #taskbar,
+#battery,
 #custom-cmus,
 #clock,
 #tray,

@@ -4,7 +4,7 @@
     "height": 40,
     "modules-left": ["sway/workspaces", "sway/mode", "wlr/taskbar"],
     "modules-center": ["custom/cmus"],
-    "modules-right": ["temperature", "memory", "pulseaudio", "clock", "tray"],
+    "modules-right": ["temperature", "battery", "memory", "pulseaudio", "clock", "tray"],
     "sway/mode": {
         "format": " {}"
     },
@@ -45,10 +45,10 @@
         "tooltip": false
     },
     "battery": {
-        "format": "<span font='Font Awesome 5 Free 11'>{icon}</span> {capacity}%{time}",
+        "format": "<span font='Font Awesome 5 Free 11'>{icon}</span> {capacity}%",
         "format-icons": ["", "", "", "", ""],
         "format-time": " ({H}h{M}m)",
-        "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}",
+        "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}%",
         "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  Charged",
         "interval": 15,
         "states": {
