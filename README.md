@@ -17,6 +17,8 @@ These are my configuration files for various applications I use on GNU/Linux, in
 <img src=Screenshots/NN_Awesome.png>
 <h5>Spooky (Cmus) - forked from Gruvbox</h5>
 <img src=Screenshots/CMUS_Spooky.png>
+<h5>Sleek (Rofi) - forked from Dracula</h5>
+<img src=Screenshots/Rofi_Sleek.png>
 <h5>Spooky (Rofi) - forked from Pop-Dark</h5>
 <img src=Screenshots/Rofi_Spooky.png>
 <h5>Personal Theme (Sway)</h5>
