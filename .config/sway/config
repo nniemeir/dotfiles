@@ -169,7 +169,7 @@
         bindsym $mod+e exec kitty ranger    
     
     #Wofi
-bindsym --release Super_L exec rofi -show drun -no-levenshtein-sort  
+bindsym $mod+r exec rofi -show drun -no-levenshtein-sort  
     ### Autostart
     exec nm-applet --indicator
     exec blueman-applet

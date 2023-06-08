@@ -17,6 +17,7 @@
 configuration {
     show-icons:      true;
     display-drun:    "";
+    drun-display-format: "{name}";
     disable-history: true;
 }
 
@@ -26,6 +27,7 @@ configuration {
     border-radius:    6;
     border-color:     @bordercolor;
     padding:          15;
+    width: 400px;
 }
 #mainbox {
     border:  0;
@@ -113,6 +115,7 @@ configuration {
 #entry {
     spacing:    0;
     text-color: @foreground;
+    placeholder: "";
 }
 #prompt {
     spacing:    0;
