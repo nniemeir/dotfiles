@@ -14,12 +14,12 @@ These are my configuration files for various applications I use on GNU/Linux, in
 </ul>
 <h4>Application Themes Included:</h4>
 <h5>Personal Theme (AwesomeWM)</h5>
-<img src=Screenshots/NN_Awesome.png>
+<img src=Previews/NN_Awesome.png>
 <h5>Spooky (Cmus) - forked from Gruvbox</h5>
-<img src=Screenshots/CMUS_Spooky.png>
+<img src=Previews/CMUS_Spooky.png>
 <h5>Sleek (Rofi) - forked from Dracula</h5>
-<img src=Screenshots/Rofi_Sleek.png>
+<img src=Previews/Rofi_Sleek.png>
 <h5>Spooky (Rofi) - forked from Pop-Dark</h5>
-<img src=Screenshots/Rofi_Spooky.png>
+<img src=Previews/Rofi_Spooky.png>
 <h5>Personal Theme (Sway)</h5>
-<img src=Screenshots/Sway.png>
+<img src=Previews/Sway.png>

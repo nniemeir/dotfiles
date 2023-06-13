@@ -1,0 +1,105 @@
+#waybar {
+  font-family: "dejavu sans 12";
+  font-size: 16px;
+}
+
+#window {
+  padding: 0 10px;
+}
+
+window#waybar {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
+  transition-duration: 0s;
+  color: rgba(217, 216, 216, 1);
+  background: rgba(46, 52, 64, 0);
+}
+
+#workspaces {
+  background-color: #313131;
+  border-radius: 6px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+#workspaces button {
+  padding: 0 10px;
+  border: 3px solid rgba(9, 85, 225, 0);
+  min-width: 33px;
+}
+
+#workspaces button.visible {
+  color: #a9b1d6;
+}
+
+#workspaces button.urgent {
+  background-color: #a96d1f;
+  color: white;
+}
+
+#workspaces button.focused {
+  color: #76a0ee;
+}
+
+#custom-recorder {
+  font-size: 18px;
+  margin: 2px 7px 0px 7px;
+  color: #ee2e24;
+}
+#taskbar,
+#battery,
+#custom-cmus,
+#clock,
+#tray,
+#mode,
+#temperature,
+#memory,
+#network,
+#pulseaudio,
+#backlight,
+#custom-media {
+  background-color: #313131;
+  border-radius: 6px;
+  margin: 0px 0px 0px 10px;
+  padding: 0 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#clock {
+  font-size: 18px;
+}
+
+#tray {
+  margin-right: 5px;
+}
+
+#battery.warning {
+  color: rgba(255, 210, 4, 1);
+}
+
+#battery.critical {
+  color: rgba(238, 46, 36, 1);
+}
+
+#battery.charging {
+  color: rgba(217, 216, 216, 1);
+}
+
+#custom-storage.warning {
+  color: rgba(255, 210, 4, 1);
+}
+
+#custom-storage.critical {
+  color: rgba(238, 46, 36, 1);
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: black;
+  }
+}
