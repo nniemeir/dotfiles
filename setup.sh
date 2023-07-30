@@ -14,7 +14,7 @@ ln -s ~/.dotfiles/Files/waybar/ ~/.config/
 ln -s ~/.dotfiles/Files/picom.conf ~/.config/
 ln -s ~/.dotfiles/Files/.vimrc ~/
 ln -s ~/.dotfiles/Files/.zshrc ~/
-
+ln -s ~/.dotfiles/Files/GNOME/extensions/ ~/.local/share/gnome-shell/
 
 
 
