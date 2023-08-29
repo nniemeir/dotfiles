@@ -9,5 +9,12 @@ source ~/.powerlevel10k/powerlevel10k.zsh-theme
 alias game_mount="sudo cryptsetup open /dev/sda2 gaming && sudo mount /dev/mapper/gaming /mnt/gaming"
 alias media_mount="sudo cryptsetup open /dev/sdb1 media && sudo mount /dev/mapper/media /mnt/media"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+alias study="ranger 'MEGA/Academic/Community College/Courses/7. Fall 2023/'"
+study_dir="/home/natalie/MEGA/Academic/Community College/Courses/7. Fall 2023" 
+alias algebra="ranger '/home/natalie/MEGA/Academic/Community College/Courses/7. Fall 2023/College Algebra'"
+alias py="ranger '/home/natalie/MEGA/Academic/Community College/Courses/7. Fall 2023/Python'"
+alias project="ranger '/home/natalie/MEGA/Academic/Community College/Courses/7. Fall 2023/Project Management'"
+alias capstone="ranger '/home/natalie/MEGA/Academic/Community College/Courses/7. Fall 2023/Capstone'"
+#To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source ~/.powerlevel10k/powerlevel10k.zsh-theme

@@ -15,6 +15,25 @@
 
     # Xwayland
     xwayland enable
+
+
+    #
+# Screen capture
+set $screenshot 1 selected, 2 whole, 3 selected clipboard, 4 whole clipboard, 5 swappy
+mode "$screenshot" {
+    bindsym 1 exec 'grim -g "$(slurp)" ~/ps_$(date +"%Y%m%d%H%M%S").png', mode "default"
+    bindsym 2 exec 'grim ~/ps_$(date +"%Y%m%d%H%M%S").png', mode "default"
+    bindsym 3 exec 'grim -g "$(slurp)" - | wl-copy', mode "default"
+    bindsym 4 exec 'grim - | wl-copy', mode "default"
+    bindsym 5 exec 'grim -g "$(slurp)" - | swappy -f -', mode "default"
+
+# back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+Print mode "default"
+}
+
+bindsym $mod+Print mode "$screenshot"
     # Borders
         # Also removes all title bars
         for_window [class="^.*"] border pixel 3
@@ -40,7 +59,7 @@
         smart_gaps on
 
     # Set Wallpaper
-        output * bg /home/natalie/Pictures/Wallpapers/dark_morning.jpg fill
+        output * bg /home/natalie/MEGA/Personal/Wallpapers/blue_desert.jpg fill
 
 ### Keybindings
 
@@ -84,11 +103,7 @@
         bindsym $mod+Shift+4 move container to workspace number 4
         bindsym $mod+Shift+5 move container to workspace number 5
 
-    # Split direction
-    # NOTE: we are using autotiling based on window dimensions
-    # See https://github.com/nwg-piotr/autotiling
-        bindsym $mod+c splith
-        bindsym $mod+v splitv
+   
 
     # Make the current focused window fullscreen
         bindsym $mod+f fullscreen
@@ -132,7 +147,24 @@
         for_window [app_id="mpv"] floating enable
         for_window [app_id="mpv"] resize set 1280 720 floating enable
         for_window [app_id="(pavuctrl|psensor)"] floating enable
-
+	for_window [app_id="pavucontrol"] {
+	floating enable
+	resize set width 800px
+	resize set height 540px
+	}
+    for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable;
+    for_window [title="(?:Open|Save) (?:File|Folder|As)"] resize set 800 600 
+   for_window [title="qalc"] {
+  	floating enable
+  	resize set width 400px
+	resize set height 540px
+	}
+    for_window [window_role="pop-up"] floating enable
+    for_window [window_role="bubble"] floating enable
+    for_window [window_role="task_dialog"] floating enable
+    for_window [window_role="Preferences"] floating enable
+    for_window [window_type="dialog"] floating enable
+    for_window [window_type="menu"] floating enable
 ### Assign Programs to Workspaces ###
     #WEB
         assign [class="discord"] → number 1
@@ -167,12 +199,16 @@
     bindsym ctrl+alt+Delete exec /home/natalie/.config/sway/scripts/powermenu.sh
     #Ranger
         bindsym $mod+e exec kitty ranger    
-    
+        bindsym $mod+c exec kitty qalc  
+	bindsym $mod+v exec pavucontrol
+	bindsym $mod+Shift+F exec firefox
+
+  
     #Wofi
 bindsym $mod+r exec rofi -show drun -no-levenshtein-sort  
     ### Autostart
     exec nm-applet --indicator
     exec blueman-applet
     exec wl-paste -t text --watch clipman store
-    exec autotiling &
+    exec_always autotiling &
     exec_always /home/natalie/.config/waybar/launch.sh &
