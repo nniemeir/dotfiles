@@ -1,5 +1,5 @@
 #waybar {
-  font-family: "dejavu sans 12";
+  font-family: "dejavu sans";
   font-size: 16px;
 }
 
@@ -28,11 +28,12 @@ window#waybar {
 #workspaces button {
   padding: 0 5px;
   border: 3px solid rgba(9, 85, 225, 0);
+  color: white;
   min-width: 33px;
 }
 
 #workspaces button.visible {
-  color: #a9b1d6;
+  color: orange;
 }
 
 #workspaces button.urgent {

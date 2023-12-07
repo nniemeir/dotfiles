@@ -209,6 +209,8 @@ bindsym $mod+Print mode "$screenshot"
     # Search bar
     bindsym $mod+g exec /home/natalie/.dotfiles/Files/Linux/sway/scripts/ddg.sh
 
+    bindsym $mod+tab workspace next_on_output 
+    bindsym $mod+Shift+tab workspace prev_on_output 
 
     #Ranger
         bindsym $mod+e exec kitty ranger    
