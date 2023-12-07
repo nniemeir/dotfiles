@@ -14,7 +14,7 @@ window#waybar {
   text-shadow: none;
   transition-duration: 0s;
   color: rgba(217, 216, 216, 1);
-  background: rgba(46, 52, 64, 0);
+  background: rgba(49, 49, 49, 0);
 }
 
 #workspaces {
@@ -26,7 +26,7 @@ window#waybar {
 }
 
 #workspaces button {
-  padding: 0 10px;
+  padding: 0 5px;
   border: 3px solid rgba(9, 85, 225, 0);
   min-width: 33px;
 }
@@ -37,11 +37,11 @@ window#waybar {
 
 #workspaces button.urgent {
   background-color: #a96d1f;
-  color: white;
+  color: black;
 }
 
 #workspaces button.focused {
-  color: #76a0ee;
+  color: #d65d0e;
 }
 
 #custom-recorder {
@@ -59,6 +59,7 @@ window#waybar {
 #memory,
 #network,
 #pulseaudio,
+#custom-powermenu,
 #backlight,
 #custom-media {
   background-color: #313131;
@@ -67,6 +68,11 @@ window#waybar {
   padding: 0 5px;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+#custom-powermenu {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 #clock {
@@ -99,7 +105,7 @@ window#waybar {
 
 @keyframes blink {
   to {
-    background-color: #ffffff;
+    background-color: #d65d0e;
     color: black;
   }
 }

@@ -1,5 +1,2 @@
-#include catppuccin-macchiato
-#include catppuccin-mocha
-#include catppuccin-latte
-include catppuccin-frappe
-set recolor true
+#include zathura-gruvbox-dark-hard
+set recol:or true

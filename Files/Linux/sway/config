@@ -42,7 +42,7 @@ bindsym $mod+Print mode "$screenshot"
         # Hide borders at the edge of the screen
         hide_edge_borders smart
 
-        client.focused           #c5411d #16161d #c0caf5 #9aa5ce   #9aa5ce
+        client.focused           #c5411d #16161d #c0caf5 #d54d0e   #d54d0e
         client.focused_inactive  #16161d #16161d #c0caf5 #16161d   #16161d
         client.unfocused         #16161d #16161d #c0caf5 #16161d   #16161d
 
@@ -59,7 +59,7 @@ bindsym $mod+Print mode "$screenshot"
         smart_gaps on
 
     # Set Wallpaper
-        output * bg /home/natalie/MEGA/Personal/Wallpapers/blue_desert.jpg fill
+        output * bg /home/natalie/MEGA/Personal/Images/Wallpapers/green_staircase.jpg fill
 
 ### Keybindings
 
@@ -76,7 +76,7 @@ bindsym $mod+Print mode "$screenshot"
         floating_modifier $mod normal
 
     # reload sway
-        bindsym $mod+w reload
+        bindsym $mod+Shift+w reload
 
     # Exit sway
         bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
@@ -191,12 +191,25 @@ bindsym $mod+Print mode "$screenshot"
         assign [class="mpv"] → number 5
         assign [class="Pavuctrl"] → number 5
 
-### USER APPLICATIONS
+### CUSTOM SCRIPTS
     #Lock Screen
-    bindsym $mod+l exec swaylock -i ~/Pictures/Wallpapers/dark_morning.jpg --color=282a36  --indicator-radius=100 --indicator-thickness=10 --inside-color=282a36 --inside-clear-color=282a36 --inside-ver-color=282a36 --inside-wrong-color=282a36 --key-hl-color=bd93f9aa --bs-hl-color=ff5555aa --ring-color=44475a90 --ring-ver-color=bd93f9 --ring-clear-color=ff79c611 --line-color=282a36 --line-uses-ring --ring-wrong-color=ff5555 
+    bindsym $mod+l exec swaylock -i ~/Pictures/Wallpapers/orange_autumn_cabin_far.jpg --color=282a36  --indicator-radius=100 --indicator-thickness=10 --inside-color=282a36 --inside-clear-color=282a36 --inside-ver-color=282a36 --inside-wrong-color=282a36 --key-hl-color=bd93f9aa --bs-hl-color=ff5555aa --ring-color=44475a90 --ring-ver-color=bd93f9 --ring-clear-color=ff79c611 --line-color=282a36 --line-uses-ring --ring-wrong-color=ff5555 
 
     #Power Menu
-    bindsym ctrl+alt+Delete exec /home/natalie/.config/sway/scripts/powermenu.sh
+    bindsym ctrl+alt+Delete exec /home/natalie/.dotfiles/Files/Linux/sway/scripts/powermenu.sh
+    bindsym $mod+Delete exec /home/natalie/.dotfiles/Files/Linux/sway/scripts/powermenu.sh
+
+
+    # Wallpaper Menu
+    bindsym $mod+w exec /home/natalie/.dotfiles/Files/Linux/sway/scripts/wallmenu.sh
+    
+    # Movie Menu
+    bindsym $mod+m exec /home/natalie/.dotfiles/Files/Linux/sway/scripts/mpvlib.sh
+
+    # Search bar
+    bindsym $mod+g exec /home/natalie/.dotfiles/Files/Linux/sway/scripts/ddg.sh
+
+
     #Ranger
         bindsym $mod+e exec kitty ranger    
         bindsym $mod+c exec kitty qalc  
@@ -207,8 +220,8 @@ bindsym $mod+Print mode "$screenshot"
     #Wofi
 bindsym $mod+r exec rofi -show drun -no-levenshtein-sort  
     ### Autostart
+    exec_always ~/.dotfiles/Files/Linux/waybar/launch.sh &
     exec nm-applet --indicator
     exec blueman-applet
     exec wl-paste -t text --watch clipman store
     exec_always autotiling &
-    exec_always /home/natalie/.config/waybar/launch.sh &

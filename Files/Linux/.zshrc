@@ -5,7 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source ~/.powerlevel10k/powerlevel10k.zsh-theme
 alias game_mount="sudo cryptsetup open /dev/sda2 gaming && sudo mount /dev/mapper/gaming /mnt/gaming"
 alias media_mount="sudo cryptsetup open /dev/sdb1 media && sudo mount /dev/mapper/media /mnt/media"
 
@@ -16,5 +15,10 @@ alias py="ranger '/home/natalie/MEGA/Academic/Community College/Courses/7. Fall 
 alias project="ranger '/home/natalie/MEGA/Academic/Community College/Courses/7. Fall 2023/Project Management'"
 alias capstone="ranger '/home/natalie/MEGA/Academic/Community College/Courses/7. Fall 2023/Capstone'"
 #To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source ~/.powerlevel10k/powerlevel10k.zsh-theme
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#source ~/.powerlevel10k/powerlevel10k.zsh-theme
+
+# Startup Script
+#free -m | awk 'NR==2{printf "RAM: %.0f / %.0f MB\n", $3, $2}'
+#hostname -i | awk '{print "IP: " $1}'
+#nmcli -t -f name,device connection show --active | grep wlo1 | cut -d\: -f1 | sed 's/^/Network: /'

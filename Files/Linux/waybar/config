@@ -1,10 +1,10 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 40,
+    "height": 20,
     "modules-left": ["sway/workspaces", "sway/mode", "wlr/taskbar"],
     "modules-center": ["custom/cmus"],
-    "modules-right": ["temperature", "battery", "memory", "pulseaudio", "clock", "tray"],
+    "modules-right": ["temperature", "battery", "pulseaudio", "clock", "tray"],
     "sway/mode": {
         "format": " {}"
     },
@@ -14,11 +14,11 @@
         "disable-markup": false,
         "format": "{icon}",
         "format-icons": {
-            "1": "WEB",
-            "2": "DEV",
-            "3": "VM",
-            "4": "GAME",
-            "5": "MED",
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": ""
         }
     },
     "tray": {
@@ -41,15 +41,15 @@
     },
     "memory": {
         "interval": 15,
-        "format": "  {used:0.1f} GB",
+        "format": " {used:0.1f} GB",
         "tooltip": false
     },
     "battery": {
-        "format": "<span font='Font Awesome 5 Free 11'>{icon}</span> {capacity}%",
+        "format": " {capacity}%",
         "format-icons": ["", "", "", "", ""],
         "format-time": " ({H}h{M}m)",
-        "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}%",
-        "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  Charged",
+        "format-charging": " {capacity}%",
+        "format-full": "",
         "interval": 15,
         "states": {
             "warning": 25,
@@ -58,10 +58,8 @@
         "tooltip": false
     },
     "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-alt": "<span font='Font Awesome 5 Free 11'>{icon:2}</span>{volume}%",
-        "format-alt-click": "click-right",
-        "format-muted": "<span font='Font Awesome 5 Free 11'></span>",
+        "format": " {volume}%",
+        "format-muted": "",
         "format-icons": {
             "phone": [" ", " ", " ", " "],
             "default": ["", "", "", ""]
@@ -92,10 +90,18 @@
         "on-click": "activate",
         "on-click-middle": "close",
         "ignore-list": [
-            "Alacritty"
+            "Alacritty",
+            "kitty",
+            "pavucontrol"
         ],
         "app_ids-mapping": {
             "firefoxdeveloperedition": "firefox-developer-edition"
         }
-    }
+    },
+
+    "custom/powermenu": {
+        "format": "",
+        "on-click": "$HOME/.dotfiles/Files/Linux/sway/scripts/powermenu.sh",
+        "tooltip": false
+    },
 }
