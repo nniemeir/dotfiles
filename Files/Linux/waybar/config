@@ -2,7 +2,7 @@
     "layer": "top",
     "position": "top",
     "height": 20,
-    "modules-left": ["sway/workspaces", "sway/mode", "wlr/taskbar"],
+    "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["custom/cmus"],
     "modules-right": ["temperature", "battery", "pulseaudio", "clock", "tray"],
     "sway/mode": {
@@ -37,7 +37,7 @@
     },
     "clock": {
         "format": " {:%H:%M}",
-        "format-alt": " {:%B %e %Y}"
+        "format-alt": " {%m/%d/%y}"
     },
     "memory": {
         "interval": 15,

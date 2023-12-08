@@ -172,24 +172,31 @@ bindsym $mod+p mode "$screenshot"
         assign [class="firefox"] → number 1
         assign [app_id="firefox"] → number 1
         assign [class="zoom"] → number 1
+        assign [app_id="fluent-reader"] → number 1
     #DEV
         assign [class="Audacity"] → number 2
-        assign [class="code"] → number 2
-        for_window [class="Gimp-2.10"] move to workspace number 2
-        for_window [class="Gimp"] move to workspace number 2
+        assign [class="Code"] → number 2
+        assign [app_id="org.pwmt.zathura"] → number 2
+        assign [app_id="org.qt-project.qtcreator"] → number 2
+        assign [class="Docker Desktop"] → number 2
     #VM
-        #Nothing here yet
+        assign [class="VirtualBox Manager"] → number 3
     #GAME
-        assign [class="lutris"] → number 4
+        assign [app_id="lutris"] → number 4
         assign [class="openrgb"] → number 4
         assign [class="Steam"] → number 4
         assign [class="steam_app_.*"] → number 4
+        assign [app_id="net.davidotek.pupgui2"] → number 4
     #MED
         assign [class="Blueman-manager"] → number 5
         assign [class="freetube"] → number 5
         assign [class="Ghb"] → number 5
         assign [class="mpv"] → number 5
+        assign [class="vlc"] → number 5
         assign [class="Pavuctrl"] → number 5
+        assign [app_id="com.obsproject.Studio"] → number 5
+        for_window [class="Gimp-2.10"] move to workspace number 2
+        for_window [class="Gimp"] move to workspace number 2
 
 ### CUSTOM SCRIPTS
     #Lock Screen
@@ -225,8 +232,8 @@ bindsym XF86MonBrightnessDown exec light -U 10
 #Wofi
 bindsym $mod+r exec rofi -show drun -no-levenshtein-sort  
     ### Autostart
-    exec_always ~/.dotfiles/Files/Linux/waybar/launch.sh &
+    exec_always /home/natalie/.dotfiles/Files/Linux/waybar/launch.sh
     exec nm-applet --indicator
     exec blueman-applet
     exec wl-paste -t text --watch clipman store
-    exec_always autotiling &
+    exec_always python3 ~/.dotfiles/Files/Linux/sway/scripts/autotiling/autotiling.py
