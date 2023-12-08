@@ -20,8 +20,8 @@ These are my configuration files for various applications I use on GNU/Linux, in
 ![Screenshot of GNOME layout](Previews/GNOME.png)
 ##### Spooky (Cmus) - forked from Gruvbox
 ![Screenshot of Spooky Theme](Previews/CMUS_Spooky.png)
-##### Sleek (Rofi) - forked from Dracula
-![Screenshot of Sleek Theme](Previews/Rofi_Sleek.png)
+##### Gruvish (Rofi) - forked from Dracula
+![Screenshot of Sleek Theme](Previews/Rofi_Gruvish.png)
 ##### Spooky (Rofi) - forked from Pop-Dark
 ![Screenshot of Spooky Theme](Previews/Rofi_Spooky.png)
 ##### Personal Theme (Sway)
