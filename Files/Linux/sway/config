@@ -208,7 +208,8 @@ bindsym $mod+p mode "$screenshot"
 
     # Search bar
     bindsym $mod+g exec /home/natalie/.dotfiles/Files/Linux/sway/scripts/ddg.sh
-
+    bindsym XF86Search exec /home/natalie/.dotfiles/Files/Linux/sway/scripts/ddg.sh
+    
     bindsym $mod+tab workspace next_on_output 
     bindsym $mod+Shift+tab workspace prev_on_output 
 
@@ -218,8 +219,10 @@ bindsym $mod+p mode "$screenshot"
 	bindsym $mod+v exec pavucontrol
 	bindsym $mod+Shift+F exec firefox
 
-  
-    #Wofi
+bindsym XF86MonBrightnessUp exec light -A 10
+bindsym XF86MonBrightnessDown exec light -U 10
+
+#Wofi
 bindsym $mod+r exec rofi -show drun -no-levenshtein-sort  
     ### Autostart
     exec_always ~/.dotfiles/Files/Linux/waybar/launch.sh &

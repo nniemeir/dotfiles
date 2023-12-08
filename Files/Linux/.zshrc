@@ -26,3 +26,7 @@ alias capstone="ranger '/home/natalie/MEGA/Academic/Community College/Courses/7.
 fpath+=($HOME/.zsh/pure)
 autoload -U promptinit; promptinit
 prompt pure
+
+if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec sway
+fi
