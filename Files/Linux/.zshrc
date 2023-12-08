@@ -22,3 +22,7 @@ alias capstone="ranger '/home/natalie/MEGA/Academic/Community College/Courses/7.
 #free -m | awk 'NR==2{printf "RAM: %.0f / %.0f MB\n", $3, $2}'
 #hostname -i | awk '{print "IP: " $1}'
 #nmcli -t -f name,device connection show --active | grep wlo1 | cut -d\: -f1 | sed 's/^/Network: /'
+
+fpath+=($HOME/.zsh/pure)
+autoload -U promptinit; promptinit
+prompt pure

@@ -33,7 +33,7 @@ mode "$screenshot" {
     bindsym $mod+Print mode "default"
 }
 
-bindsym $mod+Print mode "$screenshot"
+bindsym $mod+p mode "$screenshot"
     # Borders
         # Also removes all title bars
         for_window [class="^.*"] border pixel 3
@@ -59,7 +59,7 @@ bindsym $mod+Print mode "$screenshot"
         smart_gaps on
 
     # Set Wallpaper
-        output * bg /home/natalie/MEGA/Personal/Images/Wallpapers/green_staircase.jpg fill
+        output * bg /home/natalie/MEGA/Personal/Images/Wallpapers/gruv_street.webp fill
 
 ### Keybindings
 
@@ -193,7 +193,7 @@ bindsym $mod+Print mode "$screenshot"
 
 ### CUSTOM SCRIPTS
     #Lock Screen
-    bindsym $mod+l exec swaylock -i ~/Pictures/Wallpapers/orange_autumn_cabin_far.jpg --color=282a36  --indicator-radius=100 --indicator-thickness=10 --inside-color=282a36 --inside-clear-color=282a36 --inside-ver-color=282a36 --inside-wrong-color=282a36 --key-hl-color=bd93f9aa --bs-hl-color=ff5555aa --ring-color=44475a90 --ring-ver-color=bd93f9 --ring-clear-color=ff79c611 --line-color=282a36 --line-uses-ring --ring-wrong-color=ff5555 
+    bindsym $mod+l exec swaylock -i ~/MEGA/Personal/Images/Wallpapers/gruv_street.webp --color=282a36  --indicator-radius=100 --indicator-thickness=10 --inside-color=282a36 --inside-clear-color=282a36 --inside-ver-color=282a36 --inside-wrong-color=282a36 --key-hl-color=d65d0eaa --bs-hl-color=ff5555aa --ring-color=44475a90 --ring-ver-color=d65d0e --ring-clear-color=ff79c611 --line-color=282a36 --line-uses-ring --ring-wrong-color=ff5555 
 
     #Power Menu
     bindsym ctrl+alt+Delete exec /home/natalie/.dotfiles/Files/Linux/sway/scripts/powermenu.sh
