@@ -1,7 +1,11 @@
 ### NN SwayWM Configuration ###
 
+    # Set Font
     font pango: DejaVu Sans 14
 
+    # Set Wallpaper
+        output * bg /home/natalie/MEGA/Personal/Images/Wallpapers/gruvbox/forest-hut.jpg fill
+    
     # Set Variables
         set $term kitty
         set $mod Mod4
@@ -11,76 +15,42 @@
         include /etc/sway/config.d/*
 
     # Scaling - Only Used On Mobile
-	output eDP-1 scale 1.25
-
+    	output eDP-1 scale 1.25
 
     # Xwayland
-    xwayland enable
-
- seat * xcursor_theme "Oreo Spark Orange Cursors" 32
-    #
-# Screen capture
-set $screenshot 1 selected, 2 whole, 3 selected clipboard, 4 whole clipboard, 5 swappy
-mode "$screenshot" {
-    bindsym 1 exec 'grim -g "$(slurp)" ~/ps_$(date +"%Y%m%d%H%M%S").png', mode "default"
-    bindsym 2 exec 'grim ~/ps_$(date +"%Y%m%d%H%M%S").png', mode "default"
-    bindsym 3 exec 'grim -g "$(slurp)" - | wl-copy', mode "default"
-    bindsym 4 exec 'grim - | wl-copy', mode "default"
-    bindsym 5 exec 'grim -g "$(slurp)" - | swappy -f -', mode "default"
-
-# back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-    bindsym $mod+Print mode "default"
-}
-
-bindsym $mod+p mode "$screenshot"
-    # Borders
-        # Also removes all title bars
-        for_window [class="^.*"] border pixel 3
-        default_floating_border pixel 3
-        default_border none
-        # Hide borders at the edge of the screen
-        hide_edge_borders smart
-
+        xwayland enable
+ 
+    # Border Styling
         client.focused           #c5411d #16161d #c0caf5 #d54d0e   #d54d0e
         client.focused_inactive  #16161d #16161d #c0caf5 #16161d   #16161d
         client.unfocused         #16161d #16161d #c0caf5 #16161d   #16161d
+        for_window [class="^.*"] border pixel 3
+        default_floating_border pixel 3
+        default_border none
 
+    # Hide borders at the edge of the screen
+        hide_edge_borders smart
+    
     # Gaps
-        # gaps inner|outer|horizontal|vertical|top|right|bottom|left <amount>
-        # Sets default amount pixels of inner or outer gap
-        # the inner affects spacing around each view
-        # the outer affects the spacing around each workspace
-        # To reduce or remove outer gaps, outer gaps can be set to a negative value.
         gaps inner 6
         gaps outer -9
-    
-        # Hide gaps when there is only 1 window
-        smart_gaps on
 
-    # Set Wallpaper
-        output * bg /home/natalie/MEGA/Personal/Images/Wallpapers/gruv_street.webp fill
+    # Hide gaps when there is only 1 window
+        smart_gaps on
 
 ### Keybindings
 
-    # Toggle bar
-     bindsym $mod+b exec pkill -SIGUSR1 '^waybar$'
-    # Start a terminal
-        bindsym $mod+Return exec $term
-
-# Kill focused window
+    # Kill focused window
         bindsym $mod+Shift+c kill
 
     # Resize/move (floating and tiled) windows with mouse
-    # inverse: $mod+left click = resize    $mod + right click = move window
         floating_modifier $mod normal
 
     # reload sway
         bindsym $mod+Shift+w reload
 
     # Exit sway
-        bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+        bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit Sway?' -b 'Yes' 'swaymsg exit'
 
     #prev/next workspace. bind it to your mouse if you have a sticky keyboard
         bindsym $mod+left workspace prev_on_output
@@ -104,8 +74,6 @@ bindsym $mod+p mode "$screenshot"
         bindsym $mod+Shift+4 move container to workspace number 4
         bindsym $mod+Shift+5 move container to workspace number 5
 
-   
-
     # Make the current focused window fullscreen
         bindsym $mod+f fullscreen
 
@@ -120,75 +88,101 @@ bindsym $mod+p mode "$screenshot"
 
     # Cycle through windows in the scratchpad
         bindsym $mod+s scratchpad show
+    
+    # Toggle waybar
+        bindsym $mod+b exec pkill -SIGUSR1 '^waybar$'
+    
+    # Start a terminal
+        bindsym $mod+Return exec $term
+    
+    # Brightness Control
+        bindsym XF86MonBrightnessUp exec light -A 10
+        bindsym XF86MonBrightnessDown exec light -U 10
 
+    # Lock Screen
+        bindsym $mod+l exec swaylock -i ~/MEGA/Personal/Images/Wallpapers/gruv_street.webp --color=282a36  --indicator-radius=100 --indicator-thickness=10 --inside-color=282a36 --inside-clear-color=282a36 --inside-ver-color=282a36 --inside-wrong-color=282a36 --key-hl-color=d65d0eaa --bs-hl-color=ff5555aa --ring-color=44475a90 --ring-ver-color=d65d0e --ring-clear-color=ff79c611 --line-color=282a36 --line-uses-ring --ring-wrong-color=ff5555 
 
-    # Volume & Media Controls
-        bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
-        bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10%
-        bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-        bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+    # Media Control
         bindsym XF86AudioPrev exec playerctl previous
         bindsym XF86AudioNext exec playerctl next
         bindsym XF86AudioPlay exec playerctl play-pause
 
-### Resizing Containers 
-    bindsym $mod+Shift+r mode "resize"
+    # Firefox
+        bindsym $mod+Shift+F exec firefox
 
-### Floating Windows
+    # Rofi
+        bindsym $mod+r exec rofi -show drun -no-levenshtein-sort  
+
+    # Volume Control
+        bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
+        bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10%
+        bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+        bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+### Floating Windows                
+        for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable;
+        for_window [title="(?:Open|Save) (?:File|Folder|As)"] resize set 800 600 
+        for_window [window_role="pop-up"] floating enable
+        for_window [window_role="bubble"] floating enable
+        for_window [window_role="task_dialog"] floating enable
+        for_window [window_role="Preferences"] floating enable
+        for_window [window_type="dialog"] floating enable
+        for_window [window_type="menu"] floating enable
         for_window [app_id="firefox" title="Firefox — Sharing Indicator"] floating enable
         for_window [app_id="firefox" title="Picture-in-Picture"] floating enable
         for_window [app_id="firefox" title="Pushbullet – Mozilla Firefox"] floating enable
         for_window [app_id="firefox" title="About Mozilla Firefox"] floating enable
+
         for_window [class="Gimp-2.10"] floating disable
         for_window [class="Gimp-2.10" title="New Image"] floating enable
         for_window [class="Gimp-2.10" title="Layer"] floating enable
         for_window [class="Gimp-2.10" title="Tool"] floating enable
         for_window [class="Gimp-2.10" title="Option"] floating enable
         for_window [class="Gimp-2.10" title="Change"] floating enable
-        for_window [app_id="mpv"] floating enable
+        
         for_window [app_id="mpv"] resize set 1280 720 floating enable
+        
         for_window [app_id="(pavuctrl|psensor)"] floating enable
-	for_window [app_id="pavucontrol"] {
-	floating enable
-	resize set width 800px
-	resize set height 540px
-	}
-    for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable;
-    for_window [title="(?:Open|Save) (?:File|Folder|As)"] resize set 800 600 
-   for_window [title="qalc"] {
-  	floating enable
-  	resize set width 400px
-	resize set height 540px
-	}
-    for_window [window_role="pop-up"] floating enable
-    for_window [window_role="bubble"] floating enable
-    for_window [window_role="task_dialog"] floating enable
-    for_window [window_role="Preferences"] floating enable
-    for_window [window_type="dialog"] floating enable
-    for_window [window_type="menu"] floating enable
-### Assign Programs to Workspaces ###
-    #WEB
+        for_window [app_id="pavucontrol"] {
+        floating enable
+        resize set width 800px
+        resize set height 540px
+        }
+
+        for_window [title="qalc"] {
+        floating enable
+        resize set width 400px
+        resize set height 540px
+        }    
+    
+### Assign Programs to Workspaces
+
+    # WEB
         assign [class="discord"] → number 1
         for_window [class="discord"] move to workspace number 1
         assign [class="firefox"] → number 1
         assign [app_id="firefox"] → number 1
         assign [class="zoom"] → number 1
         assign [app_id="fluent-reader"] → number 1
-    #DEV
+    
+    # DEV
         assign [class="Audacity"] → number 2
         assign [class="Code"] → number 2
         assign [app_id="org.pwmt.zathura"] → number 2
         assign [app_id="org.qt-project.qtcreator"] → number 2
         assign [class="Docker Desktop"] → number 2
-    #VM
+    
+    # VM
         assign [class="VirtualBox Manager"] → number 3
-    #GAME
+
+    # GAME
         assign [app_id="lutris"] → number 4
         assign [class="openrgb"] → number 4
         assign [class="Steam"] → number 4
         assign [class="steam_app_.*"] → number 4
         assign [app_id="net.davidotek.pupgui2"] → number 4
-    #MED
+    
+    # MED
         assign [class="Blueman-manager"] → number 5
         assign [class="freetube"] → number 5
         assign [class="Ghb"] → number 5
@@ -196,46 +190,42 @@ bindsym $mod+p mode "$screenshot"
         assign [class="vlc"] → number 5
         assign [class="Pavuctrl"] → number 5
         assign [app_id="com.obsproject.Studio"] → number 5
-        for_window [class="Gimp-2.10"] move to workspace number 2
-        for_window [class="Gimp"] move to workspace number 2
+        for_window [class="Gimp-2.10"] move to workspace number 5
+        for_window [class="Gimp"] move to workspace number 5
+
 
 ### CUSTOM SCRIPTS
-    #Lock Screen
-    bindsym $mod+l exec swaylock -i ~/MEGA/Personal/Images/Wallpapers/gruv_street.webp --color=282a36  --indicator-radius=100 --indicator-thickness=10 --inside-color=282a36 --inside-clear-color=282a36 --inside-ver-color=282a36 --inside-wrong-color=282a36 --key-hl-color=d65d0eaa --bs-hl-color=ff5555aa --ring-color=44475a90 --ring-ver-color=d65d0e --ring-clear-color=ff79c611 --line-color=282a36 --line-uses-ring --ring-wrong-color=ff5555 
+    
+    # DDG Search
+        bindsym $mod+g exec /home/natalie/.dotfiles/Files/Linux/rofi/scripts/search.sh
+        bindsym XF86Search exec /home/natalie/.dotfiles/Files/Linux/rofi/scripts/search.sh
+
+    # Grim Menu
+        bindsym $mod+p exec /home/natalie/.dotfiles/Files/Linux/rofi/scripts/grim.sh
+
+    # Movie Library Browser
+        bindsym $mod+m exec /home/natalie/.dotfiles/Files/Linux/rofi/scripts/movielib.sh
 
     #Power Menu
-    bindsym ctrl+alt+Delete exec /home/natalie/.dotfiles/Files/Linux/sway/scripts/powermenu.sh
-    bindsym $mod+Delete exec /home/natalie/.dotfiles/Files/Linux/sway/scripts/powermenu.sh
+        bindsym ctrl+alt+Delete exec /home/natalie/.dotfiles/Files/Linux/rofi/scripts/power.sh
+        bindsym $mod+Delete exec /home/natalie/.dotfiles/Files/Linux/rofi/scripts/power.sh
 
+    # Qalc
+        bindsym $mod+c exec kitty qalc  
+
+    # Ranger
+        bindsym $mod+e exec kitty ranger        
+  	
+    # Volume Mixer
+        bindsym $mod+v exec pavucontrol
 
     # Wallpaper Menu
-    bindsym $mod+w exec /home/natalie/.dotfiles/Files/Linux/sway/scripts/wallmenu.sh
-    
-    # Movie Menu
-    bindsym $mod+m exec /home/natalie/.dotfiles/Files/Linux/sway/scripts/mpvlib.sh
+        bindsym $mod+w exec /home/natalie/.dotfiles/Files/Linux/rofi/scripts/wallpapers.sh
 
-    # Search bar
-    bindsym $mod+g exec /home/natalie/.dotfiles/Files/Linux/sway/scripts/ddg.sh
-    bindsym XF86Search exec /home/natalie/.dotfiles/Files/Linux/sway/scripts/ddg.sh
-    
-    bindsym $mod+tab workspace next_on_output 
-    bindsym $mod+Shift+tab workspace prev_on_output 
-
-    #Ranger
-        bindsym $mod+e exec kitty ranger    
-        bindsym $mod+c exec kitty qalc  
-	bindsym $mod+v exec pavucontrol
-	bindsym $mod+Shift+F exec firefox
-
-bindsym XF86MonBrightnessUp exec light -A 10
-bindsym XF86MonBrightnessDown exec light -U 10
-
-#Wofi
-bindsym $mod+r exec rofi -show drun -no-levenshtein-sort  
-    ### Autostart
-    exec_always /home/natalie/.dotfiles/Files/Linux/waybar/launch.sh
-    exec nm-applet --indicator
-    exec blueman-applet
-    exec wl-paste -t text --watch clipman store
-    exec_always python3 ~/.dotfiles/Files/Linux/sway/scripts/autotiling/autotiling.py
-    exec playerctld daemon &
+### Autostart
+        exec_always python3 ~/.dotfiles/Files/Linux/sway/scripts/autotiling/autotiling.py
+        exec blueman-applet
+        exec nm-applet --indicator
+        exec playerctld daemon &
+        exec_always /home/natalie/.dotfiles/Files/Linux/waybar/launch.sh
+        exec wl-paste -t text --watch clipman store

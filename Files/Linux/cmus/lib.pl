@@ -674,6 +674,49 @@
 /run/media/natalie/Media/Audio/Depeche Mode/[2013] Delta Machine [Deluxe Edition]/CD 2/02 - Happens All The Time.mp3
 /run/media/natalie/Media/Audio/Depeche Mode/[2013] Delta Machine [Deluxe Edition]/CD 2/03 - Always.mp3
 /run/media/natalie/Media/Audio/Depeche Mode/[2013] Delta Machine [Deluxe Edition]/CD 2/04 - All That's Mine.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Slim_Shady_LP-2CD-1999-FUM/101-eminem-public_service_announcement_(skit)-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Slim_Shady_LP-2CD-1999-FUM/102-eminem-my_name_is-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Slim_Shady_LP-2CD-1999-FUM/103-eminem-guilty_conscience_(feat._dr._dre)-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Slim_Shady_LP-2CD-1999-FUM/104-eminem-brain_damage-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Slim_Shady_LP-2CD-1999-FUM/105-eminem-paul_(skit)-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Slim_Shady_LP-2CD-1999-FUM/106-eminem-if_i_had-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Slim_Shady_LP-2CD-1999-FUM/107-eminem-97_bonnie_and_clyde-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Slim_Shady_LP-2CD-1999-FUM/108-eminem-bitch_(skit)-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Slim_Shady_LP-2CD-1999-FUM/109-eminem-role_model-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Slim_Shady_LP-2CD-1999-FUM/110-eminem-lounge_(skit)-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Slim_Shady_LP-2CD-1999-FUM/111-eminem-my_fault-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Slim_Shady_LP-2CD-1999-FUM/112-eminem-ken_kaniff_(skit)-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Slim_Shady_LP-2CD-1999-FUM/113-eminem-cum_on_everybody-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Slim_Shady_LP-2CD-1999-FUM/114-eminem-rock_bottom-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Slim_Shady_LP-2CD-1999-FUM/115-eminem-just_dont_give_a_fuck-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Slim_Shady_LP-2CD-1999-FUM/116-eminem-soap_(skit)-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Slim_Shady_LP-2CD-1999-FUM/117-eminem-as_the_world_turns-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Slim_Shady_LP-2CD-1999-FUM/118-eminem-im_shady-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Slim_Shady_LP-2CD-1999-FUM/119-eminem-bad_meets_evil_(feat._royce_da_5'9)-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Slim_Shady_LP-2CD-1999-FUM/120-eminem-still_dont_give_a_fuck-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Slim_Shady_LP-2CD-1999-FUM/201-eminem-hazardous_youth_(acapella)-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Slim_Shady_LP-2CD-1999-FUM/202-eminem-get_you_mad-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Slim_Shady_LP-2CD-1999-FUM/203-eminem-greg_(acapella)-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Marshall_Mathers_LP-2000-FUM/01-eminem-public_service_announcement_2000_(skit)-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Marshall_Mathers_LP-2000-FUM/02-eminem-kill_you-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Marshall_Mathers_LP-2000-FUM/03-eminem-stan_(feat._dido)-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Marshall_Mathers_LP-2000-FUM/04-eminem-paul_(skit)-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Marshall_Mathers_LP-2000-FUM/05-eminem-who_knew-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Marshall_Mathers_LP-2000-FUM/06-eminem-steve_berman_(skit)-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Marshall_Mathers_LP-2000-FUM/07-eminem-the_way_i_am-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Marshall_Mathers_LP-2000-FUM/08-eminem-the_real_slim_shady-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Marshall_Mathers_LP-2000-FUM/09-eminem-remember_me_(feat._rbx_and_sticky_fingaz)-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Marshall_Mathers_LP-2000-FUM/10-eminem-i'm_back-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Marshall_Mathers_LP-2000-FUM/11-eminem-marshall_mathers-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Marshall_Mathers_LP-2000-FUM/12-eminem-ken_kaniff_(skit)-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Marshall_Mathers_LP-2000-FUM/13-eminem-drug_ballad-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Marshall_Mathers_LP-2000-FUM/14-eminem-amityville_(feat._bizarre)-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Marshall_Mathers_LP-2000-FUM/15-eminem-bitch_please_ii_(feat._dr._dre,_snoop_dogg,_xzibit_and_nate_dogg)-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Marshall_Mathers_LP-2000-FUM/16-eminem-kim-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Marshall_Mathers_LP-2000-FUM/17-eminem-under_the_influence_(feat._d12)-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Marshall_Mathers_LP-2000-FUM/18-eminem-criminal-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Marshall_Mathers_LP-2000-FUM/19-eminem-the_kids_(bonus_track)-fum.mp3
+/run/media/natalie/Media/Audio/Eminem/Eminem-The_Marshall_Mathers_LP-2000-FUM/20-eminem-the_way_i_am_(remix)_(feat._marilyn_manson)_(bonus_track)-fum.mp3
 /run/media/natalie/Media/Audio/esc 不在 - midi dungeon/01 - mirror harem.mp3
 /run/media/natalie/Media/Audio/esc 不在 - midi dungeon/02 - forest.mp3
 /run/media/natalie/Media/Audio/esc 不在 - midi dungeon/03 - pine.mp3
