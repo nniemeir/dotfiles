@@ -2,9 +2,9 @@
     "layer": "top",
     "position": "top",
     "height": 20,
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["custom/cmus"],
-    "modules-right": ["temperature", "battery", "pulseaudio", "clock", "tray"],
+    "modules-left": ["sway/workspaces", "sway/mode", "tray"],
+    "modules-center": ["custom/playerctl"],
+    "modules-right": ["temperature", "pulseaudio", "battery", "clock"],
     "sway/mode": {
         "format": " {}"
     },
@@ -25,19 +25,9 @@
         "icon-size": 24,
         "spacing": 8
     },
-    "custom/cmus": {
-        "format": "♪ {} ♪",
-        "interval": 10,
-        "exec": "cmus-remote -C \"format_print '%a - %t'\"",
-        "exec-if": "pgrep cmus",
-        "on-click": "cmus-remote -u",   
-        "on-scroll-up": "cmus-remote -r",
-        "on-scroll-down": "cmus-remote -n",
-        "escape": true                                       
-    },
     "clock": {
         "format": " {:%H:%M}",
-        "format-alt": " {%m/%d/%y}"
+        "format-alt": "{%m/%d/%y}"
     },
     "memory": {
         "interval": 15,
@@ -49,7 +39,7 @@
         "format-icons": ["", "", "", "", ""],
         "format-time": " ({H}h{M}m)",
         "format-charging": " {capacity}%",
-        "format-full": "",
+        "format-full": " {capacity}%",
         "interval": 15,
         "states": {
             "warning": 25,
@@ -104,4 +94,18 @@
         "on-click": "$HOME/.dotfiles/Files/Linux/sway/scripts/powermenu.sh",
         "tooltip": false
     },
+        "custom/playerctl": {
+    "format": "{icon}  {}",
+    "return-type": "json",
+    "format-icons": {
+        "Playing": " ",
+        "Paused": " ",
+    },
+    "max-length":40,
+    "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click": "playerctl play-pause",
+    "on-click-middle":"playerctl previous",
+    "on-click-right":"playerctl next"
+    
+},
 }

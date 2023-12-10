@@ -1,6 +1,6 @@
 ### NN SwayWM Configuration ###
 
-    font pango: dejavu sans 14
+    font pango: DejaVu Sans 14
 
     # Set Variables
         set $term kitty
@@ -13,10 +13,11 @@
     # Scaling - Only Used On Mobile
 	output eDP-1 scale 1.25
 
+
     # Xwayland
     xwayland enable
 
-
+ seat * xcursor_theme "Oreo Spark Orange Cursors" 32
     #
 # Screen capture
 set $screenshot 1 selected, 2 whole, 3 selected clipboard, 4 whole clipboard, 5 swappy
@@ -126,9 +127,9 @@ bindsym $mod+p mode "$screenshot"
         bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10%
         bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
         bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-        bindsym XF86AudioPrev exec cmus-remote -r
-        bindsym XF86AudioNext exec cmus-remote -n
-        bindsym XF86AudioPlay exec cmus-remote -u
+        bindsym XF86AudioPrev exec playerctl previous
+        bindsym XF86AudioNext exec playerctl next
+        bindsym XF86AudioPlay exec playerctl play-pause
 
 ### Resizing Containers 
     bindsym $mod+Shift+r mode "resize"
@@ -237,3 +238,4 @@ bindsym $mod+r exec rofi -show drun -no-levenshtein-sort
     exec blueman-applet
     exec wl-paste -t text --watch clipman store
     exec_always python3 ~/.dotfiles/Files/Linux/sway/scripts/autotiling/autotiling.py
+    exec playerctld daemon &
