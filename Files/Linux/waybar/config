@@ -2,16 +2,24 @@
     "layer": "top",
     "position": "top",
     "height": 20,
-    "modules-left": ["sway/workspaces", "sway/mode", "tray"],
+    "modules-left": ["hyprland/workspaces", "tray"],
     "modules-center": ["custom/playerctl"],
     "modules-right": ["temperature", "pulseaudio", "battery", "clock"],
     "sway/mode": {
         "format": " {}"
     },
-    "sway/workspaces": {
+    "hyprland/workspaces": {
+	"active-only": false,
         "disable-scroll": true,
         "all-outputs": true,
         "disable-markup": false,
+	"persistent_workspaces": {
+	"1": [],
+	"2": [],
+	"3": [],
+	"4": [],
+	"5": [],
+	},
         "format": "{icon}",
         "format-icons": {
             "1": "",

@@ -117,9 +117,8 @@
         bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
         bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10%
         bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-        bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-
-### Floating Windows                
+       
+       ### Floating Windows                
         for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable;
         for_window [title="(?:Open|Save) (?:File|Folder|As)"] resize set 800 600 
         for_window [window_role="pop-up"] floating enable
