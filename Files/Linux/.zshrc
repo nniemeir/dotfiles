@@ -14,6 +14,7 @@ alias algebra="ranger '/home/natalie/MEGA/Academic/Community College/Courses/7. 
 alias py="ranger '/home/natalie/MEGA/Academic/Community College/Courses/7. Fall 2023/Python'"
 alias project="ranger '/home/natalie/MEGA/Academic/Community College/Courses/7. Fall 2023/Project Management'"
 alias capstone="ranger '/home/natalie/MEGA/Academic/Community College/Courses/7. Fall 2023/Capstone'"
+alias upgrade="sudo dnf upgrade -y && flatpak update -y"
 #To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 #source ~/.powerlevel10k/powerlevel10k.zsh-theme
