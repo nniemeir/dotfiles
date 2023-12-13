@@ -7,7 +7,7 @@ options(){
 	printf "2. Whole Screen"
 }
 
-choice=$(options | rofi -dmenu -p "Screenshot Menu "| cut -d. -f1)
+choice=$(options | rofi -dmenu -p "Screenshot Area: "| cut -d. -f1)
 case $choice in 
 	1)
 		mkdir $screenshotDir
