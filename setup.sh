@@ -15,7 +15,7 @@ ln -s ~/.dotfiles/Files/Linux/picom.conf ~/.config/
 ln -s ~/.dotfiles/Files/Linux/.vimrc ~/
 ln -s ~/.dotfiles/Files/Linux/.zshrc ~/
 #ln -s ~/.dotfiles/Files/Linux/GNOME/extensions/ ~/.local/share/gnome-shell/
-ln -s ~/.dotfiles/Files/Linux/Zathura ~/.config/
+ln -s ~/.dotfiles/Files/Linux/zathura ~/.config/
 
 
 

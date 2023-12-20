@@ -13,20 +13,13 @@
         "disable-scroll": true,
         "all-outputs": true,
         "disable-markup": false,
-	"persistent_workspaces": {
-	"1": [],
-	"2": [],
-	"3": [],
-	"4": [],
-	"5": [],
-	},
         "format": "{icon}",
         "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": ""
+            "1": "WEB",
+            "2": "DEV",
+            "3": "VM",
+            "4": "GAME",
+            "5": "MED"
         }
     },
     "tray": {

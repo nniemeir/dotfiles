@@ -5,8 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-alias game_mount="sudo cryptsetup open /dev/sda2 gaming && sudo mount /dev/mapper/gaming /mnt/gaming"
-alias media_mount="sudo cryptsetup open /dev/sdb1 media && sudo mount /dev/mapper/media /mnt/media"
+alias game_mount="sudo cryptsetup open /dev/sda gaming && sudo mount /dev/mapper/gaming /mnt/gaming"
+alias media_mount="sudo cryptsetup open /dev/sdb media && sudo mount /dev/mapper/media /mnt/media"
 
 alias study="ranger 'MEGA/Academic/Community College/Courses/7. Fall 2023/'"
 study_dir="/home/natalie/MEGA/Academic/Community College/Courses/7. Fall 2023" 
@@ -24,8 +24,8 @@ alias upgrade="sudo dnf upgrade -y && flatpak update -y"
 #hostname -i | awk '{print "IP: " $1}'
 #nmcli -t -f name,device connection show --active | grep wlo1 | cut -d\: -f1 | sed 's/^/Network: /'
 
-fpath+=($HOME/.zsh/pure)
-autoload -U promptinit; promptinit
-prompt pure
-
+source ~/.powerlevel10k/powerlevel10k.zsh-theme
 PATH=$PATH:~/.local/bin
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

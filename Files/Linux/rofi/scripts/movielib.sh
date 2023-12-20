@@ -1,9 +1,10 @@
 #!/bin/bash
 #Author: Natalie Niemeir
-path=/run/media/natalie/Media/Video/Movies
-chosen=$(find $path -type f -regex '.*\.\(mkv\|mp4\)$' | sed 's!.*/!!' | rofi -dmenu -p "Films: " )
-if [ "$chosen" != "" ]; then
-	mpv --fs $path/"$chosen"
+filmPath=/mnt/media
+film=$(find "$filmPath" -type f -regex '.*\.\(mkv\|mp4\)$' | sed 's!.*/!!; s#[.][^.]*$##' | sort | rofi -dmenu -p "Films: " )
+if [ -n "$film" ]; then
+	filename=$(find $filmPath -maxdepth 1 -name "$film*" -print)   
+	mpv --fs "$filename"
 else 
 	exit
 fi

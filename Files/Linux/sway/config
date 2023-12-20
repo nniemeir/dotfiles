@@ -1,7 +1,7 @@
 ### NN SwayWM Configuration ###
 
     # Set Font
-    font pango: DejaVu Sans 14
+    font pango: FontAwesome 14
 
     # Set Wallpaper
         output * bg /home/natalie/MEGA/Personal/Images/Wallpapers/gruvbox/forest-hut.jpg fill
