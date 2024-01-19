@@ -2,13 +2,13 @@
     "layer": "top",
     "position": "top",
     "height": 20,
-    "modules-left": ["hyprland/workspaces", "tray"],
+    "modules-left": ["sway/workspaces", "tray"],
     "modules-center": ["custom/playerctl"],
     "modules-right": ["temperature", "pulseaudio", "battery", "clock"],
     "sway/mode": {
         "format": " {}"
     },
-    "hyprland/workspaces": {
+    "sway/workspaces": {
 	"active-only": false,
         "disable-scroll": true,
         "all-outputs": true,

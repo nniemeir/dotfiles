@@ -4,7 +4,7 @@
     font pango: FontAwesome 14
 
     # Set Wallpaper
-        output * bg /home/natalie/MEGA/Personal/Images/Wallpapers/gruvbox/forest-hut.jpg fill
+        output * bg /home/natalie/MEGA/Images/Wallpapers/gruvbox/forest-hut.jpg fill
     
     # Set Variables
         set $term kitty
@@ -111,7 +111,7 @@
         bindsym $mod+Shift+F exec firefox
 
     # Rofi
-        bindsym $mod+r exec rofi -show drun -no-levenshtein-sort  
+        bindsym $mod+r exec rofi -show drun -no-levenshtein-sort -disable-history 
 
     # Volume Control
         bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
@@ -209,9 +209,6 @@
 
     # Grim Menu
         bindsym $mod+p exec /home/natalie/.dotfiles/Files/Linux/rofi/scripts/grim.sh
-
-    # Movie Library Browser
-        bindsym $mod+m exec /home/natalie/.dotfiles/Files/Linux/rofi/scripts/movielib.sh
 
     #Power Menu
         bindsym ctrl+alt+Delete exec /home/natalie/.dotfiles/Files/Linux/rofi/scripts/power.sh

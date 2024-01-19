@@ -2,20 +2,23 @@
 #This script will automatically create symlinks for your dotfiles#
 #!/bin/bash
 
-ln -s ~/.dotfiles/Files/Linux/awesome/ ~/.config/
-ln -s ~/.dotfiles/Files/Linux/cmus/ ~/.config/
-ln -s ~/.dotfiles/Files/Linux/dunst/ ~/.config/
-ln -s ~/.dotfiles/Files/Linux/kitty/ ~/.config/
-ln -s ~/.dotfiles/Files/Linux/nvim/ ~/.config/
-ln -s ~/.dotfiles/Files/Linux/ranger/ ~/.config/
-ln -s ~/.dotfiles/Files/Linux/rofi/ ~/.config/
-ln -s ~/.dotfiles/Files/Linux/sway/ ~/.config/
-ln -s ~/.dotfiles/Files/Linux/waybar/ ~/.config/
-ln -s ~/.dotfiles/Files/Linux/picom.conf ~/.config/
-ln -s ~/.dotfiles/Files/Linux/.vimrc ~/
-ln -s ~/.dotfiles/Files/Linux/.zshrc ~/
-#ln -s ~/.dotfiles/Files/Linux/GNOME/extensions/ ~/.local/share/gnome-shell/
-ln -s ~/.dotfiles/Files/Linux/zathura ~/.config/
+dotsPath="~/.dotfiles/Files/Linux"
 
+#toConfigDir=('awesome/' 'cmus/' 'dunst/' 'kitty/' 'nvim/' '')
+ln -s $dotsPath/awesome/ ~/.config/
+ln -s $dotsPath/cmus/ ~/.config/
+ln -s $dotsPath/dunst/ ~/.config/
+ln -s $dotsPath/kitty/ ~/.config/
+ln -s $dotsPath/nvim/ ~/.config/
+ln -s $dotsPath/ranger/ ~/.config/
+ln -s $dotsPath/rofi/ ~/.config/
+ln -s $dotsPath/sway/ ~/.config/
+ln -s $dotsPath/waybar/ ~/.config/
+ln -s $dotsPath/picom.conf ~/.config/
+ln -s $dotsPath/.vimrc ~/
+ln -s $dotsPath/.zshrc ~/
+#ln -s $dotsPath/GNOME/extensions/ ~/.local/share/gnome-shell/
+ln -s $dotsPath/zathura ~/.config/
+ln -s $dotsPath/mpv ~/.config/
 
 
