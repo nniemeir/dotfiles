@@ -1,24 +1,16 @@
 #Author: Natalie Niemeir
 #This script will automatically create symlinks for your dotfiles#
 #!/bin/bash
+dotsPath="$HOME/.dotfiles/Files/Linux"
+toConfigDir=('awesome' 'cmus' 'dunst' 'kitty' 'mpv' 'nvim' 'ranger' 'rofi' 'sway' 'waybar' 'picom.conf' 'zathura')
+toHomeDir=('.vimrc' '.zshrc')
 
-dotsPath="~/.dotfiles/Files/Linux"
+for item in "${toConfigDir[@]}"; do
+	ln -s "$dotsPath/$item" "$HOME/.config"
+done
 
-#toConfigDir=('awesome/' 'cmus/' 'dunst/' 'kitty/' 'nvim/' '')
-ln -s $dotsPath/awesome/ ~/.config/
-ln -s $dotsPath/cmus/ ~/.config/
-ln -s $dotsPath/dunst/ ~/.config/
-ln -s $dotsPath/kitty/ ~/.config/
-ln -s $dotsPath/nvim/ ~/.config/
-ln -s $dotsPath/ranger/ ~/.config/
-ln -s $dotsPath/rofi/ ~/.config/
-ln -s $dotsPath/sway/ ~/.config/
-ln -s $dotsPath/waybar/ ~/.config/
-ln -s $dotsPath/picom.conf ~/.config/
-ln -s $dotsPath/.vimrc ~/
-ln -s $dotsPath/.zshrc ~/
-#ln -s $dotsPath/GNOME/extensions/ ~/.local/share/gnome-shell/
-ln -s $dotsPath/zathura ~/.config/
-ln -s $dotsPath/mpv ~/.config/
+for item in "${toHomeDir[@]}"; do
+	ln -s "$dotsPath/$item" $HOME
+done
 
 
