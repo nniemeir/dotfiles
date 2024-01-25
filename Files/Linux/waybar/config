@@ -3,8 +3,8 @@
     "position": "top",
     "height": 20,
     "modules-left": ["sway/workspaces", "tray"],
-    "modules-center": ["custom/playerctl"],
-    "modules-right": ["temperature", "pulseaudio", "battery", "clock"],
+    "modules-center": ["clock"],
+    "modules-right": ["custom/weather", "temperature", "memory", "pulseaudio", "battery"],
     "sway/mode": {
         "format": " {}"
     },
@@ -26,13 +26,15 @@
         "icon-size": 24,
         "spacing": 8
     },
-    "clock": {
-        "format": " {:%H:%M}",
-        "format-alt": "{%m/%d/%y}"
-    },
+  "clock": {
+  	"tooltip": false,
+	"interval": 60,
+  	"format": " {:%H:%M}",
+  	"format-alt": " {:%A, %B %d}"
+  },
     "memory": {
         "interval": 15,
-        "format": " {used:0.1f} GB",
+        "format": " {used:0.1f} GB",
         "tooltip": false
     },
     "battery": {
@@ -89,24 +91,14 @@
             "firefoxdeveloperedition": "firefox-developer-edition"
         }
     },
-
     "custom/powermenu": {
         "format": "",
         "on-click": "$HOME/.dotfiles/Files/Linux/sway/scripts/powermenu.sh",
         "tooltip": false
     },
-        "custom/playerctl": {
-    "format": "{icon}  {}",
-    "return-type": "json",
-    "format-icons": {
-        "Playing": " ",
-        "Paused": " ",
-    },
-    "max-length":40,
-    "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-    "on-click": "playerctl play-pause",
-    "on-click-middle":"playerctl previous",
-    "on-click-right":"playerctl next"
-    
-},
+    "custom/weather": {
+	"format": "{}",
+	"interval": 3600,
+	"exec": "$HOME/.dotfiles/Files/Linux/waybar/scripts/weather.sh",
+    }
 }

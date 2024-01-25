@@ -4,7 +4,7 @@
     font pango: FontAwesome 14
 
     # Set Wallpaper
-        output * bg /home/natalie/MEGA/Images/Wallpapers/gruvbox/forest-hut.jpg fill
+        output * bg /home/natalie/MEGA/Images/Wallpapers/gruvbox/girl-reading-book.jpg fill
     
     # Set Variables
         set $term kitty

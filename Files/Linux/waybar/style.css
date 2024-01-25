@@ -18,11 +18,13 @@ window#waybar {
 
 #workspaces {
   background-color: #313131;
-  border-radius: 6px;
+  border-radius: 6px; 
   margin-top: 5px;
   margin-bottom: 5px;
   margin-left: 5px;
   font-size: 16px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 #workspaces button {
@@ -33,16 +35,12 @@ window#waybar {
 }
 
 #workspaces button.visible {
-  color: orange;
+  border-bottom: solid 3px #d65d0e;
 }
 
 #workspaces button.urgent {
   background-color: #a96d1f;
   color: black;
-}
-
-#workspaces button.focused {
-  color: #d65d0e;
 }
 
 #custom-recorder {
@@ -52,7 +50,6 @@ window#waybar {
 }
 #taskbar,
 #battery,
-#custom-playerctl,
 #clock,
 #tray,
 #mode,
@@ -61,6 +58,7 @@ window#waybar {
 #network,
 #pulseaudio,
 #custom-powermenu,
+#custom-weather,
 #backlight,
 #custom-media {
   background-color: #313131;
