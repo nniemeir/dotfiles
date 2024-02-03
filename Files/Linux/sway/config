@@ -4,7 +4,7 @@
     font pango: FontAwesome 14
 
     # Set Wallpaper
-        output * bg /home/natalie/MEGA/Images/Wallpapers/gruvbox/girl-reading-book.jpg fill
+        output * bg /home/natalie/MEGA/Images/Wallpapers/WITCH_HUT_BG_3.png fill
     
     # Set Variables
         set $term kitty
@@ -152,9 +152,9 @@
         floating enable
         resize set width 400px
         resize set height 540px
-        }   
+        }  
 	
-	     for_window [title="radio"] {
+	for_window [title="radio"] {
         floating enable
         resize set width 400px
         resize set height 540px
