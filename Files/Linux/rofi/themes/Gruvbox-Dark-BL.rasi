@@ -13,9 +13,9 @@ configuration {
 @theme "/dev/null"
 
 * {
-  bg: #1e1e2e75;
-  bg-alt: #6c708676;
-  bg-selected: #6c708675;
+  bg: #28282875;
+  bg-alt: #50494575;
+  bg-selected: #50494575;
   text-color: white;
   fg: #cdd6f4;
   fg-alt: #7f849c;
@@ -57,12 +57,12 @@ element-icon {
 
 entry {
   padding: 12;
-  background-color: #1e1e2e;
+  background-color: #1d2021;
 }
 
 inputbar {
   children: [prompt, entry];
-  background-color: #1e1e2e;
+  background-color: #1d2021;
 
 }
 
@@ -80,7 +80,7 @@ mainbox {
 prompt {
   enabled: true;
   padding: 12 0 0 12;
-  background-color: #1e1e2e;
+  background-color: #1d2021;
 }
 
 /* vim: ft=sass

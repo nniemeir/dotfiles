@@ -1,0 +1,10 @@
+    # Set Font
+    font pango: FontAwesome 14 
+    
+    # Border Styling
+        client.focused           #c5411d #16161d #c0caf5 #d54d0e   #d54d0e
+        client.focused_inactive  #16161d #16161d #c0caf5 #16161d   #16161d
+        client.unfocused         #16161d #16161d #c0caf5 #16161d   #16161d
+        for_window [class="^.*"] border pixel 3
+        default_floating_border pixel 3
+        default_border none

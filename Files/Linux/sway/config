@@ -4,7 +4,7 @@
     font pango: FontAwesome 14
 
     # Set Wallpaper
-        output * bg /home/natalie/MEGA/Images/Wallpapers/WITCH_HUT_BG_3.png fill
+        output * bg /home/natalie/MEGA/Images/Wallpapers/catppuccin_dark-cat-rosewater.png fill
     
     # Set Variables
         set $term kitty
@@ -14,20 +14,15 @@
     # Include scripts or configs
         include /etc/sway/config.d/*
 
+    # Include theme
+	include /home/natalie/.dotfiles/Files/Linux/sway/themes/Catppuccin-Mocha-Standard-Lavender-Dark
+
     # Scaling - Only Used On Mobile
     	output eDP-1 scale 1.25
 
     # Xwayland
         xwayland enable
  
-    # Border Styling
-        client.focused           #c5411d #16161d #c0caf5 #d54d0e   #d54d0e
-        client.focused_inactive  #16161d #16161d #c0caf5 #16161d   #16161d
-        client.unfocused         #16161d #16161d #c0caf5 #16161d   #16161d
-        for_window [class="^.*"] border pixel 3
-        default_floating_border pixel 3
-        default_border none
-
     # Hide borders at the edge of the screen
         hide_edge_borders smart
     
@@ -138,8 +133,13 @@
         for_window [class="Gimp-2.10" title="Tool"] floating enable
         for_window [class="Gimp-2.10" title="Option"] floating enable
         for_window [class="Gimp-2.10" title="Change"] floating enable
-        
         for_window [app_id="mpv"] resize set 1280 720 floating enable
+
+	for_window [app_id="openrgb"] {
+        floating enable
+        resize set width 540px
+        resize set height 400px
+        }   
         
         for_window [app_id="(pavuctrl|psensor)"] floating enable
         for_window [app_id="pavucontrol"] {
@@ -147,8 +147,8 @@
         resize set width 800px
         resize set height 540px
         }
-
-        for_window [title="qalc"] {
+	
+	for_window [title="qalc"] {
         floating enable
         resize set width 400px
         resize set height 540px
@@ -160,8 +160,6 @@
         resize set height 540px
         }   
 
-
-    
 ### Assign Programs to Workspaces
 
     # WEB

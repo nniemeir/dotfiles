@@ -1,8 +1,6 @@
 call plug#begin()
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'preservim/nerdtree'
 Plug 'lervag/vimtex'
-Plug 'ellisonleao/gruvbox.nvim'
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
@@ -16,7 +14,6 @@ set encoding=utf8
 setlocal spell
 set spelllang=nl,en_gb
 set background=dark
-colorscheme gruvbox
 nnoremap <down> gj
 nnoremap <up> gk
 nnoremap gj <down>

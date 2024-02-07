@@ -17,7 +17,7 @@ window#waybar {
 }
 
 #workspaces {
-  background-color: #1e1e2e;
+  background-color: #4C566A;
   border-radius: 6px; 
   margin-top: 5px;
   margin-bottom: 5px;
@@ -35,7 +35,7 @@ window#waybar {
 }
 
 #workspaces button.visible {
-  border-bottom: solid 3px #cba6f7;
+  border-bottom: solid 3px #5E81AC;
 }
 
 #workspaces button.urgent {
@@ -61,7 +61,7 @@ window#waybar {
 #custom-weather,
 #backlight,
 #custom-media {
-  background-color: #1e1e2e;
+  background-color: #4C566A;
   border-radius: 6px;
   margin: 0px 0px 0px 10px;
   padding: 0 5px;
