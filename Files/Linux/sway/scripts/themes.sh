@@ -10,11 +10,15 @@ fi
 if [ -n "$accent" ]; then
 gsettings set org.gnome.desktop.wm.preferences theme "$theme"
 gsettings set org.gnome.desktop.interface gtk-theme "$theme"
+sudo flatpak override --filesystem=$HOME/.local/share/themes/
+sudo flatpak override --env=GTK_THEME="$theme"
 papirus-folders -t Papirus-Dark -C "$accent"
 rm -rf ~/.dotfiles/Files/Linux/style.css
 cp "$HOME/.dotfiles/Files/Linux/waybar/themes/$theme.css" "$HOME/.dotfiles/Files/Linux/waybar/style.css"
 rm -rf $HOME/.dotfiles/Files/Linux/rofi/config.rasi
 cp "$HOME/.dotfiles/Files/Linux/rofi/themes/$theme.rasi" "$HOME/.dotfiles/Files/Linux/rofi/config.rasi"
+rm -rf $HOME/.dotfiles/Files/Linux/dunst/dunstrc
+cp "$HOME/.dotfiles/Files/Linux/dunst/themes/$theme" "$HOME/.dotfiles/Files/Linux/dunst/dunstrc"
 
 sed -i "s|include /home/natalie/.dotfiles/Files/Linux/sway/themes/.*|include /home/natalie/.dotfiles/Files/Linux/sway/themes/$theme|g" "/home/natalie/.dotfiles/Files/Linux/sway/config"
 case $theme in

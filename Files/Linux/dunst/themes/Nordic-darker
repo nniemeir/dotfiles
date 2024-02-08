@@ -13,7 +13,7 @@ padding = 10
 horizontal_padding = 10
 
 frame_width = 3
-frame_color = "#cba6f7"
+frame_color = "#5E81AC"
 
 corner_radius = 10
 
@@ -56,18 +56,18 @@ mouse_right_click = close_all
 
 [urgency_low]
 timeout = 5
-background = "#45475a"
+background = "#434C5E"
 foreground = "#e7e7e7"
 highlight = "#c49ec4"
 
 [urgency_normal]
 timeout = 10
-background = "#45475a"
+background = "#434C5E"
 foreground = "#e7e7e7"
 highlight = "#c49ec4"
 
 [urgency_critical]
 timeout = 0
-background = "#45475a"
+background = "#434C5E"
 foreground = "#e7e7e7"
 highlight = "#c49ec4"
