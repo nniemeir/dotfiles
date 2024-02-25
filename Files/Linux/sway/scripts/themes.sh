@@ -10,6 +10,7 @@ fi
 if [ -n "$accent" ]; then
 gsettings set org.gnome.desktop.wm.preferences theme "$theme"
 gsettings set org.gnome.desktop.interface gtk-theme "$theme"
+#gsettings set org.gnome.desktop.interface icon-theme "Chicago95"    
 sudo flatpak override --filesystem=$HOME/.local/share/themes/
 sudo flatpak override --env=GTK_THEME="$theme"
 papirus-folders -t Papirus-Dark -C "$accent"

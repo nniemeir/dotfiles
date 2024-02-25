@@ -4,7 +4,7 @@
     font pango: FontAwesome 14
 
     # Set Wallpaper
-        output * bg /home/natalie/MEGA/Images/Wallpapers/catppuccin_dark-cat-rosewater.png fill
+        output * bg /home/nat/MEGA/Images/Wallpapers/catppuccin_buttons.png fill
     
     # Set Variables
         set $term kitty
@@ -15,7 +15,7 @@
         include /etc/sway/config.d/*
 
     # Include theme
-	include /home/natalie/.dotfiles/Files/Linux/sway/themes/Catppuccin-Mocha-Standard-Lavender-Dark
+	include /home/nat/.dotfiles/Files/Linux/sway/themes/Catppuccin-Mocha-Standard-Lavender-Dark
 
     # Scaling - Only Used On Mobile
     	output eDP-1 scale 1.25

@@ -4,7 +4,7 @@ while [ $finished == "0" ]; do
 clear
 musicPath="$HOME/Drives/Media/Audio/"
 musicFiles=$(ls -d "$musicPath"*/*/ | sed "s,$musicPath,,g")
-musicSelection=$(echo "$musicFiles" | fzf --height=80% --padding=5,40,0,40 --layout=reverse --cycle --preview='
+musicSelection=$(echo "$musicFiles" | fzf --height=80% --padding=5,40,0,40 --layout=reverse --cycle --prompt="Select Album: " --preview='
 file_path=/home/natalie/Drives/Media/Audio/{}
 preview_file="$file_path"cover.png
 if [ -e "$preview_file" ]; then

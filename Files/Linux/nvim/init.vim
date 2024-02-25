@@ -1,12 +1,14 @@
 call plug#begin()
 Plug 'preservim/nerdtree'
 Plug 'lervag/vimtex'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
 call plug#end() 
+colorscheme catppuccin-mocha
 set number
 set linebreak
 syntax on
@@ -23,4 +25,3 @@ noremap <CAPSLOCK> <Leader>
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 autocmd filetype markdown syn region match start=/\\$\\$/ end=/\\$\\$/
 autocmd filetype markdown syn match math '\\$[^$].\{-}\$'
-
