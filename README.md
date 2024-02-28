@@ -22,11 +22,12 @@ These are my configuration files and some of my scripts for various applications
 ### Microsoft Windows 11
 * AutoHotKey
 
+### Cross-platform
+* Freetube
+
 #### Application Themes Included:
 ##### Personal Theme (AwesomeWM)
 ![Screenshot of AwesomeWM Theme](Previews/NN_Awesome.png)
-##### Personal Configuration (GNOME)
-![Screenshot of GNOME layout](Previews/GNOME.png)
 ##### Spooky (Cmus) - forked from Gruvbox
 ![Screenshot of Spooky Theme](Previews/CMUS_Spooky.png)
 ##### Gruvish (Rofi) - forked from Dracula
