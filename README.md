@@ -3,7 +3,6 @@ These are my configuration files for various applications I use on GNU/Linux, in
 * AwesomeWM
 * Cmus
 * Dunst
-* GNOME<sup>*</sup>
 * Kitty
 * NVIM
 * Picom
@@ -27,5 +26,3 @@ These are my configuration files for various applications I use on GNU/Linux, in
 ##### Personal Theme (Sway)
 ![Screenshot of Sway Theme](Previews/Sway.png)
 
-
-*I keep the GNOME extensions I use in this repository for convenience's sake, they were not written by me.
