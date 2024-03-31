@@ -5,7 +5,7 @@ clear
 musicPath="$HOME/Drives/Media/Audio/"
 musicFiles=$(ls -d "$musicPath"*/*/ | sed "s,$musicPath,,g")
 musicSelection=$(echo "$musicFiles" | fzf --height=80% --padding=5,40,0,40 --layout=reverse --cycle --prompt="Select Album: " --preview='
-file_path=/home/natalie/Drives/Media/Audio/{}
+file_path=/home/nat/Drives/Media/Audio/{}
 preview_file="$file_path"cover.png
 if [ -e "$preview_file" ]; then
   kitty icat --clear --transfer-mode=stream --stdin=no --place=40x40@20x20 "$preview_file"

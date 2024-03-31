@@ -4,7 +4,7 @@
     font pango: FontAwesome 14
 
     # Set Wallpaper
-        output * bg /home/nat/MEGA/Images/Wallpapers/catppuccin_buttons.png fill
+        output * bg /home/nat/MEGA/Images/Wallpapers/gruv_forest-moss.png fill
     
     # Set Variables
         set $term kitty
@@ -15,7 +15,7 @@
         include /etc/sway/config.d/*
 
     # Include theme
-	include /home/nat/.dotfiles/Files/Linux/sway/themes/Catppuccin-Mocha-Standard-Lavender-Dark
+	include /home/nat/.dotfiles/Files/Linux/sway/themes/Gruvbox-Dark-BL
 
     # Scaling - Only Used On Mobile
     	output eDP-1 scale 1.25
@@ -202,21 +202,21 @@
 ### CUSTOM SCRIPTS
     
     # DDG Search
-        bindsym $mod+g exec /home/natalie/.dotfiles/Files/Linux/rofi/scripts/search.sh
-        bindsym XF86Search exec /home/natalie/.dotfiles/Files/Linux/rofi/scripts/search.sh
+        bindsym $mod+g exec /home/nat/.dotfiles/Files/Linux/rofi/scripts/search.sh
+        bindsym XF86Search exec /home/nat/.dotfiles/Files/Linux/rofi/scripts/search.sh
 
     # Grim Menu
-        bindsym $mod+p exec /home/natalie/.dotfiles/Files/Linux/rofi/scripts/grim.sh
+        bindsym $mod+p exec /home/nat/.dotfiles/Files/Linux/rofi/scripts/grim.sh
 
     #Power Menu
-        bindsym ctrl+alt+Delete exec /home/natalie/.dotfiles/Files/Linux/rofi/scripts/power.sh
-        bindsym $mod+Delete exec /home/natalie/.dotfiles/Files/Linux/rofi/scripts/power.sh
+        bindsym ctrl+alt+Delete exec /home/nat/.dotfiles/Files/Linux/rofi/scripts/power.sh
+        bindsym $mod+Delete exec /home/nat/.dotfiles/Files/Linux/rofi/scripts/power.sh
 
     # Qalc
         bindsym $mod+c exec kitty qalc  
 
     # Radio Menu
-	bindsym $mod+Shift+r exec kitty /home/natalie/.dotfiles/Files/Linux/sway/scripts/radio/radio.sh
+	bindsym $mod+Shift+r exec kitty /home/nat/.dotfiles/Files/Linux/sway/scripts/radio/radio.sh
 
     # Ranger
         bindsym $mod+e exec kitty ranger        
@@ -225,12 +225,12 @@
         bindsym $mod+v exec pavucontrol
 
     # Wallpaper Menu
-        bindsym $mod+w exec /home/natalie/.dotfiles/Files/Linux/rofi/scripts/wallpapers.sh
+        bindsym $mod+w exec /home/nat/.dotfiles/Files/Linux/rofi/scripts/wallpapers.sh
 
 ### Autostart
         exec_always python3 ~/.dotfiles/Files/Linux/sway/scripts/autotiling/autotiling.py
         exec blueman-applet
         exec nm-applet --indicator
         exec playerctld daemon &
-        exec_always /home/natalie/.dotfiles/Files/Linux/waybar/launch.sh
+        exec_always /home/nat/.dotfiles/Files/Linux/waybar/launch.sh
         exec wl-paste -t text --watch clipman store

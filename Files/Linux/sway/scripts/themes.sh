@@ -21,7 +21,7 @@ cp "$HOME/.dotfiles/Files/Linux/rofi/themes/$theme.rasi" "$HOME/.dotfiles/Files/
 rm -rf $HOME/.dotfiles/Files/Linux/dunst/dunstrc
 cp "$HOME/.dotfiles/Files/Linux/dunst/themes/$theme" "$HOME/.dotfiles/Files/Linux/dunst/dunstrc"
 
-sed -i "s|include /home/natalie/.dotfiles/Files/Linux/sway/themes/.*|include /home/natalie/.dotfiles/Files/Linux/sway/themes/$theme|g" "/home/natalie/.dotfiles/Files/Linux/sway/config"
+sed -i "s|include /home/nat/.dotfiles/Files/Linux/sway/themes/.*|include /home/nat/.dotfiles/Files/Linux/sway/themes/$theme|g" "/home/nat/.dotfiles/Files/Linux/sway/config"
 case $theme in
   Catppuccin-Mocha-Standard-Lavender-Dark)
     kitten themes "Catppuccin-Mocha"

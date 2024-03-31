@@ -1,8 +1,8 @@
-#!/bin/bash
 #Author: Nat Niemeir
-#This script will automatically create symlinks for your dotfiles
+#This script will automatically create symlinks for your dotfiles#
+#!/bin/bash
 dotsPath="$HOME/.dotfiles/Files/Linux"
-toConfigDir=('awesome' 'cmus' 'dunst' 'fzf' 'hypr' 'kitty' 'mpv' 'nvim' 'pandoc' 'ranger' 'rofi' 'sway' 'waybar' 'picom.conf' 'zathura')
+toConfigDir=('awesome' 'cmus' 'dunst' 'kitty' 'mpv' 'nvim' 'ranger' 'rofi' 'sway' 'waybar' 'picom.conf' 'zathura')
 toHomeDir=('.vimrc' '.zshrc')
 
 for item in "${toConfigDir[@]}"; do

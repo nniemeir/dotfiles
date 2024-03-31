@@ -21,7 +21,7 @@ alias media_mount="sudo cryptsetup open $MEDIA_DRIVE media && sudo mount /dev/ma
 
 ## Media
 alias books="cd ~/.dotfiles/Files/Linux/fzf/ && ./books.sh"
-alias films="cd /mnt/media/Video/Video_Binder && ./binder.sh"
+alias films="cd /mnt/media/Video_Binder && ./binder.sh"
 alias games="cd /mnt/games/Games/Game_Binder/ && ./binder.sh"
 alias music="cd ~/.dotfiles/Files/Linux/fzf/ && ./music.sh"
 alias png="find . -name '*.jpg' -exec mogrify -format png {} \;"

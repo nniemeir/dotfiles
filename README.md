@@ -1,14 +1,9 @@
 # .files
-These are my configuration files and some of my scripts for various applications I use.
-
-### GNU/LINUX
+These are my configuration files for various applications I use on GNU/Linux, including:
 * AwesomeWM
 * Cmus
 * Dunst
-* fzf
-* Hyprland
 * Kitty
-* MPV
 * NVIM
 * Picom
 * Ranger
@@ -16,15 +11,7 @@ These are my configuration files and some of my scripts for various applications
 * Sway
 * VIM
 * Waybar
-* Zathura
 * ZSH
-
-### Microsoft Windows 11
-* AutoHotKey
-
-### Cross-platform
-* Freetube
-
 #### Application Themes Included:
 ##### Personal Theme (AwesomeWM)
 ![Screenshot of AwesomeWM Theme](Previews/NN_Awesome.png)

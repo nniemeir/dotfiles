@@ -7,9 +7,9 @@
 #+F::Run "C:\Program Files\Mozilla Firefox\firefox.exe"
 #+Enter::Run "C:\Program Files\WindowsApps\TheDebianProject.DebianGNULinux_1.15.0.0_x64__76v4gfsz19hv4\debian.exe"
 #V::Run "C:\Windows\System32\SndVol.exe"
-#Enter::Run "C:\Users\natalie\AppData\Local\Microsoft\WindowsApps\wt.exe"
-^!T::Run "C:\Users\natalie\AppData\Local\Microsoft\WindowsApps\wt.exe"
-#+E::Run "C:\Users\natalie\AppData\Local\Microsoft\WinGet\Packages\gokcehan.lf_Microsoft.Winget.Source_8wekyb3d8bbwe\lf.exe C:\Users\Natalie\"
+#Enter::Run "C:\Users\nat\AppData\Local\Microsoft\WindowsApps\wt.exe"
+^!T::Run "C:\Users\nat\AppData\Local\Microsoft\WindowsApps\wt.exe"
+#+E::Run "C:\Users\nat\AppData\Local\Microsoft\WinGet\Packages\gokcehan.lf_Microsoft.Winget.Source_8wekyb3d8bbwe\lf.exe C:\Users\Natalie\"
 
 
 ; Additional Functionality 
