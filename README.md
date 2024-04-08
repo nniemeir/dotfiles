@@ -8,12 +8,14 @@ These are my configuration files for various applications that I use.
 * Hyprland
 * Kitty
 * NVIM
+* Pandoc
 * Picom
 * Ranger
 * Rofi
 * Sway
 * VIM
 * Waybar
+* Zathura
 * ZSH
 
 ### Windows
