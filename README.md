@@ -3,6 +3,7 @@ These are my configuration files for various applications I use on GNU/Linux, in
 * AwesomeWM
 * Cmus
 * Dunst
+* Hyprland
 * Kitty
 * NVIM
 * Picom
