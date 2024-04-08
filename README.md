@@ -1,5 +1,7 @@
 # .files
-These are my configuration files for various applications I use on GNU/Linux, including:
+These are my configuration files for various applications that I use. 
+
+### Linux
 * AwesomeWM
 * Cmus
 * Dunst
@@ -13,6 +15,10 @@ These are my configuration files for various applications I use on GNU/Linux, in
 * VIM
 * Waybar
 * ZSH
+
+### Windows
+* AutoHotKey
+
 #### Application Themes Included:
 ##### Personal Theme (AwesomeWM)
 ![Screenshot of AwesomeWM Theme](Previews/NN_Awesome.png)
