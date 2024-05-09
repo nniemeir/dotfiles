@@ -1,14 +1,15 @@
 call plug#begin()
 Plug 'preservim/nerdtree'
 Plug 'lervag/vimtex'
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug 'ellisonleao/gruvbox.nvim'
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
 call plug#end() 
-colorscheme catppuccin-mocha
+colorscheme gruvbox
+set background=dark
 set number
 set linebreak
 syntax on

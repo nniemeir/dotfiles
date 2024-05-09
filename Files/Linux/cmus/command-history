@@ -1,9 +1,0 @@
-colorscheme gruvbox
-set colorscheme gruvbox
-add /mnt/media/Audio/
-clear
-colorscheme default
-colorscheme amazon
-colorscheme night'
-q
-add /run/media/natalie/Media/Audio/

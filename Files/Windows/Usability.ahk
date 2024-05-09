@@ -9,7 +9,7 @@
 #V::Run "C:\Windows\System32\SndVol.exe"
 #Enter::Run "C:\Users\nat\AppData\Local\Microsoft\WindowsApps\wt.exe"
 ^!T::Run "C:\Users\nat\AppData\Local\Microsoft\WindowsApps\wt.exe"
-#+E::Run "C:\Users\nat\AppData\Local\Microsoft\WinGet\Packages\gokcehan.lf_Microsoft.Winget.Source_8wekyb3d8bbwe\lf.exe C:\Users\Natalie\"
+#+E::Run "C:\Users\nat\AppData\Local\Microsoft\WinGet\Packages\gokcehan.lf_Microsoft.Winget.Source_8wekyb3d8bbwe\lf.exe C:\Users\Nat\"
 
 
 ; Additional Functionality 

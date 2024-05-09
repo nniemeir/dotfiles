@@ -1,26 +1,16 @@
 # .files
-These are my configuration files for various applications that I use. 
-
-### Linux
+These are my configuration files for various applications I use on GNU/Linux, including:
 * AwesomeWM
-* Cmus
 * Dunst
-* Hyprland
 * Kitty
 * NVIM
-* Pandoc
 * Picom
 * Ranger
 * Rofi
 * Sway
 * VIM
 * Waybar
-* Zathura
 * ZSH
-
-### Windows
-* AutoHotKey
-
 #### Application Themes Included:
 ##### Personal Theme (AwesomeWM)
 ![Screenshot of AwesomeWM Theme](Previews/NN_Awesome.png)

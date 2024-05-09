@@ -1,5 +1,4 @@
 #!/bin/bash
-#Author: Natalie Niemeir
 screenshotDir=(~/Pictures/Screenshots)
 
 options(){

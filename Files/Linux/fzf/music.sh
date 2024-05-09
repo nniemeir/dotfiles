@@ -11,7 +11,7 @@ if [ -e "$preview_file" ]; then
   kitty icat --clear --transfer-mode=stream --stdin=no --place=40x40@20x20 "$preview_file"
 else
 echo $preview_file
-  kitty icat --clear --transfer-mode=stream --stdin=no --place=40x40@20x20 "/home/natalie/MEGA/Academic/Books/covers/error.png"
+  kitty icat --clear --transfer-mode=stream --stdin=no --place=40x40@20x20 "/home/nat/MEGA/Education/Books/covers/error.png"
 fi
 ' --preview-window noborder,up,30)
 

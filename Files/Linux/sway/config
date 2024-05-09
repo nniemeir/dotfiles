@@ -4,7 +4,7 @@
     font pango: FontAwesome 14
 
     # Set Wallpaper
-        output * bg /home/nat/MEGA/Images/Wallpapers/gruv_forest-moss.png fill
+        output * bg /home/nat/MEGA/Images/Wallpapers/dark_moon.png fill
     
     # Set Variables
         set $term kitty
@@ -32,6 +32,9 @@
 
     # Hide gaps when there is only 1 window
         smart_gaps on
+
+    # Allow compose key
+	#input * xkb_options compose:ralt
 
 ### Keybindings
 
@@ -201,10 +204,6 @@
 
 ### CUSTOM SCRIPTS
     
-    # DDG Search
-        bindsym $mod+g exec /home/nat/.dotfiles/Files/Linux/rofi/scripts/search.sh
-        bindsym XF86Search exec /home/nat/.dotfiles/Files/Linux/rofi/scripts/search.sh
-
     # Grim Menu
         bindsym $mod+p exec /home/nat/.dotfiles/Files/Linux/rofi/scripts/grim.sh
 
@@ -215,17 +214,11 @@
     # Qalc
         bindsym $mod+c exec kitty qalc  
 
-    # Radio Menu
-	bindsym $mod+Shift+r exec kitty /home/nat/.dotfiles/Files/Linux/sway/scripts/radio/radio.sh
-
     # Ranger
         bindsym $mod+e exec kitty ranger        
   
     # Volume Mixer
         bindsym $mod+v exec pavucontrol
-
-    # Wallpaper Menu
-        bindsym $mod+w exec /home/nat/.dotfiles/Files/Linux/rofi/scripts/wallpapers.sh
 
 ### Autostart
         exec_always python3 ~/.dotfiles/Files/Linux/sway/scripts/autotiling/autotiling.py
