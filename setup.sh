@@ -1,4 +1,4 @@
-#Author: Nat Niemeir
+# Author: Jacob Niemeir <nniemeir@protonmail.com>
 #This script will automatically create symlinks for your dotfiles
 #!/bin/bash
 dotsPath="$HOME/.dotfiles/Files/Linux"
