@@ -1,10 +1,8 @@
 # .files
 These are my configuration files for various applications I use on GNU/Linux, including:
-* AwesomeWM
 * Dunst
 * Kitty
 * NVIM
-* Picom
 * Ranger
 * Rofi
 * Sway
@@ -12,8 +10,6 @@ These are my configuration files for various applications I use on GNU/Linux, in
 * Waybar
 * ZSH
 #### Application Themes Included:
-##### Personal Theme (AwesomeWM)
-![Screenshot of AwesomeWM Theme](Previews/NN_Awesome.png)
 ##### Spooky (Cmus) - forked from Gruvbox
 ![Screenshot of Spooky Theme](Previews/CMUS_Spooky.png)
 ##### Gruvish (Rofi) - forked from Dracula
