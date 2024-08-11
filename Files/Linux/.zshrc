@@ -8,11 +8,10 @@ DOTFILES="$HOME/.dotfiles/"
 ## Education
 alias cdnotes="cd $HOME/MEGA/Education/Notes/"
 alias notes="cd ~/.dotfiles/Files/Linux/fzf/ && ./notebooks.sh"
-alias alrender="pdflatex -output-directory MAT121_output College\ Algebra.tex && clear"
 
 ## Customization
-alias wallpapers="cd $DOTFILES/Files/Linux/scripts/ && ./wallpapers.sh"
-alias themes="cd $DOTFILES/Files/Linux/scripts/ && ./themes.sh"
+alias wallpapers="cd $DOTFILES/Files/Linux/sway/scripts/ && ./sway_wallpapers.sh"
+alias themes="cd $DOTFILES/Files/Linux/sway/scripts/ && ./sway_themes.sh"
 
 ## Drives
 GAME_DRIVE="/dev/sda"
@@ -21,15 +20,10 @@ alias game_mount="sudo cryptsetup open $GAME_DRIVE games && sudo mount /dev/mapp
 alias media_mount="sudo cryptsetup open $MEDIA_DRIVE media && sudo mount /dev/mapper/media /mnt/media"
 
 ## Media
-alias books="cd $DOTFILES/Files/Linux/fzf/ && ./books.sh"
-alias films="cd /mnt/media/Video_Binder && ./binder.sh"
-alias games="cd /mnt/games/Games/Game_Binder/ && ./binder.sh"
-alias music="cd $DOTFILES/Files/Linux/scripts/ && ./albumPick.sh"
 alias png="find . -name '*.jpg' -exec mogrify -format png {} \;"
+
+alias leisure="cd leisureLib && ./leisureLib.sh"
 
 ## System
 alias upgrade="sudo dnf upgrade -y && flatpak update -y"
 
-ytmusic () {
-    mpv --no-audio-display --ytdl-format=bestaudio "ytdl://ytsearch:$*"
-}
