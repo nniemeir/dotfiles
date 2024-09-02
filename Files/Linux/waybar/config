@@ -1,10 +1,8 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 20,
-    "modules-left": ["sway/workspaces", "tray"],
-    "modules-center": ["clock"],
-    "modules-right": ["custom/weather", "temperature", "memory", "pulseaudio", "battery"],
+    "height": 15,
+    "modules-center": ["sway/workspaces", "clock", "battery"],
     "sway/mode": {
         "format": " {}"
     },
@@ -19,7 +17,8 @@
             "2": "DEV",
             "3": "VM",
             "4": "GAME",
-            "5": "MED"
+            "5": "MED",
+	    "6": "REC"
         }
     },
     "tray": {
@@ -30,13 +29,8 @@
   	"tooltip": false,
 	"interval": 60,
   	"format": " {:%H:%M}",
-  	"format-alt": " {:%A, %B %d}"
+  	"format-alt": " {:%A, %B %d}",
   },
-    "memory": {
-        "interval": 15,
-        "format": " {used:0.1f} GB",
-        "tooltip": false
-    },
     "battery": {
         "format": " {capacity}%",
         "format-icons": ["", "", "", "", ""],
@@ -50,55 +44,4 @@
         },
         "tooltip": false
     },
-    "pulseaudio": {
-        "format": " {volume}%",
-        "format-muted": "",
-        "format-icons": {
-            "phone": [" ", " ", " ", " "],
-            "default": ["", "", "", ""]
-        },
-        "scroll-step": 2,
-        "on-click": "pavucontrol",
-        "tooltip": false
-    },
-    "temperature": {
-        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 75,
-        "interval": 5,
-        "format": "{icon}  {temperatureC}°",
-        "tooltip": false,
-        "format-icons": [
-            "", // Icon: temperature-empty
-            "", // Icon: temperature-quarter
-            "", // Icon: temperature-half
-            "", // Icon: temperature-three-quarters
-            ""  // Icon: temperature-full
-        ]
-    },
-    "wlr/taskbar": {
-        "format": "{icon}",
-        "icon-size": 26,
-        "icon-theme": "Numix-Circle",
-        "tooltip-format": "{title}",
-        "on-click": "activate",
-        "on-click-middle": "close",
-        "ignore-list": [
-            "Alacritty",
-            "kitty",
-            "pavucontrol"
-        ],
-        "app_ids-mapping": {
-            "firefoxdeveloperedition": "firefox-developer-edition"
-        }
-    },
-    "custom/powermenu": {
-        "format": "",
-        "on-click": "$HOME/.dotfiles/Files/Linux/sway/scripts/powermenu.sh",
-        "tooltip": false
-    },
-    "custom/weather": {
-	"format": "{}",
-	"interval": 3600,
-	"exec": "$HOME/.dotfiles/Files/Linux/waybar/scripts/weather.sh",
-    }
 }
