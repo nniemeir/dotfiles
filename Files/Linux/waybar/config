@@ -2,7 +2,7 @@
     "layer": "top",
     "position": "top",
     "height": 15,
-    "modules-center": ["sway/workspaces", "clock", "battery"],
+    "modules-center": ["sway/workspaces", "clock", "pulseaudio", "battery"],
     "sway/mode": {
         "format": " {}"
     },
@@ -28,8 +28,8 @@
   "clock": {
   	"tooltip": false,
 	"interval": 60,
-  	"format": " {:%H:%M}",
-  	"format-alt": " {:%A, %B %d}",
+  	"format": "{:%H:%M}",
+  	"format-alt": "{:%A, %B %d}",
   },
     "battery": {
         "format": " {capacity}%",
@@ -43,5 +43,13 @@
             "critical": 10
         },
         "tooltip": false
+    },
+    "pulseaudio": {
+      "format": " {volume}%",
+      "format-bluetooth": " {volume}%",
+      "format-bluetooth-muted": " {icon} {format_source}",
+      "format-muted": "",
+      "on-click": "pavucontrol",
+      "on-click-right": "blueman-manager"
     },
 }

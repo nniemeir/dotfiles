@@ -1,11 +1,10 @@
 #waybar {
-  font-family: "dejavu sans";
-  font-size: 16px;
-  background: alpha(#313131, 0);
+  font-family: "Lodeh";
+  font-size: 18px;
 }
 
 #window {
-  padding: 0 5px;
+  padding: 0 10px;
 }
 
 window#waybar {
@@ -14,47 +13,73 @@ window#waybar {
   box-shadow: none;
   text-shadow: none;
   color: rgba(217, 216, 216, 1);
+  background: rgba(49, 49, 49, 0);
 }
-
 
 #workspaces {
   background-color: #313131;
-  margin-left: 2px;
+  border-radius: 6px; 
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
   font-size: 16px;
   padding-left: 5px;
   padding-right: 5px;
-  border-bottom: solid 3px #d65d0e;
-  border-left: solid 3px #d65d0e;
-  border-radius: 0px 0px 0px 6px;
 }
 
 #workspaces button {
   padding: 0 5px;
   border: 3px solid rgba(9, 85, 225, 0);
-  color: grey;
+  color: white;
   min-width: 33px;
 }
 
 #workspaces button.visible {
-  border-radius: 0px;
-  color:white
+  border-bottom: solid 3px #ffffff;
 }
 
 #workspaces button.urgent {
-  background-color: #a96d1f;
+  background-color: #520c02;
   color: black;
 }
 
-#clock {
+#custom-recorder {
+  font-size: 18px;
+  margin: 2px 7px 0px 7px;
+  color: #ee2e24;
+}
+#taskbar,
+#battery,
+#clock,
+#tray,
+#mode,
+#temperature,
+#memory,
+#network,
+#pulseaudio,
+#custom-powermenu,
+#custom-weather,
+#backlight,
+#custom-media {
   background-color: #313131;
+  border-radius: 6px;
+  margin: 0px 0px 0px 10px;
   padding: 0 5px;
-  border-bottom: solid 3px #d65d0e;
-  border-right: solid 3px #d65d0e;
-  border-radius: 0px 0 6px 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#custom-powermenu {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 #clock {
   font-size: 18px;
+}
+
+#tray {
+  margin-right: 5px;
 }
 
 #battery.warning {
@@ -68,3 +93,12 @@ window#waybar {
 #battery.charging {
   color: rgba(217, 216, 216, 1);
 }
+
+#custom-storage.warning {
+  color: rgba(255, 210, 4, 1);
+}
+
+#custom-storage.critical {
+  color: rgba(238, 46, 36, 1);
+}
+

@@ -3,7 +3,7 @@
 #!/bin/bash
 dotsPath="$HOME/.dotfiles/Files/Linux"
 toConfigDir=('dunst' "fzf" 'hypr' 'kitty' 'mpv' 'nvim' 'ranger' 'rofi' 'sway' 'waybar' 'zathura')
-toHomeDir=('.vimrc' '.zshrc')
+toHomeDir=('.zshrc')
 
 for item in "${toConfigDir[@]}"; do
 	ln -s "$dotsPath/$item" "$HOME/.config"

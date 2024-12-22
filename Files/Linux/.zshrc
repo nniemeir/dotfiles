@@ -4,6 +4,7 @@ PATH=$PATH:~/.local/bin
 PS1=$'[%{\e[0;35m%}%n%{\e[0m%}@%{\e[0;35m%}%M%{\e[0m%}] %B%~%b '
 DOTFILES="$HOME/.dotfiles/"
 # ALIASES
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 ## Education
 alias cdnotes="cd $HOME/MEGA/Education/Notes/"
@@ -14,7 +15,7 @@ alias wallpapers="cd $DOTFILES/Files/Linux/sway/scripts/ && ./sway_wallpapers.sh
 alias themes="cd $DOTFILES/Files/Linux/sway/scripts/ && ./sway_themes.sh"
 
 ## Drives
-GAME_DRIVE="/dev/sda"
+GAME_DRIVE="/dev/sda1"
 MEDIA_DRIVE="/dev/sdb"
 alias game_mount="sudo cryptsetup open $GAME_DRIVE games && sudo mount /dev/mapper/games /mnt/games"
 alias media_mount="sudo cryptsetup open $MEDIA_DRIVE media && sudo mount /dev/mapper/media /mnt/media"

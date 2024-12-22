@@ -4,7 +4,7 @@
     font pango: FontAwesome 14
 
     # Set Wallpaper
-        output * bg /home/noodle/MEGA/Images/Wallpapers/gruv_waterfall-3.jpg fill
+        output * bg /home/nat/MEGA/Images/Wallpapers/dark_gustave doré.png fill
     
     # Set Variables
         set $term kitty
@@ -15,10 +15,10 @@
         include /etc/sway/config.d/*
 
     # Include theme
-	include /home/noodle/.dotfiles/Files/Linux/sway/themes/Gruvbox-Dark-BL
+	include /home/nat/.dotfiles/Files/Linux/sway/themes/Gruvbox-Dark-BL
 
     # Scaling - Only Used On Mobile
-    	output eDP-1 scale 1.25
+#    	output eDP-1 scale 1.25
 
     # Xwayland
         xwayland enable
@@ -31,13 +31,6 @@
 default_border pixel 3
 default_floating_border normal
  titlebar_border_thickness 0
-
-# Property Name             Border  BG      Text    Indicator Child-border
-client.focused              #d65d0e #d65d0e #cecece #d65d0e   #d65d0e
-client.focused_inactive     #000000 #000000 #cecece #000000   #000000
-client.unfocused            #000000 #000000 #cecece #000000   #000000
-client.urgent               #000000 #000000 #cecece #000000   #000000
-client.placeholder          #000000 #000000 #cecece #000000   #000000
 
 ### Keybindings
 
@@ -135,6 +128,8 @@ client.placeholder          #000000 #000000 #cecece #000000   #000000
         for_window [app_id="firefox" title="Pushbullet – Mozilla Firefox"] floating enable
         for_window [app_id="firefox" title="About Mozilla Firefox"] floating enable
 
+	
+        for_window [class="feh"] fullscreen enable
         for_window [class="Gimp-2.10"] floating disable
         for_window [class="Gimp-2.10" title="New Image"] floating enable
         for_window [class="Gimp-2.10" title="Layer"] floating enable
@@ -142,7 +137,10 @@ client.placeholder          #000000 #000000 #cecece #000000   #000000
         for_window [class="Gimp-2.10" title="Option"] floating enable
         for_window [class="Gimp-2.10" title="Change"] floating enable
         for_window [app_id="mpv"] resize set 1280 720 floating enable
+        for_window [app_id="blueman-manager"] resize set 1280 720 floating enable
 
+        for_window [class="MEGAsync"] floating enable
+	
 	for_window [app_id="openrgb"] {
         floating enable
         resize set width 540px
@@ -196,25 +194,25 @@ client.placeholder          #000000 #000000 #cecece #000000   #000000
         assign [app_id="net.davidotek.pupgui2"] → number 4
     
     # MED
-        assign [class="Blueman-manager"] → number 5
-        assign [class="freetube"] → number 5
+        assign [class="FreeTube"] → number 5
         assign [class="Ghb"] → number 5
         assign [class="mpv"] → number 5
         assign [class="vlc"] → number 5
         assign [class="Pavuctrl"] → number 5
-        assign [app_id="com.obsproject.Studio"] → number 5
         for_window [class="Gimp-2.10"] move to workspace number 5
         for_window [class="Gimp"] move to workspace number 5
 
+    # REC
+       assign [app_id="com.obsproject.Studio"] → number 6
 
 ### CUSTOM SCRIPTS
     
     # Grim Menu
-        bindsym $mod+p exec /home/noodle/.dotfiles/Files/Linux/rofi/scripts/grim.sh
+        bindsym $mod+p exec /home/nat/.dotfiles/Files/Linux/rofi/scripts/grim.sh
 
     #Power Menu
-        bindsym ctrl+alt+Delete exec /home/noodle/.dotfiles/Files/Linux/rofi/scripts/power.sh
-        bindsym $mod+Delete exec /home/noodle/.dotfiles/Files/Linux/rofi/scripts/power.sh
+        bindsym ctrl+alt+Delete exec /home/nat/.dotfiles/Files/Linux/rofi/scripts/power.sh
+        bindsym $mod+Delete exec /home/nat/.dotfiles/Files/Linux/rofi/scripts/power.sh
 
     # Qalc
         bindsym $mod+c exec kitty qalc  
@@ -227,5 +225,5 @@ client.placeholder          #000000 #000000 #cecece #000000   #000000
 
 ### Autostart
         exec_always python3 ~/.dotfiles/Files/Linux/sway/scripts/autotiling/autotiling.py
-        exec_always /home/noodle/.dotfiles/Files/Linux/waybar/launch.sh
+        exec_always /home/nat/.dotfiles/Files/Linux/waybar/launch.sh
         exec wl-paste -t text --watch clipman store

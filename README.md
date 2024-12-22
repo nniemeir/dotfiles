@@ -4,13 +4,14 @@ These are my configuration files for various applications I use on GNU/Linux, in
 * Dunst
 * FreeTube
 * Fzf
-* Hypr
 * Kitty
 * NVIM
 * Ranger
 * Rofi
 * Sway
-* VIM
 * Waybar
+* Zathura
 * ZSH
 
+Sway Theme
+![Sway Theme Preview](previews/sway.png)
