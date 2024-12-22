@@ -14,4 +14,4 @@ These are my configuration files for various applications I use on GNU/Linux, in
 * ZSH
 
 Sway Theme
-![Sway Theme Preview](previews/sway.png)
+![Sway Theme Preview](Previews/sway.png)
