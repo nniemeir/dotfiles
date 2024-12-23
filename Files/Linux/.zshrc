@@ -7,12 +7,10 @@ DOTFILES="$HOME/.dotfiles/"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 ## Education
-alias cdnotes="cd $HOME/MEGA/Education/Notes/"
 alias notes="cd ~/.dotfiles/Files/Linux/fzf/ && ./notebooks.sh"
 
 ## Customization
 alias wallpapers="cd $DOTFILES/Files/Linux/sway/scripts/ && ./sway_wallpapers.sh"
-alias themes="cd $DOTFILES/Files/Linux/sway/scripts/ && ./sway_themes.sh"
 
 ## Drives
 GAME_DRIVE="/dev/sda1"
