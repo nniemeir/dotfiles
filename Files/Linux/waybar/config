@@ -45,10 +45,10 @@
         "tooltip": false
     },
     "pulseaudio": {
-      "format": " {volume}%",
+      "format": "{volume}%",
       "format-bluetooth": " {volume}%",
       "format-bluetooth-muted": " {icon} {format_source}",
-      "format-muted": "",
+      "format-muted": "M",
       "on-click": "pavucontrol",
       "on-click-right": "blueman-manager"
     },

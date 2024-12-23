@@ -15,7 +15,7 @@ configuration {
 * {
   bg: #28282875;
   bg-alt: #50494575;
-  bg-selected: #50494575;
+  bg-selected: #54535275;
   text-color: white;
   fg: #cdd6f4;
   fg-alt: #7f849c;
