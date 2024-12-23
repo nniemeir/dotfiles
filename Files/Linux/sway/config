@@ -14,11 +14,19 @@
     # Include scripts or configs
         include /etc/sway/config.d/*
 
-    # Include theme
-	include /home/nat/.dotfiles/Files/Linux/sway/themes/Gruvbox-Dark-BL
+   # Set Font 
+    font pango: FontAwesome 14 
+    
+    # Border Styling
+        client.focused           #6495ED #16161d #b5b5b5 #b5b5b5   #b5b5b5
+        client.focused_inactive  #16161d #16161d #b5b5b5 #16161d   #16161d
+        client.unfocused         #16161d #16161d #b5b5b5 #16161d   #16161d
+        for_window [class="^.*"] border pixel 3
+        default_floating_border pixel 3
+        default_border none
 
     # Scaling - Only Used On Mobile
-#    	output eDP-1 scale 1.25
+    	output eDP-1 scale 1.25
 
     # Xwayland
         xwayland enable
@@ -44,7 +52,7 @@ default_floating_border normal
         bindsym $mod+Shift+w reload
 
     # Exit sway
-        bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit Sway?' -b 'Yes' 'swaymsg exit'
+        bindsym $mod+Shift+q exec swaynag -t warning -m 'Exit Sway?' -b 'Yes' 'swaymsg exit'
 
     #prev/next workspace. bind it to your mouse if you have a sticky keyboard
         bindsym $mod+left workspace prev_on_output
@@ -219,7 +227,10 @@ default_floating_border normal
 
     # Ranger
         bindsym $mod+e exec kitty ranger        
-  
+ 
+    # Thunar
+        bindsym $mod+Shift+e exec thunar         
+
     # Volume Mixer
         bindsym $mod+v exec pavucontrol
 

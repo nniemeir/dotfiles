@@ -10,6 +10,7 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 alias notes="cd ~/.dotfiles/Files/Linux/fzf/ && ./notebooks.sh"
 
 ## Customization
+alias themes="cd $DOTFILES/Files/Linux/sway/scripts/ && ./sway_themes.sh"
 alias wallpapers="cd $DOTFILES/Files/Linux/sway/scripts/ && ./sway_wallpapers.sh"
 
 ## Drives
