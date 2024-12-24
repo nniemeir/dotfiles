@@ -2,7 +2,7 @@
 PATH=$PATH:~/.local/bin
 
 PS1=$'[%{\e[0;35m%}%n%{\e[0m%}@%{\e[0;35m%}%M%{\e[0m%}] %B%~%b '
-DOTFILES="$HOME/.dotfiles/"
+DOTFILES="~/.dotfiles/"
 # ALIASES
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
@@ -22,7 +22,7 @@ alias media_mount="sudo cryptsetup open $MEDIA_DRIVE media && sudo mount /dev/ma
 ## Media
 alias png="find . -name '*.jpg' -exec mogrify -format png {} \;"
 
-alias leisure="cd $HOME/MEGA/Education/Independent\ Studies/leisureLib && ./leisureLib.sh"
+alias leisure="cd ~/MEGA/Education/Independent\ Studies/leisureLib && ./leisureLib.sh"
 
 ## System
 alias upgrade="sudo dnf upgrade -y && flatpak update -y"

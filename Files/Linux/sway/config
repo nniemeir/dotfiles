@@ -1,10 +1,10 @@
-### NN SwayWM Configuration ###
+###SwayWM Configuration ###
 
     # Set Font
     font pango: FontAwesome 14
 
     # Set Wallpaper
-        output * bg /home/nat/MEGA/Images/Wallpapers/dark_gustave doré.png fill
+        output * bg ~/MEGA/Images/Wallpapers/dark_gustave doré.png fill
     
     # Set Variables
         set $term kitty
@@ -35,12 +35,12 @@
        gaps outer 2
        gaps inner 4
 
-# Window borders
-default_border pixel 3
-default_floating_border normal
- titlebar_border_thickness 0
+    # Window borders
+    default_border pixel 3
+    default_floating_border normal
+    titlebar_border_thickness 0
 
-### Keybindings
+### Keybindings 
 
     # Kill focused window
         bindsym $mod+Shift+c kill
@@ -104,7 +104,7 @@ default_floating_border normal
         bindsym XF86MonBrightnessDown exec light -U 10
 
     # Lock Screen
-        bindsym $mod+l exec swaylock -i ~/MEGA/Personal/Images/Wallpapers/gruv_street.webp --color=282a36  --indicator-radius=100 --indicator-thickness=10 --inside-color=282a36 --inside-clear-color=282a36 --inside-ver-color=282a36 --inside-wrong-color=282a36 --key-hl-color=d65d0eaa --bs-hl-color=ff5555aa --ring-color=44475a90 --ring-ver-color=d65d0e --ring-clear-color=ff79c611 --line-color=282a36 --line-uses-ring --ring-wrong-color=ff5555 
+        bindsym $mod+l exec swaylock -i ~/MEGA/Images/Wallpapers/dark_helvete.png --color=000000  --indicator-radius=100 --indicator-thickness=10 --inside-color=00000080 --inside-clear-color=00000080 --inside-ver-color=00000080 --inside-wrong-color=00000060 --key-hl-color=c9c8c7aa --bs-hl-color=400303aa --ring-color=44475a90 --ring-ver-color=595653 --ring-clear-color=ff79c611 --line-color=000000 --line-uses-ring --ring-wrong-color=400303 
 
     # Media Control
         bindsym XF86AudioPrev exec playerctl previous
@@ -187,7 +187,6 @@ default_floating_border normal
     # DEV
         assign [class="Audacity"] → number 2
         assign [class="Code"] → number 2
-        assign [app_id="org.pwmt.zathura"] → number 2
         assign [app_id="org.qt-project.qtcreator"] → number 2
         assign [class="Docker Desktop"] → number 2
     
@@ -216,11 +215,11 @@ default_floating_border normal
 ### CUSTOM SCRIPTS
     
     # Grim Menu
-        bindsym $mod+p exec /home/nat/.dotfiles/Files/Linux/rofi/scripts/grim.sh
+        bindsym $mod+p exec ~/.dotfiles/Files/Linux/rofi/scripts/grim.sh
 
     #Power Menu
-        bindsym ctrl+alt+Delete exec /home/nat/.dotfiles/Files/Linux/rofi/scripts/power.sh
-        bindsym $mod+Delete exec /home/nat/.dotfiles/Files/Linux/rofi/scripts/power.sh
+        bindsym ctrl+alt+Delete exec ~/.dotfiles/Files/Linux/rofi/scripts/power.sh
+        bindsym $mod+Delete exec ~/.dotfiles/Files/Linux/rofi/scripts/power.sh
 
     # Qalc
         bindsym $mod+c exec kitty qalc  
@@ -236,5 +235,5 @@ default_floating_border normal
 
 ### Autostart
         exec_always python3 ~/.dotfiles/Files/Linux/sway/scripts/autotiling/autotiling.py
-        exec_always /home/nat/.dotfiles/Files/Linux/waybar/launch.sh
+        exec_always ~/.dotfiles/Files/Linux/waybar/launch.sh
         exec wl-paste -t text --watch clipman store

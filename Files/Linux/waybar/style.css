@@ -36,6 +36,7 @@ window#waybar {
 
 #workspaces button.visible {
   border-bottom: solid 3px #ffffff;
+  border-radius: 0px;
 }
 
 #workspaces button.urgent {
