@@ -146,6 +146,7 @@
         for_window [class="Gimp-2.10" title="Change"] floating enable
         for_window [app_id="mpv"] resize set 1280 720 floating enable
         for_window [app_id="blueman-manager"] resize set 1280 720 floating enable
+        for_window [title="File Operation Progress"] floating enable
 
         for_window [class="MEGAsync"] floating enable
 	
