@@ -8,6 +8,7 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 
 ## Education
 alias notes="cd ~/.dotfiles/Files/Linux/fzf/ && ./notebooks.sh"
+alias cdnotes="cd '$HOME/MEGA/Coursework & Notes'"
 
 ## Customization
 alias themes="cd $DOTFILES/Files/Linux/sway/scripts/ && ./sway_themes.sh"

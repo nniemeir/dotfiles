@@ -4,7 +4,7 @@
     font pango: FontAwesome 14
 
     # Set Wallpaper
-        output * bg ~/MEGA/Images/Wallpapers/dark_gustave doré.png fill
+        output * bg /home/nat/MEGA/Images/Wallpapers/death_sbg.png fill
     
     # Set Variables
         set $term kitty
@@ -18,11 +18,11 @@
     font pango: FontAwesome 14 
     
     # Border Styling
-        client.focused           #6495ED #16161d #b5b5b5 #b5b5b5   #b5b5b5
-        client.focused_inactive  #16161d #16161d #b5b5b5 #16161d   #16161d
-        client.unfocused         #16161d #16161d #b5b5b5 #16161d   #16161d
-        for_window [class="^.*"] border pixel 3
-        default_floating_border pixel 3
+        client.focused           #6495ED #16161d #5c0707 #5c0707   #5c0707
+        client.focused_inactive  #16161d #16161d #5c0707 #16161d   #16161d
+        client.unfocused         #16161d #16161d #5c0707 #16161d   #16161d
+        for_window [class="^.*"] border pixel 4
+        default_floating_border pixel 4
         default_border none
 
     # Scaling - Only Used On Mobile
@@ -98,7 +98,10 @@
     
     # Start a terminal
         bindsym $mod+Return exec $term
-    
+   
+
+    # 
+      bindsym $mod+Shift+p exec grim -g "$(slurp -p)" -t ppm - | magick - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy 
     # Brightness Control
         bindsym XF86MonBrightnessUp exec light -A 10
         bindsym XF86MonBrightnessDown exec light -U 10
