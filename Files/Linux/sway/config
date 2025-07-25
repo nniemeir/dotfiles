@@ -4,10 +4,10 @@
     font pango: FontAwesome 14
 
     # Set Wallpaper
-        output * bg /home/nat/MEGA/Images/Wallpapers/death_sbg.png fill
+        output * bg /home/noodle/MEGA/Images/Wallpapers/dark_landscape.png fill
     
     # Set Variables
-        set $term kitty
+        set $term alacritty
         set $mod Mod4
         focus_follows_mouse no
 
@@ -18,9 +18,9 @@
     font pango: FontAwesome 14 
     
     # Border Styling
-        client.focused           #6495ED #16161d #5c0707 #5c0707   #5c0707
-        client.focused_inactive  #16161d #16161d #5c0707 #16161d   #16161d
-        client.unfocused         #16161d #16161d #5c0707 #16161d   #16161d
+        client.focused           #6495ED #16161d #485263 #485263   #485263
+        client.focused_inactive  #16161d #16161d #485263 #16161d   #16161d
+        client.unfocused         #16161d #16161d #485263 #16161d   #16161d
         for_window [class="^.*"] border pixel 4
         default_floating_border pixel 4
         default_border none
@@ -87,6 +87,45 @@
     # Swap focus between the tiling area and the floating area
         bindsym $mod+t focus mode_toggle
 
+mode "mousekeys" {
+    # use the keycodes from /usr/share/X11/xkb/keycodes/keypad and verify with wev
+    # mirror the motions in https://en.wikipedia.org/wiki/Mouse_keys#Layout
+
+    # movement
+    bindsym KP_Up seat - cursor move 0 -20
+    bindsym KP_Down seat - cursor move 0 +20
+    bindsym KP_Left seat - cursor move -20 0
+    bindsym KP_Right seat - cursor move +20 0
+
+    bindsym KP_Home seat - cursor move -20 -20
+    bindsym KP_Next seat - cursor move +20 +20
+    bindsym KP_Prior seat - cursor move +20 -20
+    bindsym KP_End seat - cursor move -20 +20
+
+    # actions - (double click), drag and drop
+    # keys: / left (button1), * middle (button2), - right (button3)
+    # motions: 5 click (press & release), + double click (press press release), 0 drag (press only), . drop (release only)
+    # NOTE: these are a bit messier in the sense that they also emit output, which is suboptimal, but someone can probably tell me how to fix that (or tell me that it isn't possible to do so)
+    bindsym KP_Divide+KP_Begin exec 'swaymsg seat - cursor press button1 && swaymsg seat - cursor release button1'
+    bindsym KP_Divide+KP_Add exec 'swaymsg seat - cursor press button1 && swaymsg seat - cursor press button1 && swaymsg seat - cursor release button1'
+    bindsym KP_Divide+KP_Insert seat - cursor press button1
+    bindsym KP_Divide+KP_Delete seat - cursor release button1
+    bindsym KP_Multiply+KP_Begin exec 'swaymsg seat - cursor press button2 && swaymsg seat - cursor release button2'
+    bindsym KP_Multiply+KP_Add exec 'swaymsg seat - cursor press button2 && swaymsg seat - cursor press button2 && swaymsg seat - cursor release button2'
+    bindsym KP_Multiply+KP_Insert seat - cursor press button2
+    bindsym KP_Multiply+KP_Delete seat - cursor release button2
+    bindsym KP_Subtract+KP_Begin exec 'swaymsg seat - cursor press button3 && swaymsg seat - cursor release button3'
+    bindsym KP_Subtract+KP_Add exec 'swaymsg seat - cursor press button3 && swaymsg seat - cursor press button3 && swaymsg seat - cursor release button3'
+    bindsym KP_Subtract+KP_Insert seat - cursor press button3
+    bindsym KP_Subtract+KP_Delete seat - cursor release button3
+
+    # leave mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+m mode "mousekeys"
+
+
     # Move the currently focused window to the scratchpad
         bindsym $mod+Shift+s move scratchpad
 
@@ -107,7 +146,7 @@
         bindsym XF86MonBrightnessDown exec light -U 10
 
     # Lock Screen
-        bindsym $mod+l exec swaylock -i ~/MEGA/Images/Wallpapers/dark_helvete.png --color=000000  --indicator-radius=100 --indicator-thickness=10 --inside-color=00000080 --inside-clear-color=00000080 --inside-ver-color=00000080 --inside-wrong-color=00000060 --key-hl-color=c9c8c7aa --bs-hl-color=400303aa --ring-color=44475a90 --ring-ver-color=595653 --ring-clear-color=ff79c611 --line-color=000000 --line-uses-ring --ring-wrong-color=400303 
+        bindsym $mod+l exec swaylock -i ~/MEGA/Images/Wallpapers/mocha20.png --color=000000  --indicator-radius=100 --indicator-thickness=10 --inside-color=00000080 --inside-clear-color=00000080 --inside-ver-color=00000080 --inside-wrong-color=00000060 --key-hl-color=c9c8c7aa --bs-hl-color=400303aa --ring-color=44475a90 --ring-ver-color=595653 --ring-clear-color=ff79c611 --line-color=000000 --line-uses-ring --ring-wrong-color=400303 
 
     # Media Control
         bindsym XF86AudioPrev exec playerctl previous
@@ -140,7 +179,7 @@
         for_window [app_id="firefox" title="About Mozilla Firefox"] floating enable
 
 	
-        for_window [class="feh"] fullscreen enable
+        for_window [app_id="com.libretro.RetroArch"] fullscreen enable
         for_window [class="Gimp-2.10"] floating disable
         for_window [class="Gimp-2.10" title="New Image"] floating enable
         for_window [class="Gimp-2.10" title="Layer"] floating enable
@@ -226,10 +265,10 @@
         bindsym $mod+Delete exec ~/.dotfiles/Files/Linux/rofi/scripts/power.sh
 
     # Qalc
-        bindsym $mod+c exec kitty qalc  
+        bindsym $mod+c exec $term -e sh -c qalc  
 
     # Ranger
-        bindsym $mod+e exec kitty ranger        
+        bindsym $mod+e exec $term -e sh -c ranger        
  
     # Thunar
         bindsym $mod+Shift+e exec thunar         

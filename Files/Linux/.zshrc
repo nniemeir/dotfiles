@@ -23,7 +23,6 @@ alias media_mount="sudo cryptsetup open $MEDIA_DRIVE media && sudo mount /dev/ma
 ## Media
 alias png="find . -name '*.jpg' -exec mogrify -format png {} \;"
 
-alias leisure="cd ~/MEGA/Education/Independent\ Studies/leisureLib && ./leisureLib.sh"
 
 ## System
 alias upgrade="sudo dnf upgrade -y && flatpak update -y"
