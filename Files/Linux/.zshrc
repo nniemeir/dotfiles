@@ -1,29 +1,27 @@
-# Include .local/bin in PATH
+### Set PATH
 PATH=$PATH:~/.local/bin
 
+### Set Prompt
 PS1=$'[%{\e[0;35m%}%n%{\e[0m%}@%{\e[0;35m%}%M%{\e[0m%}] %B%~%b '
-DOTFILES="~/.dotfiles/"
-# ALIASES
-alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
-## Education
-alias notes="cd ~/.dotfiles/Files/Linux/fzf/ && ./notebooks.sh"
-alias cdnotes="cd '$HOME/MEGA/Coursework & Notes'"
+### ALIASES
+DOTFILES="~/.dotfiles"
 
-## Customization
-alias themes="cd $DOTFILES/Files/Linux/sway/scripts/ && ./sway_themes.sh"
-alias wallpapers="cd $DOTFILES/Files/Linux/sway/scripts/ && ./sway_wallpapers.sh"
+# Education
+alias notes="$DOTFILES/Files/Linux/fzf/notes.sh"
 
-## Drives
-GAME_DRIVE="/dev/sda1"
-MEDIA_DRIVE="/dev/sdb"
-alias game_mount="sudo cryptsetup open $GAME_DRIVE games && sudo mount /dev/mapper/games /mnt/games"
-alias media_mount="sudo cryptsetup open $MEDIA_DRIVE media && sudo mount /dev/mapper/media /mnt/media"
+# Customization
+alias themes="$DOTFILES/Files/Linux/sway/scripts/sway_themes.sh"
+alias wallpapers="$DOTFILES/Files/Linux/sway/scripts/sway_wallpapers.sh"
 
-## Media
+# Drives
+alias game_mount="sudo cryptsetup open /dev/sda1 games && sudo mount /dev/mapper/games /mnt/games"
+alias media_mount="sudo cryptsetup open /dev/sdb media && sudo mount /dev/mapper/media /mnt/media"
+
+# Media
 alias png="find . -name '*.jpg' -exec mogrify -format png {} \;"
+alias jpg="find . -name '*.png' -exec mogrify -format jpg {} \;"
 
-
-## System
+# System
 alias upgrade="sudo dnf upgrade -y && flatpak update -y"
 

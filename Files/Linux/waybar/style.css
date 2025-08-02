@@ -1,7 +1,8 @@
 #waybar {
-  font-family: "Lodeh";
+  font-family: "FontAwesome";
   font-size: 14px;
 }
+
 window#waybar {
   border: none;
   border-radius: 0;
@@ -37,37 +38,16 @@ window#waybar {
   color: black;
 }
 
-#custom-recorder {
-  font-size: 18px;
-  margin: 2px 7px 0px 7px;
-  color: #ee2e24;
-}
-#taskbar,
-#battery,
 #clock,
-#tray,
-#mode,
-#temperature,
-#memory,
-#network,
-#pulseaudio,
-#custom-powermenu,
-#custom-weather,
-#backlight,
-#custom-media {
+#pulseaudio {
   border-radius: 6px;
   margin: 0px 0px 0px 10px;
   padding: 0 5px;
   margin-top: 5px;
 }
 
-#custom-powermenu {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-#tray {
-  margin-right: 5px;
+#battery.charging {
+  color: rgba(217, 216, 216, 1);
 }
 
 #battery.warning {
@@ -77,16 +57,3 @@ window#waybar {
 #battery.critical {
   color: rgba(238, 46, 36, 1);
 }
-
-#battery.charging {
-  color: rgba(217, 216, 216, 1);
-}
-
-#custom-storage.warning {
-  color: rgba(255, 210, 4, 1);
-}
-
-#custom-storage.critical {
-  color: rgba(238, 46, 36, 1);
-}
-

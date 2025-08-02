@@ -1,30 +1,42 @@
-﻿; Remappings
+﻿; GENERAL
+SetWinDelay 2
+CoordMode "Mouse"
+g_DoubleAlt := false
+
+; ENVIRONMENT VARIABLES
+EnvGet, hdrive, Homedrive
+EnvGet, hpath, Homepath
+userHome := hdrive . hpath
+
+; PREVENT AUTO REPEAT FOR ALT
+~Alt::
+{
+    global g_DoubleAlt := (A_PriorHotkey = "~Alt" and A_TimeSincePriorHotkey < 400)
+    Sleep 0
+    KeyWait "Alt"  ; This prevents the keyboard's auto-repeat feature from interfering.
+}
+return
+
+; REMAPPINGS
 #f::F11
 #+C::!F4
 
-; Application Launchers
-#+L::Run "C:\Program Files\Mozilla Firefox\firefox.exe https://rivershare.polarislibrary.com/default.aspx?ctx=28.1033.0.0.1"
+; APPLICATIONS
 #+F::Run "C:\Program Files\Mozilla Firefox\firefox.exe"
 #+Enter::Run "C:\Program Files\WindowsApps\TheDebianProject.DebianGNULinux_1.15.0.0_x64__76v4gfsz19hv4\debian.exe"
 #V::Run "C:\Windows\System32\SndVol.exe"
-#Enter::Run "C:\Users\nat\AppData\Local\Microsoft\WindowsApps\wt.exe"
-^!T::Run "C:\Users\nat\AppData\Local\Microsoft\WindowsApps\wt.exe"
-#+E::Run "C:\Users\nat\AppData\Local\Microsoft\WinGet\Packages\gokcehan.lf_Microsoft.Winget.Source_8wekyb3d8bbwe\lf.exe C:\Users\Nat\"
-
-
-; Additional Functionality 
+#Enter::Run userHome . "\AppData\Local\Microsoft\WindowsApps\wt.exe"
+^!T::Run userHome . "\AppData\Local\Microsoft\WindowsApps\wt.exe"
+#+E::Run userHome . "\AppData\Local\Microsoft\WinGet\Packages\gokcehan.lf_Microsoft.Winget.Source_8wekyb3d8bbwe\lf.exe"
 #Del::FileRecycleEmpty ; win + del
+
+; WINDOW CONTROL 
+#M::WinMaximize "A"
+#N::WinMinimize "A"
 #T:: 
 {
     WinSetAlwaysOnTop -1 , "A" 
 }
-#M::WinMaximize "A"
-#N::WinMinimize "A"
-
-SetWinDelay 2
-CoordMode "Mouse"
-
-g_DoubleAlt := false
 
 #LButton::
 {
@@ -109,8 +121,6 @@ g_DoubleAlt := false
     }
 }
 
-; "Alt + MButton" may be simpler, but I like an extra measure of security for
-; an operation like this.
 #MButton::
 {
     global g_DoubleAlt
@@ -122,12 +132,3 @@ g_DoubleAlt := false
         return
     }
 }
-
-; This detects "double-clicks" of the alt key.
-~Alt::
-{
-    global g_DoubleAlt := (A_PriorHotkey = "~Alt" and A_TimeSincePriorHotkey < 400)
-    Sleep 0
-    KeyWait "Alt"  ; This prevents the keyboard's auto-repeat feature from interfering.
-}
-return

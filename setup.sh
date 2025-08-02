@@ -1,6 +1,10 @@
 #!/bin/bash
 # Author: Jacob Niemeir <nniemeir@protonmail.com>
-# This script will automatically create symlinks for the included configuration files
+# This script will create symlinks for the included configuration files and clone sway autotiling script into appropriate dir
+
+git clone https://github.com/nwg-piotr/autotiling
+
+mv autotiling/autotiling/main.py ~/Files/sway/scripts/autotiling.py 
 
 dotsPath="$HOME/.dotfiles/Files/Linux"
 toConfigDir=('dunst' 'fzf' 'hypr' 'kitty' 'mpv' 'nvim' 'ranger' 'rofi' 'sway' 'waybar' 'zathura')

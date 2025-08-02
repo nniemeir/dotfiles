@@ -3,34 +3,48 @@
     "position": "top",
     "height": 5,
     "modules-center": ["sway/workspaces", "clock", "pulseaudio", "battery"],
+
     "sway/mode": {
         "format": " {}"
     },
+
     "sway/workspaces": {
-	"active-only": false,
-        "disable-scroll": true,
-        "all-outputs": true,
-        "disable-markup": false,
-        "format": "{icon}",
-        "format-icons": {
-            "1": "WEB",
-            "2": "DEV",
-            "3": "VM",
-            "4": "GAME",
-            "5": "MED",
-	    "6": "REC"
+        "active-only": false,
+            "disable-scroll": true,
+            "all-outputs": true,
+            "disable-markup": false,
+            "format": "{icon}",
+            "format-icons": {
+                "1": "WEB",
+                "2": "DEV",
+                "3": "VM",
+                "4": "GAME",
+                "5": "MED",
+            "6": "REC"
         }
     },
+
     "tray": {
         "icon-size": 24,
         "spacing": 8
     },
-  "clock": {
-  	"tooltip": false,
-	"interval": 60,
-  	"format": "{:%H:%M}",
-  	"format-alt": "{:%A, %B %d}",
-  },
+
+    "clock": {
+        "tooltip": false,
+        "interval": 60,
+        "format": "{:%H:%M}",
+        "format-alt": "{:%A, %B %d}"
+    },
+
+    "pulseaudio": {
+        "format": "{volume}%",
+        "format-bluetooth": " {volume}%",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "M",
+        "on-click": "pavucontrol",
+        "on-click-right": "blueman-manager"
+    },
+
     "battery": {
         "format": " {capacity}%",
         "format-icons": ["", "", "", "", ""],
@@ -43,13 +57,5 @@
             "critical": 10
         },
         "tooltip": false
-    },
-    "pulseaudio": {
-      "format": "{volume}%",
-      "format-bluetooth": " {volume}%",
-      "format-bluetooth-muted": " {icon} {format_source}",
-      "format-muted": "M",
-      "on-click": "pavucontrol",
-      "on-click-right": "blueman-manager"
-    },
+    }
 }
