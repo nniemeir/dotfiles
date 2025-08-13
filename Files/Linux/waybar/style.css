@@ -38,6 +38,7 @@ window#waybar {
   color: black;
 }
 
+#battery,
 #clock,
 #pulseaudio {
   border-radius: 6px;

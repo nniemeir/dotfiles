@@ -7,7 +7,7 @@ git clone https://github.com/nwg-piotr/autotiling
 mv autotiling/autotiling/main.py ~/.dotfiles/Files/Linux/sway/scripts/autotiling.py 
 
 dotsPath="$HOME/.dotfiles/Files/Linux"
-toConfigDir=('dunst' 'filmfs' 'fzf' 'hypr' 'kitty' 'mpv' 'nvim' 'ranger' 'rofi' 'sway' 'waybar' 'zathura')
+toConfigDir=('alacritty' 'dunst' 'filmfs' 'fzf' 'hypr' 'kitty' 'mpv' 'nvim' 'ranger' 'rofi' 'sway' 'waybar' 'zathura')
 toHomeDir=('.zshrc')
 
 for item in "${toConfigDir[@]}"; do
