@@ -11,6 +11,9 @@ DOTFILES="~/.dotfiles"
 # Education
 alias notes="$DOTFILES/Files/Linux/fzf/notes.sh"
 
+# Misc
+alias rand="$DOTFILES/Files/Linux/sway/scripts/rand.sh"
+
 # Customization
 alias themes="$DOTFILES/Files/Linux/sway/scripts/sway_themes.sh"
 alias wallpapers="$DOTFILES/Files/Linux/sway/scripts/sway_wallpapers.sh"
