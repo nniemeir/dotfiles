@@ -2,11 +2,14 @@
 These are my configuration files for various applications I use on GNU/Linux and Windows, including:
 * AutoHotkey
 * Dunst
+* [FilmFS](https://github.com/nniemeir/filmfs)
 * FreeTube
 * Fzf
+* gzdoom
 * Kitty
-* NVIM
+* Neovim
 * Ranger
+* RMPC
 * Rofi
 * Sway
 * Waybar
