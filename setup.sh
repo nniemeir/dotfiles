@@ -1,5 +1,4 @@
 #!/bin/bash
-# Author: Jacob Niemeir <nniemeir@protonmail.com>
 # This script will create symlinks for the included configuration files and clone sway autotiling script into appropriate dir
 
 git clone https://github.com/nwg-piotr/autotiling
