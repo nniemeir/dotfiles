@@ -11,7 +11,7 @@ selection=$(ls $wallpaper_dir | $prompt)
 
 if [ -n "$selection" ]; then
 	swaymsg output "*" bg "$wallpaper_dir/$selection" fill &
-	sed -i "s|bg .* fill|bg $wallpaper_dir/$selection fill|" "~/.dotfiles/Files/Linux/sway/styling.conf"
+	sed -i "s|bg .* fill|bg $wallpaper_dir/$selection fill|" "$HOME/.dotfiles/Files/Linux/sway/styling.conf"
 else
 	exit 0
 fi
