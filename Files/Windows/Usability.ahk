@@ -1,133 +1,126 @@
-﻿; GENERAL
+﻿#Requires AutoHotkey v2.0
+
+; GENERAL
 SetWinDelay 2
 CoordMode "Mouse"
+
 g_DoubleAlt := false
 
 ; ENVIRONMENT VARIABLES
-EnvGet, hdrive, Homedrive
-EnvGet, hpath, Homepath
+hdrive := EnvGet("Homedrive")
+hpath := EnvGet("Homepath")
 userHome := hdrive . hpath
 
-; PREVENT AUTO REPEAT FOR ALT
+; PREVENT AUTO REPEAT FOR ALT AND DETECT DOUBLE ALT
 ~Alt::
 {
-    global g_DoubleAlt := (A_PriorHotkey = "~Alt" and A_TimeSincePriorHotkey < 400)
-    Sleep 0
-    KeyWait "Alt"  ; This prevents the keyboard's auto-repeat feature from interfering.
+    global g_DoubleAlt := (A_PriorHotkey = "~Alt" && A_TimeSincePriorHotkey < 400)
+    KeyWait "Alt"  ; Prevents keyboard auto-repeat from interfering
 }
-return
 
 ; REMAPPINGS
 #f::F11
-#+C::!F4
+#+c::!F4
 
 ; APPLICATIONS
-#+F::Run "C:\Program Files\Mozilla Firefox\firefox.exe"
+#+f::Run "C:\Program Files\Mozilla Firefox\firefox.exe"
 #+Enter::Run "C:\Program Files\WindowsApps\TheDebianProject.DebianGNULinux_1.15.0.0_x64__76v4gfsz19hv4\debian.exe"
-#V::Run "C:\Windows\System32\SndVol.exe"
-#Enter::Run userHome . "\AppData\Local\Microsoft\WindowsApps\wt.exe"
-^!T::Run userHome . "\AppData\Local\Microsoft\WindowsApps\wt.exe"
-#+E::Run userHome . "\AppData\Local\Microsoft\WinGet\Packages\gokcehan.lf_Microsoft.Winget.Source_8wekyb3d8bbwe\lf.exe"
-#Del::FileRecycleEmpty ; win + del
+#v::Run "C:\Windows\System32\SndVol.exe"
+#Enter::Run userHome "\AppData\Local\Microsoft\WindowsApps\wt.exe"
+^!t::Run userHome "\AppData\Local\Microsoft\WindowsApps\wt.exe"
 
-; WINDOW CONTROL 
-#M::WinMaximize "A"
-#N::WinMinimize "A"
-#T:: 
-{
-    WinSetAlwaysOnTop -1 , "A" 
-}
+#+e::Run userHome "\AppData\Local\Microsoft\WinGet\Packages\gokcehan.lf_Microsoft.Winget.Source_8wekyb3d8bbwe\lf.exe"
+#Del::FileRecycleEmpty  ; Win + Del
 
+; WINDOW CONTROL
+#m::WinMaximize "A"
+#n::WinMinimize "A"
+#t::WinSetAlwaysOnTop -1, "A"
+
+; DOUBLE ALT + LButton: Minimize (with PostMessage for compatibility)
 #LButton::
 {
-    global g_DoubleAlt  ; Declare it since this hotkey function must modify it.
+    global g_DoubleAlt
     if g_DoubleAlt
     {
-        MouseGetPos ,, &KDE_id
-        ; This message is mostly equivalent to WinMinimize,
-        ; but it avoids a bug with PSPad.
-        PostMessage 0x0112, 0xf020,,, KDE_id
+        MouseGetPos ,, &kde_id
+        ; Equivalent to WinMinimize but avoids bugs in some apps (e.g., PSPad)
+        PostMessage 0x0112, 0xF020,,, "ahk_id " kde_id
         g_DoubleAlt := false
         return
     }
-    ; Get the initial mouse position and window id, and
-    ; abort if the window is maximized.
-    MouseGetPos &KDE_X1, &KDE_Y1, &KDE_id
-    if WinGetMinMax(KDE_id)
-        return
-    ; Get the initial window position.
-    WinGetPos &KDE_WinX1, &KDE_WinY1,,, KDE_id
-    Loop
+
+    ; Otherwise: Drag to move window
+    MouseGetPos &kde_x1, &kde_y1, &kde_id
+    if WinGetMinMax("ahk_id " kde_id)
+        return  ; Abort if window is maximized
+
+    WinGetPos &kde_winX1, &kde_winY1,,, "ahk_id " kde_id
+
+    while GetKeyState("LButton", "P")
     {
-        if !GetKeyState("LButton", "P") ; Break if button has been released.
-            break
-        MouseGetPos &KDE_X2, &KDE_Y2 ; Get the current mouse position.
-        KDE_X2 -= KDE_X1 ; Obtain an offset from the initial mouse position.
-        KDE_Y2 -= KDE_Y1
-        KDE_WinX2 := (KDE_WinX1 + KDE_X2) ; Apply this offset to the window position.
-        KDE_WinY2 := (KDE_WinY1 + KDE_Y2)
-        WinMove KDE_WinX2, KDE_WinY2,,, KDE_id ; Move the window to the new position.
+        MouseGetPos &kde_x2, &kde_y2
+        kde_x2 -= kde_x1
+        kde_y2 -= kde_y1
+        kde_winX2 := kde_winX1 + kde_x2
+        kde_winY2 := kde_winY1 + kde_y2
+        WinMove kde_winX2, kde_winY2,,, "ahk_id " kde_id
     }
 }
 
+; DOUBLE ALT + RButton: Toggle maximize/restore
 #RButton::
 {
     global g_DoubleAlt
     if g_DoubleAlt
     {
-        MouseGetPos ,, &KDE_id
-        ; Toggle between maximized and restored state.
-        if WinGetMinMax(KDE_id)
-            WinRestore KDE_id
-        Else
-            WinMaximize KDE_id
+        MouseGetPos ,, &kde_id
+        if WinGetMinMax("ahk_id " kde_id)
+            WinRestore "ahk_id " kde_id
+        else
+            WinMaximize "ahk_id " kde_id
         g_DoubleAlt := false
         return
     }
-    ; Get the initial mouse position and window id, and
-    ; abort if the window is maximized.
-    MouseGetPos &KDE_X1, &KDE_Y1, &KDE_id
-    if WinGetMinMax(KDE_id)
-        return
-    ; Get the initial window position and size.
-    WinGetPos &KDE_WinX1, &KDE_WinY1, &KDE_WinW, &KDE_WinH, KDE_id
-    ; Define the window region the mouse is currently in.
-    ; The four regions are Up and Left, Up and Right, Down and Left, Down and Right.
-    if (KDE_X1 < KDE_WinX1 + KDE_WinW / 2)
-        KDE_WinLeft := 1
-    else
-        KDE_WinLeft := -1
-    if (KDE_Y1 < KDE_WinY1 + KDE_WinH / 2)
-        KDE_WinUp := 1
-    else
-        KDE_WinUp := -1
-    Loop
+
+    ; Otherwise: Drag to resize window
+    MouseGetPos &kde_x1, &kde_y1, &kde_id
+    if WinGetMinMax("ahk_id " kde_id)
+        return  ; Abort if window is maximized
+
+    WinGetPos &kde_winX1, &kde_winY1, &kde_winW, &kde_winH, "ahk_id " kde_id
+
+    kde_winLeft := (kde_x1 < kde_winX1 + kde_winW / 2) ? 1 : -1
+    kde_winUp   := (kde_y1 < kde_winY1 + kde_winH / 2) ? 1 : -1
+
+    while GetKeyState("RButton", "P")
     {
-        if !GetKeyState("RButton", "P") ; Break if button has been released.
-            break
-        MouseGetPos &KDE_X2, &KDE_Y2 ; Get the current mouse position.
-        ; Get the current window position and size.
-        WinGetPos &KDE_WinX1, &KDE_WinY1, &KDE_WinW, &KDE_WinH, KDE_id
-        KDE_X2 -= KDE_X1 ; Obtain an offset from the initial mouse position.
-        KDE_Y2 -= KDE_Y1
-        ; Then, act according to the defined region.
-        WinMove KDE_WinX1 + (KDE_WinLeft+1)/2*KDE_X2  ; X of resized window
-              , KDE_WinY1 +   (KDE_WinUp+1)/2*KDE_Y2  ; Y of resized window
-              , KDE_WinW  -     KDE_WinLeft  *KDE_X2  ; W of resized window
-              , KDE_WinH  -       KDE_WinUp  *KDE_Y2  ; H of resized window
-              , KDE_id
-        KDE_X1 := (KDE_X2 + KDE_X1) ; Reset the initial position for the next iteration.
-        KDE_Y1 := (KDE_Y2 + KDE_Y1)
+        MouseGetPos &kde_x2, &kde_y2
+
+        WinGetPos &kde_winX1, &kde_winY1, &kde_winW, &kde_winH, "ahk_id " kde_id
+
+        kde_x2 -= kde_x1
+        kde_y2 -= kde_y1
+
+        WinMove kde_winX1 + (kde_winLeft + 1)/2 * kde_x2
+              , kde_winY1 + (kde_winUp + 1)/2 * kde_y2
+              , kde_winW - kde_winLeft * kde_x2
+              , kde_winH - kde_winUp * kde_y2
+              , "ahk_id " kde_id
+
+        kde_x1 += kde_x2
+        kde_y1 += kde_y2
     }
 }
 
+; DOUBLE ALT + MButton: Close window
 #MButton::
 {
     global g_DoubleAlt
     if g_DoubleAlt
     {
-        MouseGetPos ,, &KDE_id
-        WinClose KDE_id
+        MouseGetPos ,, &kde_id
+        WinClose "ahk_id " kde_id
         g_DoubleAlt := false
         return
     }
