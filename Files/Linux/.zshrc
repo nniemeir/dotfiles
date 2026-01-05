@@ -29,3 +29,4 @@ alias jpg="find . -name '*.png' -exec mogrify -format jpg {} \;"
 # System
 alias upgrade="sudo dnf upgrade -y && flatpak update -y"
 
+alias bookmarks="~/.dotfiles/Files/Linux/fzf/bookmarks.sh ~/.dotfiles/Files/Linux/bookmarks.csv"

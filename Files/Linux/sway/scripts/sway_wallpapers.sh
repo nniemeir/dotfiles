@@ -1,5 +1,5 @@
 #!/bin/bash
-wallpaper_dir="$HOME/MEGA/Images/Wallpapers"
+wallpaper_dir="$HOME/MEGA/Media/Images/Wallpapers"
 
 if [[ $TERM == *kitty* ]]; then
   prompt="fzf --cycle --preview='kitty icat --clear --transfer-mode=stream --stdin=no --place=50x50@30x30 $wallpaper_dir/{}'"
