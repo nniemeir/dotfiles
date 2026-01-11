@@ -5,13 +5,16 @@ mkdir -p "$screenshot_dir"
 
 file=ps_$(date +"%Y%m%d%H%M%S").png
 
-choice=$(echo -e "1. Selected Area\n2. Whole Screen" | rofi -dmenu -p "Screenshot Area: " | cut -d. -f1)
+choice=$(printf "Selected Area\nWhole Screen" | fzf --prompt="Screenshot > ")
 
-if [[ "$choice" == 1 ]]; then
+case "$choice" in
+	"Selected Area")
 	grim -g "$(slurp)" $screenshot_dir/$file
-elif [[ "$choice" == 2 ]]; then
+	;;
+	"Whole Screen")
 	grim $screenshot_dir/$file
-fi
+	;;
+esac
 
 if [ -f "$screenshot_dir/$file" ]; then
 	notify-send "Screenshot Saved" -i $screenshot_dir/$file

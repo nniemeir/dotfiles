@@ -4,14 +4,12 @@
 options=$(pactl -f json list sinks | jq -r '.[] | .description')
 
 # Let the user select a description
-selection=$(echo "$options" | rofi -dmenu -p "Output:")
+selection=$(echo "$options" | fzf --prompt="Output:")
 
 # Extract the corresponding sink name
 sink_name=$(pactl -f json list sinks | jq -r --arg sink_pretty_name "$selection" '.[] | select(.description == $sink_pretty_name) | .name')
 
 # Set the selected sink as default
 if [ -n "$sink_name" ]; then
-    pactl set-default-sink "$sink_name" && notify-send "Audio switched to: $selection"
-else
-    notify-send "Audio switch failed"
+    pactl set-default-sink "$sink_name" 
 fi

@@ -1,7 +1,6 @@
 # .files
 These are my configuration files for various applications I use on GNU/Linux and Windows, including:
 * AutoHotkey
-* Dunst
 * [FilmFS](https://github.com/nniemeir/filmfs)
 * FreeTube
 * Fzf
@@ -12,7 +11,6 @@ These are my configuration files for various applications I use on GNU/Linux and
 * RMPC
 * Rofi
 * Sway
-* Waybar
 * Zathura
 * ZSH
 

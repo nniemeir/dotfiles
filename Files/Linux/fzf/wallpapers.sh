@@ -2,12 +2,13 @@
 wallpaper_dir="$HOME/MEGA/Media/Images/Wallpapers"
 
 if [[ $TERM == *kitty* ]]; then
-  prompt="fzf --cycle --preview='kitty icat --clear --transfer-mode=stream --stdin=no --place=50x50@30x30 $wallpaper_dir/{}'"
+	fzf_cmd=(fzf --cycle --preview "kitty icat --clear --transfer-mode=stream --stdin=no --place=100x100@30x30 $wallpaper_dir/{}")
+
 else
-  prompt="fzf --cycle"
+	fzf_cmd=(fzf --cycle)
 fi
 
-selection=$(ls $wallpaper_dir | $prompt)
+selection=$(ls $wallpaper_dir | "${fzf_cmd[@]}")
 
 if [ -n "$selection" ]; then
 	swaymsg output "*" bg "$wallpaper_dir/$selection" fill &
