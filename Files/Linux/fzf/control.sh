@@ -1,5 +1,10 @@
 #!/bin/sh
 
+source "$HOME/.dotfiles/Files/Linux/preferences.conf" || {
+    echo "Error: No configuration file found."
+    exit 1
+}
+
 list="Overview
 Audio Mixer
 Audio Output
@@ -12,6 +17,7 @@ Launch An Application
 Lock
 Manual Pages
 Merrin System Monitor
+Music
 Notes
 Power Off
 Reboot
@@ -20,7 +26,7 @@ Suspend
 Themes
 Wallpapers"
 
-op=$(echo "$list" | fzf --prompt="Select Option:" --preview '
+op=$(echo "$list" | fzf $FZF_DEFAULT_OPTS --prompt="Select Option:" --preview '
 case {} in 
         "Audio Mixer")
             echo "Opens pavucontrol for audio mixing"
@@ -54,6 +60,9 @@ case {} in
             ;;
         "Merrin System Monitor")
             echo "Monitor usage percentage and temperatures of CPU, GPU, and RAM"
+            ;;
+        "Music")
+            echo "fzf and mpv-based music player"
             ;;
         "Notes")
             echo "Displays all CSV, Markdown, and Text files in the users notes directory and its subdirectories, opens selection in Neovim"
@@ -116,6 +125,9 @@ case "$op" in
             ;;
         "Merrin System Monitor")
             ~/.local/bin/merrin
+            ;;
+        "Music")
+            ~/.dotfiles/Files/Linux/fzf/music.sh
             ;;
         "Notes")
             ~/.dotfiles/Files/Linux/fzf/notes.sh

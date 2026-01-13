@@ -5,25 +5,25 @@ source "$HOME/.dotfiles/Files/Linux/preferences.conf" || {
     exit 1
 }
 
-mkdir -p "$SCREENSHOT_DIR"
+mkdir -p "$SCREENSHOT_PATH"
 
 file=ps_$(date +"%Y%m%d%H%M%S").png
 
-choice=$(printf "Selected Area\nWhole Screen" | fzf --prompt="Screenshot > ")
+choice=$(printf "Selected Area\nWhole Screen" | fzf $FZF_DEFAULT_OPTS --prompt="Screenshot > ")
 
 case "$choice" in
 	"Selected Area")
-	grim -g "$(slurp)" $SCREENSHOT_DIR/$file
+	grim -g "$(slurp)" $SCREENSHOT_PATH/$file
 	;;
 	"Whole Screen")
-	grim $SCREENSHOT_DIR/$file
+	grim $SCREENSHOT_PATH/$file
 	;;
 esac
 
-if [ -f "$SCREENSHOT_DIR/$file" ]; then
-	notify-send "Screenshot Saved" -i $SCREENSHOT_DIR/$file
+if [ -f "$SCREENSHOT_PATH/$file" ]; then
+	notify-send "Screenshot Saved" -i $SCREENSHOT_PATH/$file
 fi
 
-if [ ! "$(ls $SCREENSHOT_DIR)" ]; then
-	rm -rf "$SCREENSHOT_DIR"
+if [ ! "$(ls $SCREENSHOT_PATH)" ]; then
+	rm -rf "$SCREENSHOT_PATH"
 fi

@@ -1,5 +1,10 @@
 #!/bin/sh
 
+source "$HOME/.dotfiles/Files/Linux/preferences.conf" || {
+    echo "Error: No configuration file found."
+    exit 1
+}
+
 # List Flatpak app IDs
 list_flatpaks() {
     flatpak list --app --columns=application \
@@ -17,7 +22,7 @@ list_gui_apps() {
 
 # Construct the menu itself
 choice=$(printf "%s\n%s" "$(list_flatpaks)" "$(list_gui_apps)" \
-    | fzf --prompt="Launch: ")
+    | fzf $FZF_DEFAULT_OPTS --prompt="Launch: ")
 
 # If selection corresponds to a flatpak ID, run it as such in a subshell
 if flatpak info "$choice" >/dev/null 2>&1; then

@@ -1,10 +1,16 @@
 #! /bin/bash
 # List gathered from Papirus-Folders
+
+source "$HOME/.dotfiles/Files/Linux/preferences.conf" || {
+    echo "Error: No configuration file found."
+    exit 1
+}
+
 accents="adwaita\nblack\nblue\nbluegrey\nbreeze\nbrown\ncarmine\ncyan\ndarkcyan\ndeeporange\ngreen\ngrey\nindigo\nmagenta\nnordic\norange\npalebrown\npaleorange\npink\nred\nteal\nviolet\nwhite\nyaru\nyellow"
-theme=$(ls $HOME/.local/share/themes/ | fzf)
+theme=$(ls $HOME/.local/share/themes/ | fzf $FZF_DEFAULT_OPTS)
 
 if [ -n "$theme" ]; then
-	accent=$(echo -e "$accents" | fzf)
+	accent=$(echo -e "$accents" | fzf $FZF_DEFAULT_OPTS)
 else
 	exit 0
 fi
