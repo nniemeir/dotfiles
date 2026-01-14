@@ -1,0 +1,27 @@
+#!/bin/sh
+
+source "$HOME/.dotfiles/Files/Linux/preferences.conf" || {
+    echo "Error: No configuration file found."
+    exit 1
+}
+
+# Construct the menu itself
+choice=$(echo -e "Books\nFilms\nGames\nMusic\nTelevision" | fzf $FZF_DEFAULT_OPTS --prompt="Select Category: ")
+
+case "$choice" in 
+        "Books")
+            ~/.dotfiles/Files/Linux/fzf/books.sh
+            ;;
+        "Films")
+            ~/.dotfiles/Files/Linux/fzf/films.sh
+            ;;
+        "Games")
+            ~/.dotfiles/Files/Linux/fzf/games.sh
+            ;;
+        "Music")
+            ~/.dotfiles/Files/Linux/fzf/music.sh
+            ;;
+        "Television")
+            ~/.dotfiles/Files/Linux/fzf/television.sh
+            ;;
+esac

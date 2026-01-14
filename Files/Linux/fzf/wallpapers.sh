@@ -6,7 +6,7 @@ source "$HOME/.dotfiles/Files/Linux/preferences.conf" || {
 }
 
 if [[ $TERM == *kitty* ]]; then
-	fzf_cmd=(fzf $FZF_DEFAULT_OPTS --preview "kitty icat --clear --transfer-mode=stream --stdin=no --place=100x100@30x30 $WALLPAPER_PATH/{}")
+	fzf_cmd=(fzf $FZF_DEFAULT_OPTS --preview "kitty icat --clear --transfer-mode=stream --stdin=no --place=50x50@30x30 $WALLPAPER_PATH/{}")
 
 else
 	fzf_cmd=(fzf $FZF_DEFAULT_OPTS)

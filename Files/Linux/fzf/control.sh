@@ -16,6 +16,7 @@ Kill Process
 Launch An Application
 Lock
 Manual Pages
+Media
 Merrin System Monitor
 Music
 Notes
@@ -57,6 +58,9 @@ case {} in
             ;;
         "Manual Pages")
             echo "Opens a selection window with all manual pages on the system, opens selection via man command"
+            ;;
+        "Media")
+            echo "Media library menu"
             ;;
         "Merrin System Monitor")
             echo "Monitor usage percentage and temperatures of CPU, GPU, and RAM"
@@ -122,6 +126,9 @@ case "$op" in
                 ;;
         "Manual Pages")
             ~/.dotfiles/Files/Linux/fzf/man.sh
+            ;;
+        "Media")
+            ~/.dotfiles/Files/Linux/fzf/media.sh
             ;;
         "Merrin System Monitor")
             ~/.local/bin/merrin

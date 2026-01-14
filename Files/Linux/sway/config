@@ -7,5 +7,6 @@ include ~/.config/sway/workspaces.conf
 include ~/.config/sway/bindings/applications.conf
 include ~/.config/sway/bindings/function_keys.conf
 include ~/.config/sway/bindings/session_control.conf
+include ~/.config/sway/bindings/utilities.conf
 include ~/.config/sway/bindings/windows.conf
 include ~/.config/sway/bindings/workspaces.conf
