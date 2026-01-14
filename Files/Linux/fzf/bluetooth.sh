@@ -5,6 +5,14 @@ source "$HOME/.dotfiles/Files/Linux/preferences.conf" || {
     exit 1
 }
 
+source "$HOME/.dotfiles/Files/Linux/common.sh" || {
+    echo "Error: common.sh missing from ~/.dotfiles/Files/Linux"
+    exit 1
+}
+
+depends bluetoothctl
+depends fzf
+
 choice=$(echo -e "Connect\nDisconnect\nPower On\nPower Off" | fzf $FZF_DEFAULT_OPTS --prompt="Bluetooth: " | cut -d. -f1)
 
 devices=$(bluetoothctl devices Paired | awk '{print $2, $3}')

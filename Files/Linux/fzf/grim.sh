@@ -5,6 +5,14 @@ source "$HOME/.dotfiles/Files/Linux/preferences.conf" || {
     exit 1
 }
 
+source "$HOME/.dotfiles/Files/Linux/common.sh" || {
+    echo "Error: common.sh missing from ~/.dotfiles/Files/Linux"
+    exit 1
+}
+
+depends fzf
+depends grim
+
 mkdir -p "$SCREENSHOT_PATH"
 
 file=ps_$(date +"%Y%m%d%H%M%S").png

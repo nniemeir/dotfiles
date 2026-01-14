@@ -5,6 +5,14 @@ source "$HOME/.dotfiles/Files/Linux/preferences.conf" || {
     exit 1
 }
 
+source "$HOME/.dotfiles/Files/Linux/common.sh" || {
+    echo "Error: common.sh missing from ~/.dotfiles/Files/Linux"
+    exit 1
+}
+
+depends fzf
+depends man
+
 manual=$(man -k . | sort -u | awk '{print $1, $2}' | fzf $FZF_DEFAULT_OPTS --prompt="Manuals: " | awk '{print $1}')
 
 if [[ -n "$manual" ]]; then

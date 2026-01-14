@@ -5,6 +5,16 @@ source "$HOME/.dotfiles/Files/Linux/preferences.conf" || {
     exit 1
 }
 
+source "$HOME/.dotfiles/Files/Linux/common.sh" || {
+    echo "Error: common.sh missing from ~/.dotfiles/Files/Linux"
+    exit 1
+}
+
+depends fzf
+depends grim
+depends magick
+depends pavucontrol
+
 list="Overview
 Audio Mixer
 Audio Output
@@ -107,7 +117,7 @@ case "$op" in
             ~/.dotfiles/Files/Linux/fzf/bluetooth.sh
             ;;
         "Bookmarks")
-            ~/.dotfiles/Files/Linux/fzf/bookmarks.sh ~/.dotfiles/Files/Linux/bookmarks.csv
+            ~/.dotfiles/Files/Linux/fzf/bookmarks.sh
             ;;
         "Color Picker")
             grim -g "$(slurp -p)" -t ppm - | magick - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy 
@@ -123,7 +133,7 @@ case "$op" in
             ;;
          "Lock")
 	        swaylock -i ~/Pictures/Wallpapers/dark_morning.jpg --color=282a36  --indicator-radius=100 --indicator-thickness=10 --inside-color=282a36 --inside-clear-color=282a36 --inside-ver-color=282a36 --inside-wrong-color=282a36 --key-hl-color=bd93f9aa --bs-hl-color=ff5555aa --ring-color=44475a90 --ring-ver-color=bd93f9 --ring-clear-color=ff79c611 --line-color=282a36 --line-uses-ring --ring-wrong-color=ff5555 	
-                ;;
+            ;;
         "Manual Pages")
             ~/.dotfiles/Files/Linux/fzf/man.sh
             ;;

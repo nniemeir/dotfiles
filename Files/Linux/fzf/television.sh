@@ -5,6 +5,14 @@ source "$HOME/.dotfiles/Files/Linux/preferences.conf" || {
     exit 1
 }
 
+source "$HOME/.dotfiles/Files/Linux/common.sh" || {
+    echo "Error: common.sh missing from ~/.dotfiles/Files/Linux"
+    exit 1
+}
+
+depends fzf
+depends mpv
+
 prompt_season() {
 	clear
 	local show_selection="$1"

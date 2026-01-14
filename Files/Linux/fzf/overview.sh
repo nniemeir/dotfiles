@@ -1,4 +1,13 @@
 #!/bin/sh
+
+source "$HOME/.dotfiles/Files/Linux/common.sh" || {
+    echo "Error: common.sh missing from ~/.dotfiles/Files/Linux"
+    exit 1
+}
+
+depends fzf
+depends jq
+
 echo "$(whoami)@$(hostname)"
 echo "---------------------"
 echo "Date: $(date +"%B %d, %Y - %H:%M %Z")"

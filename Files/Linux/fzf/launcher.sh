@@ -5,6 +5,14 @@ source "$HOME/.dotfiles/Files/Linux/preferences.conf" || {
     exit 1
 }
 
+source "$HOME/.dotfiles/Files/Linux/common.sh" || {
+    echo "Error: common.sh missing from ~/.dotfiles/Files/Linux"
+    exit 1
+}
+
+depends flatpak
+depends fzf
+
 # List Flatpak app IDs
 list_flatpaks() {
     flatpak list --app --columns=application \

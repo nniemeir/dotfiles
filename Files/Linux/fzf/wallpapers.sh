@@ -5,6 +5,13 @@ source "$HOME/.dotfiles/Files/Linux/preferences.conf" || {
     exit 1
 }
 
+source "$HOME/.dotfiles/Files/Linux/common.sh" || {
+    echo "Error: common.sh missing from ~/.dotfiles/Files/Linux"
+    exit 1
+}
+
+depends fzf
+
 if [[ $TERM == *kitty* ]]; then
 	fzf_cmd=(fzf $FZF_DEFAULT_OPTS --preview "kitty icat --clear --transfer-mode=stream --stdin=no --place=50x50@30x30 $WALLPAPER_PATH/{}")
 
