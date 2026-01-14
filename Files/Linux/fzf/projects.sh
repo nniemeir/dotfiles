@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 source "$HOME/.dotfiles/Files/Linux/preferences.conf" || {
     echo "Error: No configuration file found."
@@ -11,12 +11,12 @@ source "$HOME/.dotfiles/Files/Linux/common.sh" || {
 }
 
 depends fzf
-depends man
+depends flatpak
 
-manual=$(man -k . | sort -u | awk '{print $1, $2}' | fzf $FZF_DEFAULT_OPTS --prompt="Manuals: " | awk '{print $1}')
+selection=$(ls "$PROJECTS_PATH" | fzf $FZF_DEFAULT_OPTS)	
 
-if [[ -n "$manual" ]]; then
-    man $manual
+if [ -z "$selection" ]; then
+    exit 0
+else
+    flatpak run com.visualstudio.code-oss "$PROJECTS_PATH/$selection"
 fi
-
-exit 0

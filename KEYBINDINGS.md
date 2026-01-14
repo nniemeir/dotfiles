@@ -6,12 +6,13 @@
 | Win+v      | Audio Output Selector |
 | Win+b      | Bluetooth Menu        |
 | Win+d      | Bookmarks Menu        |
-| Win+s      | Dotfiles Management   |
 | Win+h      | Control Panel         |
+| Win+s      | Dotfiles Management   |
 | Win+Delete | Kill Menu             |
 | Win+m      | Manpage Selector      |
 | Win+g      | Media Library         |
 | Win+n      | Notes Library         |
+| Win+p      | Projects Menu         |
 | Win+e      | Ranger                |
 | Win+q      | Qalculate             |
 | Win+Return | Terminal              |
@@ -22,8 +23,9 @@
 | Keybinding  | Action                |
 |-------------|-----------------------|
 | Win+Shift+F | Firefox               |
-| Win+Shift+E | Thunar                |
 | Win+Shift+M | Merrin System Monitor |
+| Win+Shift+V | Pavucontrol           |
+| Win+Shift+E | Thunar                |
 
 ## Compositor Controls
 | Keybinding       | Action                               |

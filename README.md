@@ -13,6 +13,33 @@ These are my configuration files for various applications I use on GNU/Linux and
 
 [Keybindings](KEYBINDINGS.md)
 
+## Installation
+1. Clone the repository into your home directory
+``` 
+git clone https://github.com/nniemeir/dotfiles ~/.dotfiles
+```
+
+The setup scripts create symbolic links to these dotfiles in the corresponding directories.
+
+2. Ensure script execution permissions
+* Windows:
+```
+Set-ExecutionPolicy unrestricted -scope process
+```
+* Linux:
+```
+chmod +x setup.sh
+```
+3. Run the corresponding script.
+* Windows:
+```
+.\setup.ps1
+```
+* Linux:
+```
+./setup.sh
+```
+
 ## Sway Theme
 ![Sway Theme Preview](Previews/sway.png)
 

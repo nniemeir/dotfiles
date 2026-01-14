@@ -28,9 +28,9 @@ Lock
 Manual Pages
 Media
 Merrin System Monitor
-Music
 Notes
 Power Off
+Projects
 Reboot
 Screenshot
 Suspend
@@ -75,9 +75,6 @@ case {} in
         "Merrin System Monitor")
             echo "Monitor usage percentage and temperatures of CPU, GPU, and RAM"
             ;;
-        "Music")
-            echo "fzf and mpv-based music player"
-            ;;
         "Notes")
             echo "Displays all CSV, Markdown, and Text files in the users notes directory and its subdirectories, opens selection in Neovim"
             ;;
@@ -86,6 +83,9 @@ case {} in
             ;;
         "Power Off")
             echo "Shuts down the system via systemctl"
+            ;;
+        "Projects")
+            echo "Open a programming project in Visual Studio Code"
             ;;
         "Reboot")
             echo "Reboots the system via systemctl"
@@ -143,14 +143,15 @@ case "$op" in
         "Merrin System Monitor")
             ~/.local/bin/merrin
             ;;
-        "Music")
-            ~/.dotfiles/Files/Linux/fzf/music.sh
-            ;;
         "Notes")
             ~/.dotfiles/Files/Linux/fzf/notes.sh
             ;;
         "Power Off")
             shutdown now
+            ;;
+        "Projects")
+            ~/.dotfiles/Files/Linux/fzf/projects.sh
+            sleep 1
             ;;
         "Reboot")
             reboot
@@ -159,8 +160,8 @@ case "$op" in
             ~/.dotfiles/Files/Linux/fzf/grim.sh
             ;;
         "Suspend")
-                systemctl $op
-                ;;
+            systemctl $op
+            ;;
          "Themes")
             ~/.dotfiles/Files/Linux/fzf/themes.sh
             ;;
