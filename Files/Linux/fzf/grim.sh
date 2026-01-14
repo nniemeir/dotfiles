@@ -13,9 +13,13 @@ choice=$(printf "Selected Area\nWhole Screen" | fzf $FZF_DEFAULT_OPTS --prompt="
 
 case "$choice" in
 	"Selected Area")
+	echo "Taking screenshot in 3 seconds..."
+	sleep 3
 	grim -g "$(slurp)" $SCREENSHOT_PATH/$file
 	;;
 	"Whole Screen")
+	echo "Taking screenshot in 3 seconds..."
+	sleep 3
 	grim $SCREENSHOT_PATH/$file
 	;;
 esac

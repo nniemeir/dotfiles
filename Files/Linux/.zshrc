@@ -6,17 +6,25 @@ PATH=$PATH:~/.cargo/bin
 PS1=$'[%{\e[0;35m%}%n%{\e[0m%}@%{\e[0;35m%}%M%{\e[0m%}] %B%~%b '
 
 ### ALIASES
-DOTFILES="~/.dotfiles"
+FZF_SCRIPTS_PATH="~/.dotfiles/Files/Linux/fzf"
 
-# Education
-alias notes="$DOTFILES/Files/Linux/fzf/notes.sh"
-
-# Misc
-alias rand="$DOTFILES/Files/Linux/sway/scripts/rand.sh"
-
-# Customization
-alias themes="$DOTFILES/Files/Linux/sway/scripts/sway_themes.sh"
-alias wallpapers="$DOTFILES/Files/Linux/sway/scripts/sway_wallpapers.sh"
+# Fzf Scripts
+alias audio="$FZF_SCRIPTS_PATH/audio_output.sh" 
+alias bluetooth="$FZF_SCRIPTS_PATH/bluetooth.sh"
+alias bookmarks="$FZF_SCRIPTS_PATH/bookmarks.sh"
+alias config="$FZF_SCRIPTS_PATH/config.sh"
+alias control="$FZF_SCRIPTS_PATH/control.sh" 
+alias films="$FZF_SCRIPTS_PATH/films.sh"
+alias games="$FZF_SCRIPTS_PATH/games.sh"
+alias killcli="$FZF_SCRIPTS_PATH/kill.sh"
+alias launch="$FZF_SCRIPTS_PATH/launcher.sh"
+alias mancli="$FZF_SCRIPTS_PATH/man.sh"
+alias media="$FZF_SCRIPTS_PATH/media.sh"
+alias music="$FZF_SCRIPTS_PATH/music.sh"
+alias overview="$FZF_SCRIPTS_PATH/overview.sh"
+alias television="$FZF_SCRIPTS_PATH/television.sh"
+alias themes="$FZF_SCRIPTS_PATH/themes.sh"
+alias wallpapers="$FZF_SCRIPTS_PATH/wallpapers.sh"
 
 # Drives
 alias game_mount="sudo cryptsetup open /dev/sda1 games && sudo mount /dev/mapper/games /mnt/games"
@@ -29,7 +37,5 @@ alias jpg="find . -name '*.png' -exec mogrify -format jpg {} \;"
 # System
 alias upgrade="sudo dnf upgrade -y && flatpak update -y"
 
-alias bookmarks="~/.dotfiles/Files/Linux/fzf/bookmarks.sh ~/.dotfiles/Files/Linux/bookmarks.csv"
-alias launch="~/.dotfiles/Files/Linux/fzf/launcher.sh"
-
+# Quote Generator
 wisesay Jesus

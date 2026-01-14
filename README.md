@@ -2,17 +2,16 @@
 These are my configuration files for various applications I use on GNU/Linux and Windows, including:
 * AutoHotkey
 * [FilmFS](https://github.com/nniemeir/filmfs)
-* FreeTube
 * Fzf
-* gzdoom
+* GlazeWM
 * Kitty
 * Neovim
 * Ranger
-* RMPC
-* Rofi
 * Sway
 * Zathura
 * ZSH
+
+[Keybindings](KEYBINDINGS.md)
 
 Sway Theme
 ![Sway Theme Preview](Previews/sway.png)
@@ -20,4 +19,4 @@ Sway Theme
 ## License
 GNU General Public License V2
 
-Copyright (c) 2025 Jacob Niemeir
+Copyright (c) 2026 Jacob Niemeir
