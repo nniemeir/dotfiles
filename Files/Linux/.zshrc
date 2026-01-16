@@ -6,7 +6,7 @@ PATH=$PATH:~/.cargo/bin
 PS1=$'[%{\e[0;35m%}%n%{\e[0m%}@%{\e[0;35m%}%M%{\e[0m%}] %B%~%b '
 
 ### ALIASES
-FZF_SCRIPTS_PATH="~/.dotfiles/Files/Linux/fzf"
+FZF_SCRIPTS_PATH="~/.fzf-wuzzy/bin"
 
 # Fzf Scripts
 alias audio="$FZF_SCRIPTS_PATH/audio_output.sh" 
@@ -26,6 +26,8 @@ alias projects="$FZF_SCRIPTS_PATH/projects.sh"
 alias television="$FZF_SCRIPTS_PATH/television.sh"
 alias themes="$FZF_SCRIPTS_PATH/themes.sh"
 alias wallpapers="$FZF_SCRIPTS_PATH/wallpapers.sh"
+alias yt="$FZF_SCRIPTS_PATH/youtube.sh"
+
 
 # Drives
 alias game_mount="sudo cryptsetup open /dev/sda1 games && sudo mount /dev/mapper/games /mnt/games"
