@@ -21,5 +21,5 @@ for item in "${toHomeDir[@]}"; do
 done
 
 for item in "${toFzfWuzzy[@]}"; do
-	ln -s "$dotsPath/fzf-wuzzy/$item" "$HOME/.fzf-wuzzy/config"
+	ln -s "$dotsPath/Linux/fzf-wuzzy/$item" "$HOME/.fzf-wuzzy/config"
 done
