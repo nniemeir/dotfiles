@@ -1,0 +1,3 @@
+name;dev_entry;mountpoint
+games;sda1;/mnt/games
+media;sdb;/mnt/media

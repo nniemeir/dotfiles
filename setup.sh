@@ -10,7 +10,7 @@ rm -rf autotiling
 dotsPath="$HOME/.dotfiles/Files"
 toConfigDir=('Linux/alacritty' 'Linux/dunst' 'Linux/filmfs' 'Linux/fzf' 'Linux/gzdoom' 'Linux/hypr' 'Linux/kitty' 'Linux/mpd' 'Linux/mpv' 'Common/nvim' 'Linux/ranger' 'Linux/rmpc' 'Linux/rofi' 'Linux/sway' 'Linux/waybar' 'Linux/zathura')
 toHomeDir=('Linux/.zshrc')
-toFzfWuzzy=('bookmarks.csv' 'games.csv' 'preferences.conf')
+toFzfWuzzy=('bookmarks.csv' 'drives.csv' 'games.csv' 'preferences.conf')
 
 for item in "${toConfigDir[@]}"; do
 	ln -s "$dotsPath/$item" "$HOME/.config"
