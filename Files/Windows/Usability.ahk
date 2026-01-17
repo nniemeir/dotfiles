@@ -111,17 +111,4 @@ userHome := hdrive . hpath
         kde_x1 += kde_x2
         kde_y1 += kde_y2
     }
-}
-
-; DOUBLE ALT + MButton: Close window
-#MButton::
-{
-    global g_DoubleAlt
-    if g_DoubleAlt
-    {
-        MouseGetPos ,, &kde_id
-        WinClose "ahk_id " kde_id
-        g_DoubleAlt := false
-        return
-    }
-}
+}
