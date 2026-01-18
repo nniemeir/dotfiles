@@ -8,7 +8,7 @@ mv autotiling/autotiling/main.py ~/.dotfiles/Files/Linux/sway/scripts/autotiling
 rm -rf autotiling
 
 dotsPath="$HOME/.dotfiles/Files"
-toConfigDir=('Linux/alacritty' 'Linux/dunst' 'Linux/filmfs' 'Linux/fzf' 'Linux/gzdoom' 'Linux/hypr' 'Linux/kitty' 'Linux/mpd' 'Linux/mpv' 'Common/nvim' 'Linux/ranger' 'Linux/rmpc' 'Linux/rofi' 'Linux/sway' 'Linux/waybar' 'Linux/zathura')
+toConfigDir=('Linux/dunst' 'Linux/filmfs' 'Linux/kitty' 'Linux/mpv' 'Common/nvim' 'Linux/ranger' 'Linux/sway' 'Linux/zathura')
 toHomeDir=('Linux/.zshrc')
 toFzfWuzzy=('bookmarks.csv' 'drives.csv' 'games.csv' 'preferences.conf')
 
