@@ -1,6 +1,7 @@
 function notes {
     & "$env:USERPROFILE\dotfiles\Files\Windows\fzf\notes.ps1"
 }
+
 function prompt {
     $Location = Get-Item -Path (Get-Location)
     if ($Location.PSChildName) {

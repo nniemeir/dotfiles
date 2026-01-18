@@ -9,8 +9,6 @@ offset = (40, 40)
 transparency = 0
 
 # Click behavior
-always_run_script = true
-browser = xdg-open
 mouse_left_click = close_current
 mouse_middle_click = context_all
 mouse_right_click = close_all
