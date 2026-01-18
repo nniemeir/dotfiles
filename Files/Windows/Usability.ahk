@@ -25,9 +25,8 @@ userHome := hdrive . hpath
 ; APPLICATIONS
 #+f::Run "C:\Program Files\Mozilla Firefox\firefox.exe"
 #+Enter::Run "C:\Program Files\WindowsApps\TheDebianProject.DebianGNULinux_1.15.0.0_x64__76v4gfsz19hv4\debian.exe"
-#v::Run "C:\Windows\System32\SndVol.exe"
+#+v::Run "C:\Windows\System32\SndVol.exe"
 #Enter::Run userHome "\AppData\Local\Microsoft\WindowsApps\wt.exe"
-^!t::Run userHome "\AppData\Local\Microsoft\WindowsApps\wt.exe"
 
 #+e::Run userHome "\AppData\Local\Microsoft\WinGet\Packages\gokcehan.lf_Microsoft.Winget.Source_8wekyb3d8bbwe\lf.exe"
 #Del::FileRecycleEmpty  ; Win + Del
@@ -111,4 +110,4 @@ userHome := hdrive . hpath
         kde_x1 += kde_x2
         kde_y1 += kde_y2
     }
-}
+}
