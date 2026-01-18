@@ -12,6 +12,7 @@ These are my configuration files for various applications I use on GNU/Linux and
 * [ZSH](https://github.com/zsh-users/zsh)
 
 [Sway (Linux) Keybindings](SWAY_KEYBINDINGS.md)
+
 [Windows Keybindings](WINDOWS_KEYBINDINGS.md)
 
 ## Installation
