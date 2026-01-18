@@ -1,5 +1,5 @@
 # Windows Keybindings
-These are added by AutoHotkey in addition to the existing Windows keybindings.
+These are added through AutoHotkey in addition to the existing Windows keybindings.
 
 ## CLI Programs
 | Keybinding      | Action                   |
