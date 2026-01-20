@@ -62,6 +62,9 @@ vim.api.nvim_create_autocmd("FileType", {
   command = "syn match math '\\$[^$].\\{-}\\$'"
 })
 
+-- Useful to get a quick table skeleton in markdown
+local function instable() local skeleton = { "| Column 1 | Column 2 | Column 3 |", "|----------|----------|----------|", "| | | |", } vim.api.nvim_put(skeleton, "l", true, true) end vim.api.nvim_create_user_command("Instable", instable, {})
+
 -- Vimtex
 vim.g.tex_flavor = "latex"
 vim.g.vimtex_view_method = "zathura"
