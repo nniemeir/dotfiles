@@ -13,7 +13,6 @@ These are added through AutoHotkey in addition to the existing Windows keybindin
 |-------------|-----------------------|
 | Win+Shift+F | Firefox               |
 | Win+Shift+V | Volume Mixer          |
-| Win+Shift+E | Thunar                |
 
 ## Window Manager Controls
 | Keybinding       | Action                               |
